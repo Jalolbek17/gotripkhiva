@@ -1838,7 +1838,7 @@ async function submitInlineBooking(sectionKey, id, formId, channel){
   if(message) out += `Message: ${message}\n`;
   
   recordSubmission(channel === 'wa' ? 'WhatsApp' : 'Telegram', out);
-  if(channel==='wa'){ window.open(messageUrl(whatsappUrl(), out), "_blank"); }
+  if(channel==='wa'){ window.location.href = messageUrl(whatsappUrl(), out); }
   else { await sendTelegramToOwner(out); }
 }
 
@@ -1938,7 +1938,7 @@ async function submitStandaloneBooking(sectionKey, channel){
   if(pickup) out += `Pickup: ${pickup}\n`;
   if(msg) out += `Message: ${msg}`;
   recordSubmission(channel === 'wa' ? 'WhatsApp' : 'Telegram', out);
-  if(channel==='wa'){ window.open(messageUrl(whatsappUrl(), out), "_blank"); }
+  if(channel==='wa'){ window.location.href = messageUrl(whatsappUrl(), out); }
   else { await sendTelegramToOwner(out); }
 }
 
@@ -2282,7 +2282,7 @@ function openDetailsInNewTab(sectionKey, id){
         saved.unshift({channel: channel === 'wa' ? 'WhatsApp' : 'Telegram', message: out, createdAt: new Date().toISOString()});
         localStorage.setItem('booking-submissions-v1', JSON.stringify(saved.slice(0, 100)));
         if(channel === 'wa'){
-          window.open(ddMessageUrl(DD_WA_LINK, out), "_blank");
+          window.location.href = ddMessageUrl(DD_WA_LINK, out);
           return;
         }
         fetch(DD_API_URL, {
@@ -2446,7 +2446,7 @@ function submitToWhatsApp(){
   const text = buildMessage();
   if(!text) return;
   recordSubmission('WhatsApp', text);
-  window.open(messageUrl(whatsappUrl(), text), "_blank");
+  window.location.href = messageUrl(whatsappUrl(), text);
 }
 
 function messageUrl(baseUrl, text){
