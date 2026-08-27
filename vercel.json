@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/arthouseaccomadation.html/admin",
+      "destination": "/arthouseaccomadation.html?admin=1"
+    }
+  ]
+}
