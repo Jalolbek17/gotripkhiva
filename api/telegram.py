@@ -4,7 +4,7 @@ from http.server import BaseHTTPRequestHandler
 from urllib.request import Request, urlopen
 
 
-CHAT_ID = "8683662395"
+CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
 
 
 class handler(BaseHTTPRequestHandler):
@@ -12,6 +12,9 @@ class handler(BaseHTTPRequestHandler):
         token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
         if not token:
             self.send_json(503, {"ok": False, "error": "TELEGRAM_BOT_TOKEN is not configured"})
+            return
+        if not CHAT_ID:
+            self.send_json(503, {"ok": False, "error": "TELEGRAM_CHAT_ID is not configured"})
             return
 
         try:
@@ -32,7 +35,12 @@ class handler(BaseHTTPRequestHandler):
                 result = json.loads(response.read().decode("utf-8"))
             self.send_json(200 if result.get("ok") else 502, result)
         except Exception as error:
-            self.send_json(502, {"ok": False, "error": str(error)})
+            detail = getattr(error, "read", lambda: b"")()
+            try:
+                detail = json.loads(detail.decode("utf-8"))
+            except Exception:
+                detail = str(error)
+            self.send_json(502, {"ok": False, "error": detail})
 
     def do_OPTIONS(self):
         self.send_json(204, {})
