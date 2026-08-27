@@ -1977,7 +1977,7 @@ function openDetailsInNewTab(sectionKey, id){
 
   const baseUrl = location.href.split('?')[0].split('#')[0];
   const bfFields = (item.bookingForm && item.bookingForm.fields) || ["name","phone","date","people","message"];
-  const bfEnabled = !(item.bookingForm && item.bookingForm.enabled===false);
+  const bfEnabled = true;
   const sectionItemsArr = (state.sections[sectionKey] && state.sections[sectionKey].items) || [];
   const peopleOptsDD = Array.from({length:12},(_,i)=>`<option value="${i+1}">${i+1}</option>`).join('');
   const vehOptsDD = (item.vehicles||[]).map((v,i)=>`<option value="${i}">${esc(v.label.en||v.label[currentLang])} — $${v.price}</option>`).join('');
@@ -2195,6 +2195,7 @@ function openDetailsInNewTab(sectionKey, id){
       const DD_VEHICLES = ${JSON.stringify((item.vehicles||[]).map(v=>({label: v.label.en || v.label[currentLang], price: v.price})))};
       const DD_WA_LINK = ${JSON.stringify(waLink)};
       const DD_TG_LINK = ${JSON.stringify(tgLink)};
+      const DD_API_URL = ${JSON.stringify(new URL('/api/telegram', baseUrl).href)};
       const DD_SECTION_ITEMS = ${JSON.stringify(sectionItemsArr.map(it2=>({id:it2.id, name:(it2.name.en||it2.name[currentLang]), vehicles:(it2.vehicles||[]).map(v=>({label: v.label.en || v.label[currentLang], price: v.price}))})))};
       const DD_SURVEY_QUESTIONS = ${JSON.stringify(surveyQuestions)};
       let DD_CURRENT_TOUR_ID = ${item.id};
@@ -2279,7 +2280,7 @@ function openDetailsInNewTab(sectionKey, id){
           window.open(messageUrl(DD_WA_LINK, out), "_blank");
           return;
         }
-        fetch('/api/telegram', {
+        fetch(DD_API_URL, {
           method:'POST',
           headers:{'Content-Type':'application/json'},
           body:JSON.stringify({message:out})
