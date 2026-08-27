@@ -1,0 +1,3134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Art House Travel and Accommodations</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231a0e08'/%3E%3Cpath d='M32 10c-9 8-15 16-15 24a15 15 0 0 0 30 0c0-8-6-16-15-24z' fill='%23D4652A'/%3E%3Ccircle cx='32' cy='30' r='4' fill='%23C9A84C'/%3E%3Cpath d='M14 50h36M20 50v-8M28 50v-12M36 50v-12M44 50v-8' stroke='%23C9A84C' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --header-bg:#1a0e08;
+    --header-bg-2:#2A1810;
+    --navy:#142C4F;
+    --navy-2:#0B1B33;
+    --sand:#F6F1E6;
+    --paper:#FFFFFF;
+    --terracotta:#D4652A;
+    --terracotta-dark:#A84F1E;
+    --teal-1:#0E3B3E;
+    --teal-2:#1B6E6A;
+    --ink:#1B1B1B;
+    --muted:#6b7280;
+    --line:#E4DCC9;
+    --radius:14px;
+    --shadow:0 10px 30px rgba(20,44,79,.08);
+    --gold:#C9A84C;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:'Inter',sans-serif;color:var(--ink);background:var(--sand);}
+  h1,h2,h3,h4{font-family:'Zilla Slab',serif;margin:0;letter-spacing:-.01em;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  a{color:inherit;text-decoration:none;}
+  .container{max-width:1180px;margin:0 auto;padding:0 24px;}
+  button{font-family:inherit;cursor:pointer;}
+
+  header.nav{position:sticky;top:0;z-index:50;background:var(--header-bg);box-shadow:0 2px 12px rgba(0,0,0,.4);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1180px;margin:0 auto;gap:16px;}
+  .brand{display:flex;align-items:center;gap:10px;color:#fff;}
+  .brand-mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--gold),var(--terracotta));display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;}
+  .brand-mark svg{width:20px;height:20px;}
+  .brand-mark img{width:100%;height:100%;object-fit:cover;}
+  .brand-text b{font-family:'Zilla Slab',serif;font-size:19px;line-height:1.1;display:block;color:#fff;}
+  .brand-text span{font-size:11px;letter-spacing:.14em;color:#D8C6B8;text-transform:uppercase;}
+  nav.links{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+  nav.links a{color:#EADFD3;font-size:14px;font-weight:500;padding:6px 2px;border-bottom:2px solid transparent;white-space:nowrap;cursor:pointer;}
+  nav.links a:hover{color:#fff;border-color:var(--gold);}
+  .lang-switch{display:flex;gap:4px;background:rgba(255,255,255,.08);border-radius:8px;padding:3px;}
+  .lang-switch button{background:none;border:none;color:#D8C6B8;font-size:12.5px;font-weight:700;padding:6px 9px;border-radius:6px;font-family:'JetBrains Mono',monospace;}
+  .lang-switch button.active{background:var(--terracotta);color:#fff;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;font-weight:700;font-size:14.5px;border:none;transition:transform .15s ease;}
+  .btn:hover{transform:translateY(-1px);}
+  .btn-terracotta{background:var(--terracotta);color:#fff;box-shadow:0 6px 16px rgba(212,101,42,.35);}
+  .btn-terracotta:hover{background:var(--terracotta-dark);}
+  .btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5);}
+  .btn-outline:hover{border-color:#fff;}
+  .btn-teal{background:var(--teal-2);color:#fff;}
+  .btn-teal:hover{background:var(--teal-1);}
+  .btn-ghost{background:#fff;color:var(--navy);border:1.5px solid var(--line);}
+  .btn-gold{background:var(--gold);color:#1a0e08;}
+  .btn-gold:hover{background:#b8953a;}
+  .hamburger{display:none;background:none;border:none;color:#fff;font-size:22px;}
+
+  .hero{position:relative;background:linear-gradient(180deg, rgba(26,14,8,.55) 0%, rgba(42,24,16,.6) 35%, rgba(106,58,34,.72) 75%, rgba(138,82,48,.8) 100%), url('https://images.unsplash.com/photo-1756914374243-b645fe72e100?auto=format&fit=crop&w=1800&q=70') center 65%/cover no-repeat, linear-gradient(180deg,var(--header-bg-2) 0%, #3d2215 40%, #6a3a22 80%, #8a5230 100%);overflow:hidden;padding:90px 24px 0;}
+  .hero::before{content:"";position:absolute;inset:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="%23ffffff20"/><circle cx="30" cy="25" r="0.8" fill="%23ffffff15"/><circle cx="50" cy="5" r="1.2" fill="%23ffffff10"/><circle cx="70" cy="35" r="0.6" fill="%23ffffff12"/><circle cx="90" cy="15" r="1" fill="%23ffffff18"/></svg>');background-size:200px 200px;opacity:0.3;}
+  .hero-inner{max-width:820px;margin:0 auto;text-align:center;position:relative;z-index:2;}
+  .hero-icon{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,217,176,.5);backdrop-filter:blur(2px);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;}
+  .hero-icon svg{width:32px;height:32px;}
+  .hero-eyebrow{color:#FFD9B0;font-family:'JetBrains Mono',monospace;letter-spacing:.18em;text-transform:uppercase;font-size:12.5px;margin-bottom:14px;font-weight:700;}
+  .hero h1{color:#fff;font-size:clamp(34px,6vw,62px);line-height:1.03;}
+  .hero p.tagline{color:#F1E3D3;font-size:clamp(15px,2vw,19px);margin-top:16px;max-width:560px;margin-left:auto;margin-right:auto;}
+  .hero-btns{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap;justify-content:center;padding-bottom:20px;position:relative;z-index:2;}
+  .hero-contact-row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap;justify-content:center;padding-bottom:56px;position:relative;z-index:2;}
+  .hero-contact-btn{display:inline-flex;align-items:center;gap:9px;padding:11px 20px;border-radius:30px;font-weight:700;font-size:14.5px;color:#fff;box-shadow:0 8px 20px rgba(0,0,0,.25);}
+  .hero-contact-btn svg{width:20px;height:20px;}
+  .hero-contact-btn.wa{background:#25D366;}
+  .hero-contact-btn.wa:hover{background:#1fb355;}
+  .hero-contact-btn.tg{background:#229ED9;}
+  .hero-contact-btn.tg:hover{background:#1c85b8;}
+  .dune{position:relative;height:120px;margin-top:10px;}
+  .dune svg{position:absolute;bottom:-2px;left:0;width:100%;height:100%;}
+
+  section{padding:78px 0;}
+  .section-head{text-align:center;max-width:640px;margin:0 auto 46px;}
+  .eyebrow{font-family:'JetBrains Mono',monospace;color:var(--terracotta);text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:700;}
+  .section-head h2{font-size:clamp(28px,4vw,40px);margin-top:10px;}
+  .section-head p{color:var(--muted);margin-top:14px;font-size:16px;line-height:1.6;}
+
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .service-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:box-shadow .2s, transform .2s;position:relative;overflow:hidden;}
+  .service-card:hover{box-shadow:var(--shadow);transform:translateY(-3px);background:#FDEEE1;border-color:var(--terracotta);}
+  .service-card.hi{background:linear-gradient(135deg,var(--terracotta),var(--terracotta-dark));color:#fff;border-color:transparent;}
+  .service-card.hi:hover{background:var(--terracotta-dark);}
+  .service-card.hi::after{content:"✦";position:absolute;top:10px;right:16px;font-size:20px;opacity:.3;}
+  .service-icon{width:46px;height:46px;border-radius:10px;background:var(--sand);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+  .service-card.hi .service-icon{background:rgba(255,255,255,.2);}
+  .service-icon svg{width:24px;height:24px;stroke:var(--header-bg);}
+  .service-card.hi .service-icon svg{stroke:#fff;}
+  .service-card h3{font-size:19px;margin-bottom:8px;}
+  .service-card p{color:var(--muted);font-size:14.5px;line-height:1.55;margin:0;}
+  .service-card.hi p{color:rgba(255,255,255,.92);}
+
+  .tours-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-bottom:8px;}
+  .ticket{background:var(--paper);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .2s;}
+  .ticket:hover{transform:translateY(-3px);}
+  .ticket-body{padding:22px 24px 6px;flex:1;}
+  .ticket-body h4{font-size:19px;line-height:1.35;color:var(--header-bg);}
+  .ticket-img{width:100%;height:160px;object-fit:cover;display:block;}
+  .stub{border-top:2px dashed var(--line);margin-top:14px;position:relative;padding:16px 24px 8px;}
+  .stub::before,.stub::after{content:"";position:absolute;top:-9px;width:18px;height:18px;background:var(--sand);border-radius:50%;}
+  .stub::before{left:-9px;}
+  .stub::after{right:-9px;}
+  .price-row{display:flex;justify-content:space-between;font-size:14.5px;padding:6px 0;color:var(--ink);}
+  .price-row span:first-child{color:var(--muted);}
+  .price-row b{font-family:'JetBrains Mono',monospace;color:var(--terracotta-dark);font-size:15.5px;}
+  .ticket-actions{display:flex;gap:10px;padding:16px 24px 24px;}
+  .ticket-actions .btn{flex:1;justify-content:center;padding:12px;font-size:14.5px;}
+
+  .cat-head{text-align:center;max-width:760px;margin:54px auto 28px;}
+  .cat-head:first-child{margin-top:6px;}
+  .cat-head .eyebrow{display:block;}
+  .cat-head h3{font-size:23px;margin-top:8px;color:var(--navy);}
+  .cat-head .rule{width:64px;height:3px;background:var(--gold);margin:14px auto 0;border-radius:2px;}
+
+  .about-wrap{background:var(--paper);}
+  .about-text{max-width:760px;margin:0 auto;text-align:center;color:var(--muted);font-size:16px;line-height:1.75;}
+  .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:46px;}
+  .review-card{border:1px solid var(--line);border-radius:var(--radius);padding:26px;text-align:center;position:relative;overflow:hidden;}
+  .review-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;}
+  .review-card.google::before{background:#EA4335;}
+  .review-card.trip::before{background:#00AF87;}
+  .review-card.trust::before{background:#00B67A;}
+  .review-logo{width:46px;height:46px;border-radius:50%;background:var(--sand);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-weight:800;font-size:18px;}
+  .review-name{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;}
+  .review-score{font-size:34px;font-family:'Zilla Slab',serif;font-weight:700;margin:6px 0;}
+  .stars{color:var(--gold);letter-spacing:2px;font-size:15px;}
+  .review-count{color:var(--muted);font-size:13px;margin:8px 0 16px;}
+
+  .contact{background:linear-gradient(150deg,var(--teal-1),var(--teal-2));color:#fff;}
+  .contact .section-head p{color:rgba(255,255,255,.85);}
+  .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:50px;}
+  .info-card{background:#fff;color:var(--ink);border-radius:var(--radius);padding:26px;text-align:center;}
+  .info-icon{width:48px;height:48px;border-radius:50%;background:#FDEEE1;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;}
+  .info-icon svg{width:22px;height:22px;stroke:var(--terracotta);}
+  .info-card h4{font-size:16.5px;margin-bottom:8px;}
+  .info-card p{margin:2px 0;color:var(--muted);font-size:14.5px;}
+  .info-card a{color:var(--terracotta-dark);font-weight:600;}
+
+  .booking-panel{background:#fff;color:var(--ink);border-radius:18px;padding:38px;max-width:820px;margin:0 auto;box-shadow:0 24px 60px rgba(0,0,0,.25);}
+  .booking-panel h3{font-size:24px;text-align:center;}
+  .booking-panel>p{text-align:center;color:var(--muted);margin-top:8px;font-size:14.5px;}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px;}
+  .form-grid .full{grid-column:1/-1;}
+  label{display:block;font-size:12.5px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;}
+  input,select,textarea{width:100%;padding:11px 13px;border:1.5px solid var(--line);border-radius:9px;font-family:inherit;font-size:14.5px;background:var(--sand);color:var(--ink);}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--terracotta);outline-offset:1px;}
+  textarea{resize:vertical;min-height:60px;}
+  .form-actions{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap;}
+  .form-actions .btn{flex:1;justify-content:center;min-width:180px;}
+  .form-note{font-size:12px;color:var(--muted);margin-top:12px;text-align:center;}
+
+  .admin-table-wrap{overflow-x:auto;margin-top:12px;}
+  .admin-table{width:100%;border-collapse:collapse;font-size:13.5px;background:#fff;border-radius:8px;overflow:hidden;}
+  .admin-table th{background:var(--header-bg);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.05em;}
+  .admin-table td{padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:middle;}
+  .admin-table tr:hover td{background:var(--sand);}
+  .admin-table input,.admin-table select{background:var(--sand);padding:6px 10px;font-size:13px;border-radius:6px;width:100%;}
+  .admin-table textarea{background:var(--sand);padding:6px 10px;font-size:13px;border-radius:6px;width:100%;min-height:50px;}
+
+  footer{background:var(--header-bg-2);color:#D8C6B8;padding:60px 0 26px;position:relative;}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;}
+  .footer-grid h5{color:#fff;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px;}
+  .footer-grid a{display:block;color:#D8C6B8;font-size:14px;padding:5px 0;}
+  .footer-grid a:hover{color:var(--gold);}
+  .footer-brand p{margin-top:12px;font-size:14px;color:#B79E8B;max-width:280px;}
+  .socials{display:flex;gap:10px;margin-top:18px;}
+  .social{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:background .2s;}
+  .social:hover{background:var(--gold);}
+  .social svg{width:17px;height:17px;stroke:#fff;fill:none;}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:44px;padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12.5px;color:#A88C77;}
+
+  .footer-admin-btn{background:var(--terracotta);color:#fff;border:none;padding:12px 24px;border-radius:10px;font-weight:700;font-size:15px;cursor:pointer;transition:all .2s;margin-top:10px;}
+  .footer-admin-btn:hover{background:var(--terracotta-dark);transform:scale(1.02);}
+
+  .side-icons{position:fixed;right:20px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:55;}
+  .side-icon{width:48px;height:48px;border-radius:50%;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,.15);display:flex;align-items:center;justify-content:center;transition:all .2s;border:1px solid var(--line);cursor:pointer;}
+  .side-icon:hover{transform:scale(1.05);}
+  .side-icon svg{width:24px;height:24px;}
+
+  .standalone-header{background:var(--header-bg);color:#fff;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  .standalone-header .brand{display:flex;align-items:center;gap:10px;}
+  .standalone-header .brand-mark{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--gold),var(--terracotta));display:flex;align-items:center;justify-content:center;overflow:hidden;}
+  .standalone-header .brand-mark svg{width:18px;height:18px;}
+  .standalone-header .brand-mark img{width:100%;height:100%;object-fit:cover;}
+  .standalone-header .brand-text b{font-family:'Zilla Slab',serif;font-size:16px;color:#fff;}
+  .standalone-header .brand-text span{font-size:10px;color:#D8C6B8;display:block;}
+  .standalone-nav{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+  .standalone-nav a{color:#EADFD3;font-size:13px;font-weight:500;padding:4px 8px;border-bottom:2px solid transparent;}
+  .standalone-nav a:hover{color:#fff;border-color:var(--gold);}
+  .standalone-nav .btn{font-size:13px;padding:8px 14px;}
+
+  .modal-bg{position:fixed;inset:0;background:rgba(11,27,51,.6);display:none;align-items:center;justify-content:center;z-index:100;padding:20px;overflow-y:auto;}
+  .modal-bg.open{display:flex;}
+  .modal{background:#fff;border-radius:16px;max-width:560px;width:100%;padding:32px;max-height:88vh;overflow-y:auto;}
+  .modal-wide{max-width:920px;}
+  .modal h3{font-size:22px;margin-bottom:6px;}
+  .modal-close{float:right;background:none;border:none;font-size:22px;color:var(--muted);cursor:pointer;padding:0 8px;}
+  .field{margin-bottom:14px;}
+  .admin-tour-row{border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:14px;background:var(--sand);}
+  .admin-tour-row h5{font-size:13px;margin-bottom:0;color:var(--navy);font-family:'JetBrains Mono',monospace;}
+  .toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:var(--header-bg);color:#fff;padding:12px 22px;border-radius:30px;font-size:14px;z-index:200;box-shadow:0 10px 24px rgba(0,0,0,.3);display:none;}
+  .toast.show{display:block;}
+
+  .survey-question-item{border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:12px;background:var(--sand);}
+  .survey-question-item .q-header{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+  .survey-question-item .q-header input[type="text"]{flex:2;min-width:150px;}
+  .survey-question-item .q-header select{flex:1;min-width:100px;}
+  .survey-question-item .q-options{margin-top:10px;padding-left:20px;border-left:3px solid var(--gold);}
+  .survey-question-item .q-options .opt-row{display:flex;gap:8px;align-items:center;margin-bottom:6px;}
+  .survey-question-item .q-options .opt-row input{flex:1;}
+  .survey-container{margin-top:16px;}
+  .survey-container .survey-question{margin-bottom:18px;padding:14px;border:1px solid var(--line);border-radius:10px;background:var(--sand);}
+  .survey-container .survey-question label{font-weight:600;font-size:14px;color:var(--ink);text-transform:none;letter-spacing:0;}
+  .survey-container .survey-question .required-star{color:#c0392b;}
+  .survey-container .survey-question input,.survey-container .survey-question select,.survey-container .survey-question textarea{margin-top:6px;background:#fff;}
+
+  .placeholder-row{display:flex;gap:8px;margin-bottom:5px;align-items:center;}
+  .placeholder-row input{flex:1;}
+
+  .vehicle-picker-row{display:flex;gap:8px;margin-bottom:10px;align-items:center;flex-wrap:wrap;}
+  .vehicle-picker-row select{flex:2;min-width:160px;}
+  .vehicle-picker-row input{flex:1;min-width:90px;}
+
+  @media(max-width:940px){
+    nav.links{display:none;}
+    .hamburger{display:block;}
+    .services-grid,.tours-grid,.reviews-grid,.contact-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    .form-grid{grid-template-columns:1fr;}
+    .side-icons{right:10px;gap:8px;}
+    .side-icon{width:42px;height:42px;}
+    .side-icon svg{width:21px;height:21px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <div class="brand-mark" id="header-brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 20V11C4 6.58 7.58 3 12 3s8 3.58 8 8v9" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M3 20h18" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+          <circle cx="12" cy="10.5" r="2" fill="#fff"/>
+          <path d="M7.5 20v-4.5M16.5 20v-4.5" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M12 7v2M12 12v1" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <b>Art House Travel and Accommodations</b>
+        <span>Khiva · Uzbekistan</span>
+      </div>
+    </div>
+    <nav class="links">
+      <a data-i18n="nav.home" href="#home" onclick="event.preventDefault(); scrollToSection('home')">Home</a>
+      <a data-i18n="nav.services" href="#services" onclick="event.preventDefault(); scrollToSection('services')">Services</a>
+      <a data-i18n="nav.tours" href="#tours" onclick="event.preventDefault(); scrollToSection('tours')">Tours</a>
+      <a data-i18n="nav.sharedDayTrips" href="#shared-trips" onclick="event.preventDefault(); scrollToSection('shared-trips')">Shared Day Trips</a>
+      <a data-i18n="nav.twoDayTours" href="#two-day" onclick="event.preventDefault(); scrollToSection('two-day')">2-Day Tours</a>
+      <a data-i18n="nav.aralSea" href="#aral-sea" onclick="event.preventDefault(); scrollToSection('aral-sea')">Aral Sea</a>
+      <a data-i18n="nav.transfers" href="#transfers" onclick="event.preventDefault(); scrollToSection('transfers')">Transfers</a>
+      <a data-i18n="nav.cars" href="#cars" onclick="event.preventDefault(); scrollToSection('cars')">Our Cars</a>
+      <a data-i18n="nav.about" href="#about" onclick="event.preventDefault(); scrollToSection('about')">About</a>
+      <a data-i18n="nav.contact" href="#contact" onclick="event.preventDefault(); scrollToSection('contact')">Contact</a>
+      <button data-i18n="nav.enquiry" class="btn btn-terracotta" onclick="openBooking()">Enquiry</button>
+      <div class="lang-switch">
+        <button data-lang="uz" onclick="setLang('uz')">UZ</button>
+        <button data-lang="ru" onclick="setLang('ru')">RU</button>
+        <button data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+    </nav>
+    <button class="hamburger" onclick="toggleMobileNav()">☰</button>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Ancient Khorezm · Amu Darya Oasis</div>
+    <h1>GoTripKhiva</h1>
+    <p class="tagline">Discover Ancient Khorezm With Us!</p>
+    <div class="hero-btns">
+      <button class="btn btn-gold" onclick="document.getElementById('tours').scrollIntoView()">Explore Tours</button>
+      <button class="btn btn-outline" onclick="openBooking()">Contact Us</button>
+    </div>
+    <div class="hero-contact-row" id="hero-contact-row"></div>
+  </div>
+  <div class="dune">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,80 C200,20 350,110 600,60 C820,15 1000,90 1200,40 L1200,120 L0,120 Z" fill="#F6F1E6" opacity="1"></path>
+      <path d="M0,100 C250,60 450,115 700,80 C900,50 1050,100 1200,70 L1200,120 L0,120 Z" fill="#EFE6D4" opacity=".7"></path>
+    </svg>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Our Services</div>
+      <h2>Tour and accommodation services</h2>
+      <p>We offer a full range of tour and transfer services in the Karakalpakstan, Khorezm and Bukhara regions.</p>
+    </div>
+    <div class="services-grid" id="services-grid"></div>
+  </div>
+</section>
+
+<section id="tours" style="background:var(--paper);">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Private Day Trips</div>
+      <h2>Tours departing from Khiva</h2>
+      <p>Explore the ancient Khorezm fortresses, desert landscapes and cultural highlights with a private driver.</p>
+    </div>
+    <div id="privateDayTrips-cards"></div>
+  </div>
+</section>
+
+<section id="shared-trips" style="background:var(--sand);display:none;">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Shared Day Trips</div>
+      <h2>Shared Group Tours</h2>
+      <p>Join our daily budget-friendly group tours departing from Khiva.</p>
+    </div>
+    <div id="sharedDayTrips-cards"></div>
+  </div>
+</section>
+
+<section id="two-day" style="background:var(--paper);display:none;">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Two-Day Trips</div>
+      <h2>Two-Day Tours</h2>
+      <p>Sleep in a yurt camp and explore the desert fortresses over two days.</p>
+    </div>
+    <div id="twoDayTours-cards"></div>
+  </div>
+</section>
+
+<section id="aral-sea" style="background:var(--sand);display:none;">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Aral Sea</div>
+      <h2>Aral Sea Adventures</h2>
+      <p>Discover the legendary shrinking Aral Sea and the Muynak ship cemetery.</p>
+    </div>
+    <div id="aralSea-cards"></div>
+  </div>
+</section>
+
+<section id="transfers" style="background:var(--paper);display:none;">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Transfers</div>
+      <h2>Private Transfers</h2>
+      <p>Comfortable door-to-door transfers between Khiva, Nukus, Bukhara and the airports.</p>
+    </div>
+    <div id="privateTransfers-cards"></div>
+  </div>
+</section>
+
+<section id="cars" style="background:var(--sand);display:none;">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Our Fleet</div>
+      <h2>Our Cars</h2>
+      <p>Modern, comfortable vehicles for your journeys.</p>
+    </div>
+    <div id="cars-cards"></div>
+  </div>
+</section>
+
+<section class="about-wrap" id="about">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">About the company</div>
+      <h2>About GoTripKhiva</h2>
+    </div>
+    <p class="about-text" id="about-text"></p>
+    <div class="reviews-grid">
+      <div class="review-card google">
+        <div class="review-logo">G</div>
+        <div class="review-name">Google</div>
+        <div class="review-score">5.0</div>
+        <div class="stars">★★★★★</div>
+        <div class="review-count">1007 reviews</div>
+      </div>
+      <div class="review-card trip">
+        <div class="review-logo">T</div>
+        <div class="review-name">TripAdvisor</div>
+        <div class="review-score">5.0</div>
+        <div class="stars">★★★★★</div>
+        <div class="review-count">724 verified reviews</div>
+      </div>
+      <div class="review-card trust">
+        <div class="review-logo">★</div>
+        <div class="review-name">Trustpilot</div>
+        <div class="review-score">4.7</div>
+        <div class="stars">★★★★★</div>
+        <div class="review-count">36 verified reviews</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Get in touch</div>
+      <h2>Contact us</h2>
+      <p>Send us an email or write on WhatsApp. We reply within 24 hours.</p>
+    </div>
+    <div class="contact-grid" id="contact-grid"></div>
+
+    <div class="booking-panel" id="booking-panel">
+      <h3>Fill in the enquiry form</h3>
+      <p>Fill in the form below — your request will be sent directly via Telegram or WhatsApp.</p>
+      <form id="booking-form" onsubmit="return false;">
+        <div class="form-grid">
+          <div class="full">
+            <label>Tour name</label>
+            <select id="f-tour" onchange="updateVehicleOptions()"></select>
+          </div>
+          <div>
+            <label>Vehicle / price</label>
+            <select id="f-vehicle" onchange="autofillPrice()">
+              <option value="">—</option>
+            </select>
+          </div>
+          <div>
+            <label>Date</label>
+            <input type="date" id="f-date">
+          </div>
+          <div>
+            <label>Confirm the price ($)</label>
+            <input type="text" id="f-price" placeholder="$">
+          </div>
+          <div>
+            <label>Number of travellers</label>
+            <select id="f-people"></select>
+          </div>
+          <div>
+            <label>Your name</label>
+            <input type="text" id="f-name" required>
+          </div>
+          <div>
+            <label>Pick-up place</label>
+            <input type="text" id="f-pickup" placeholder="Hotel / airport / railway station name">
+          </div>
+          <div>
+            <label>Pick-up time</label>
+            <input type="text" id="f-pickuptime" placeholder="09:00">
+          </div>
+          <div>
+            <label>Drop-off place</label>
+            <input type="text" id="f-dropoff" placeholder="Hotel / airport / railway station name">
+          </div>
+          <div>
+            <label>Contact email</label>
+            <input type="email" id="f-email" placeholder="email@example.com">
+          </div>
+          <div>
+            <label>Phone / WhatsApp</label>
+            <input type="tel" id="f-phone" required placeholder="+998 90 123-45-67">
+          </div>
+          <div class="full">
+            <label>Full names of group members (optional)</label>
+            <textarea id="f-members" placeholder="Full name, date of birth, citizenship, passport number"></textarea>
+          </div>
+          <div class="full">
+            <label>Question or special requests</label>
+            <textarea id="f-message"></textarea>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn-teal" onclick="submitToWhatsApp()">💬 Send via WhatsApp</button>
+          <button type="button" class="btn btn-terracotta" onclick="submitToTelegram()">✈️ Send via Telegram</button>
+        </div>
+        <p class="form-note">Clicking a button opens the app with your message ready to send.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <div class="brand-mark" id="footer-brand-mark">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 20V11C4 6.58 7.58 3 12 3s8 3.58 8 8v9" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M3 20h18" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+              <circle cx="12" cy="10.5" r="2" fill="#fff"/>
+              <path d="M7.5 20v-4.5M16.5 20v-4.5" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <b style="color:#fff;">GoTripKhiva</b>
+          </div>
+        </div>
+        <p>Discover Ancient Khorezm With Us!</p>
+        <div class="socials">
+          <a class="social" id="social-wa" href="#" target="_blank" title="WhatsApp"><svg viewBox="0 0 32 32" fill="#25D366" stroke="none"><path d="M16 0C7.16 0 0 7.16 0 16c0 2.82.74 5.56 2.14 7.98L0 32l8.24-2.1A15.9 15.9 0 0 0 16 32c8.84 0 16-7.16 16-16S24.84 0 16 0zm0 29.2c-2.5 0-4.94-.67-7.08-1.94l-.5-.3-5.02 1.28 1.34-4.9-.33-.5A13.16 13.16 0 0 1 2.8 16C2.8 8.7 8.7 2.8 16 2.8S29.2 8.7 29.2 16 23.3 29.2 16 29.2zm7.2-9.86c-.4-.2-2.34-1.15-2.7-1.28-.36-.13-.63-.2-.9.2-.26.4-1.02 1.28-1.25 1.55-.23.26-.46.3-.86.1-.4-.2-1.68-.62-3.2-1.98-1.18-1.05-1.98-2.36-2.2-2.76-.24-.4-.03-.62.17-.82.18-.18.4-.46.6-.7.2-.23.26-.4.4-.66.13-.26.06-.5-.03-.7-.1-.2-.9-2.17-1.23-2.97-.32-.78-.65-.67-.9-.68l-.77-.02c-.26 0-.7.1-1.06.5-.36.4-1.4 1.36-1.4 3.33s1.43 3.86 1.63 4.13c.2.26 2.8 4.28 6.8 6 .95.4 1.7.65 2.27.84.95.3 1.83.26 2.52.16.77-.12 2.34-.96 2.67-1.88.33-.92.33-1.7.23-1.87-.1-.16-.36-.26-.76-.46z"/></svg></a>
+          <a class="social" id="social-tg" href="#" target="_blank" title="Telegram"><svg viewBox="0 0 240 240" fill="#229ED9" stroke="none"><path d="M120 0C53.73 0 0 53.73 0 120s53.73 120 120 120 120-53.73 120-120S186.27 0 120 0zm55.6 82.2-19.6 92.5c-1.5 6.6-5.4 8.2-10.9 5.1l-30.1-22.2-14.5 14c-1.6 1.6-2.9 2.9-6 2.9l2.1-30.5 55.6-50.2c2.4-2.1-.5-3.3-3.7-1.2l-68.7 43.3-29.6-9.3c-6.4-2-6.6-6.4 1.4-9.5l115.8-44.6c5.4-2 10.1 1.3 8.2 9.7z"/></svg></a>
+          <a class="social" href="#"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+          <a class="social" href="#"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5>Our Tours</h5>
+        <a href="#tours">Private Day Trips</a>
+        <a href="javascript:void(0)" onclick="openStandalone('sharedDayTrips')">Shared Day Trips</a>
+        <a href="javascript:void(0)" onclick="openStandalone('twoDayTours')">Two-Day Tours</a>
+        <a href="javascript:void(0)" onclick="openStandalone('aralSea')">Aral Sea Adventures</a>
+        <a href="javascript:void(0)" onclick="openStandalone('privateTransfers')">Private Transfers</a>
+        <a href="javascript:void(0)" onclick="openStandalone('cars')">Our Cars</a>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <a href="#about">Our Team</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#">Terms and Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2018–2026 GoTripKhiva. All Rights Reserved.</span>
+      <span>Khiva, Uzbekistan</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Side Icons -->
+<div class="side-icons">
+  <a class="side-icon" id="side-wa" href="#" target="_blank" title="WhatsApp">
+    <svg viewBox="0 0 32 32" fill="#25D366"><path d="M16 0C7.16 0 0 7.16 0 16c0 2.82.74 5.56 2.14 7.98L0 32l8.24-2.1A15.9 15.9 0 0 0 16 32c8.84 0 16-7.16 16-16S24.84 0 16 0zm0 29.2c-2.5 0-4.94-.67-7.08-1.94l-.5-.3-5.02 1.28 1.34-4.9-.33-.5A13.16 13.16 0 0 1 2.8 16C2.8 8.7 8.7 2.8 16 2.8S29.2 8.7 29.2 16 23.3 29.2 16 29.2zm7.2-9.86c-.4-.2-2.34-1.15-2.7-1.28-.36-.13-.63-.2-.9.2-.26.4-1.02 1.28-1.25 1.55-.23.26-.46.3-.86.1-.4-.2-1.68-.62-3.2-1.98-1.18-1.05-1.98-2.36-2.2-2.76-.24-.4-.03-.62.17-.82.18-.18.4-.46.6-.7.2-.23.26-.4.4-.66.13-.26.06-.5-.03-.7-.1-.2-.9-2.17-1.23-2.97-.32-.78-.65-.67-.9-.68l-.77-.02c-.26 0-.7.1-1.06.5-.36.4-1.4 1.36-1.4 3.33s1.43 3.86 1.63 4.13c.2.26 2.8 4.28 6.8 6 .95.4 1.7.65 2.27.84.95.3 1.83.26 2.52.16.77-.12 2.34-.96 2.67-1.88.33-.92.33-1.7.23-1.87-.1-.16-.36-.26-.76-.46z"/></svg>
+  </a>
+  <a class="side-icon" id="side-tg" href="#" target="_blank" title="Telegram">
+    <svg viewBox="0 0 240 240" fill="#229ED9"><path d="M120 0C53.73 0 0 53.73 0 120s53.73 120 120 120 120-53.73 120-120S186.27 0 120 0zm55.6 82.2-19.6 92.5c-1.5 6.6-5.4 8.2-10.9 5.1l-30.1-22.2-14.5 14c-1.6 1.6-2.9 2.9-6 2.9l2.1-30.5 55.6-50.2c2.4-2.1-.5-3.3-3.7-1.2l-68.7 43.3-29.6-9.3c-6.4-2-6.6-6.4 1.4-9.5l115.8-44.6c5.4-2 10.1 1.3 8.2 9.7z"/></svg>
+  </a>
+</div>
+
+<!-- Admin Login Modal -->
+<div class="modal-bg" id="admin-login-bg">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('admin-login-bg')">×</button>
+    <h3>Admin Panel Login</h3>
+    <p style="color:var(--muted);font-size:14px;">Enter password once, it won't be asked again (in this browser).</p>
+    <div class="field" style="margin-top:18px;">
+      <label>Password</label>
+      <input type="password" id="admin-password" placeholder="Enter password">
+    </div>
+    <button class="btn btn-terracotta" style="width:100%;justify-content:center;" onclick="checkAdminPassword()">Login</button>
+  </div>
+</div>
+
+<!-- Admin Panel Modal -->
+<div class="modal-bg" id="admin-panel-bg">
+  <div class="modal modal-wide">
+    <button class="modal-close" onclick="closeModal('admin-panel-bg')">×</button>
+    <button class="btn btn-ghost" style="float:right;font-size:12.5px;padding:7px 12px;margin-top:2px;" onclick="adminLogout()">Logout</button>
+    <h3>Admin Panel</h3>
+    <p style="color:var(--muted);font-size:14px;">Changes are saved and visible to all visitors immediately. Name/description fields are edited in the current language (<span id="a-current-lang-note">EN</span>) — switch language to edit other translations.</p>
+    <div id="admin-submissions-wrap" style="margin-top:24px;"></div>
+
+    <h5 style="margin-top:24px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">General Information</h5>
+    <div class="field"><label>Site Name</label><input type="text" id="a-sitename"></div>
+    <div class="field"><label>Tagline</label><input type="text" id="a-tagline"></div>
+    <div class="field"><label>About Us Text</label><textarea id="a-about" style="min-height:100px;"></textarea></div>
+
+    <h5 style="margin-top:24px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Contact Information</h5>
+    <div class="form-grid" style="margin-top:0;">
+      <div><label>Phone 1</label><input type="text" id="a-phone1"></div>
+      <div><label>Phone 2</label><input type="text" id="a-phone2"></div>
+      <div><label>WhatsApp number (+998...)</label><input type="text" id="a-whatsapp"></div>
+      <div class="full"><label>WhatsApp Link (optional — full URL, e.g. wa.me/... or a group invite link. If left empty, the number above is used)</label><input type="text" id="a-whatsapp-link" placeholder="https://wa.me/998901234567 or https://chat.whatsapp.com/..."></div>
+      <div><label>Telegram username (@user)</label><input type="text" id="a-telegram"></div>
+      <div><label>Email</label><input type="text" id="a-email"></div>
+      <div><label>Address</label><input type="text" id="a-address"></div>
+      <div class="full"><label>Google Maps Link</label><input type="text" id="a-maplink"></div>
+      <div class="full"><label>Change Admin Password</label>
+        <div style="display:flex;gap:10px;align-items:center;">
+          <input type="password" id="a-new-password" placeholder="New password" style="flex:1;">
+          <button class="btn btn-ghost" onclick="changeAdminPassword()">Change</button>
+        </div>
+      </div>
+    </div>
+
+    <h5 style="margin-top:24px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">API Settings — JSONBin & ImgBB</h5>
+    <p style="font-size:13px;color:var(--muted);line-height:1.6;">Enter JSONBin and ImgBB API keys. You can upload images directly from your computer.</p>
+    <div class="form-grid" style="margin-top:0;">
+      <div><label>JSONBin ID</label><input type="text" id="a-jsonbin-id" placeholder="e.g. 65f1a2b3c4..."></div>
+      <div><label>JSONBin X-Master-Key</label><input type="text" id="a-jsonbin-key" placeholder="$2b$10$..."></div>
+      <div class="full"><label>ImgBB API Key</label><input type="text" id="a-imgbb-key" placeholder="e.g. 8f3a1c..."></div>
+    </div>
+    <button class="btn btn-ghost" style="margin-top:6px;" onclick="saveApiConfig()">Save API Settings</button>
+
+    <div id="admin-sections-wrap"></div>
+
+    <button class="btn btn-terracotta" style="width:100%;justify-content:center;margin-top:20px;" onclick="saveAdminChanges()">Save All Changes</button>
+    <button class="btn btn-ghost" style="width:100%;justify-content:center;margin-top:10px;" onclick="resetToDefault()">Reset to Default</button>
+  </div>
+</div>
+
+<!-- Survey Editor Modal -->
+<div class="modal-bg" id="survey-modal">
+  <div class="modal modal-wide" style="max-width:750px;">
+    <button class="modal-close" onclick="closeModal('survey-modal')">×</button>
+    <h3 id="survey-modal-title">📋 So'rovnoma yaratish</h3>
+    <p style="color:var(--muted);font-size:14px;">Savollar va javob maydonlarini qo'shing. Har bir savol uchun bir nechta placeholder (namuna) qo'shishingiz mumkin.</p>
+    
+    <div id="survey-questions-list"></div>
+    
+    <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;">
+      <button class="btn btn-ghost" onclick="addSurveyQuestion()">+ Savol qo'shish</button>
+      <button class="btn btn-terracotta" onclick="saveSurvey()">💾 So'rovnomani saqlash</button>
+      <button class="btn btn-ghost" onclick="closeModal('survey-modal')">Bekor qilish</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- ============================================================ -->
+<!-- ===================== JAVASCRIPT ============================ -->
+<!-- ============================================================ -->
+<script>
+// ================================================================
+// CONFIGURATION
+// ================================================================
+const ADMIN_PASSWORD = "2026";
+const TELEGRAM_USERNAME = "Icefp";
+const WHATSAPP_NUMBER = "+998991041699";
+const IMGBB_API_KEY = "965c6e3465655de4fefd861facb671c1";
+const JSONBIN_ID = "67b7f8b2ad19ca34f8123456";
+const JSONBIN_MASTER_KEY = "$2b$10$abcdefghijklmnopqrstuvwxyz1234567890";
+const LOGO_DATA_URI = "khiva.jpg";
+
+let apiConfig = { 
+  jsonbinId: JSONBIN_ID,
+  jsonbinKey: JSONBIN_MASTER_KEY,
+  imgbbKey: IMGBB_API_KEY 
+};
+
+// ================================================================
+// STATE
+// ================================================================
+let currentLang = "en";
+let adminAuthed = false;
+let standalonePage = null;
+let surveyContext = null; // { sec: 'privateDayTrips', idx: 0 }
+
+// ================================================================
+// TRANSLATIONS
+// ================================================================
+const I18N = {
+  uz: {
+    servicesList:[
+      {t:"Individual kunlik turlar",d:"Shaxsiy haydovchi bilan Xorazm qal'alarini o'z jadvalingiz bo'yicha kashf eting."},
+      {t:"Umumiy guruh turlari",d:"Xivadan har kuni boshlanadigan guruh turiga qulay narxlarda qo'shiling!"},
+      {t:"Ikki kunlik turlar",d:"Yurta lagerida tunab, ikki kun davomida cho'l qal'alarini kashf eting."},
+      {t:"Orol dengizi sayohati",d:"Afsonaviy qurigan Orol dengizi va Buyuk Ustyurt kanyonlarini kashf eting."},
+      {t:"Shaxsiy transferlar",d:"Xiva, Nukus, Buxoro va undan tashqarida qulay eshikdan-eshikkacha transferlar."},
+      {t:"Bizning jamoamiz",d:"Guruh hajmiga mos yaxshi saqlangan sedan, SUV, miniven va avtobuslarimiz bor."}
+    ]
+  },
+  ru: {
+    servicesList:[
+      {t:"Индивидуальные однодневные туры",d:"Исследуйте крепости Хорезма по своему графику с личным водителем."},
+      {t:"Групповые туры",d:"Присоединяйтесь к ежедневному групповому туру из Хивы по выгодным ценам!"},
+      {t:"Двухдневные туры",d:"Ночёвка в юрточном лагере и два дня исследования крепостей пустыни."},
+      {t:"Приключения на Аральском море",d:"Откройте для себя легендарное высыхающее Аральское море и каньоны Устюрта."},
+      {t:"Индивидуальные трансферы",d:"Удобные трансферы «от двери до двери» между Хивой, Нукусом, Бухарой и далее."},
+      {t:"Наша команда",d:"У нас есть ухоженные седаны, внедорожники, минивэны и автобусы под любой размер группы."}
+    ]
+  },
+  en: {
+    servicesList:[
+      {t:"Private Day Trips",d:"Explore the ancient Khorezm fortresses on your own timetable with a private driver."},
+      {t:"Shared Day Trips",d:"Join our daily group tour from Khiva at a great price!"},
+      {t:"Two-Day Tours",d:"Sleep in yurt camps and spend two days exploring the desert fortresses."},
+      {t:"Aral Sea Adventures",d:"Discover the legendary dying Aral Sea and the Great Ustyurt Canyons."},
+      {t:"Private Transfers",d:"Comfortable door-to-door transfers between Khiva, Nukus, Bukhara and beyond."},
+      {t:"Our Fleet",d:"Well-maintained sedans, SUVs, minivans and buses to fit all group sizes."}
+    ]
+  }
+};
+
+const UI_TEXT = {
+  uz: {
+    brand: 'Art House Travel and Accommodations',
+    location: 'Xiva · O\'zbekiston',
+    home: 'Bosh sahifa',
+    services: 'Xizmatlar',
+    tours: 'Turlar',
+    sharedDayTrips: 'Umumiy kunlik turlar',
+    twoDayTours: '2 kunlik turlar',
+    aralSea: 'Orol dengizi',
+    transfers: 'Transferlar',
+    cars: 'Bizning mashinalar',
+    about: 'Biz haqimizda',
+    contact: 'Aloqa',
+    enquiry: 'So\'rov',
+    heroEyebrow: 'Qadimiy Xorazm · Amudaryo vohasi',
+    servicesEyebrow: 'Bizning xizmatlar',
+    servicesTitle: 'Sayohat va turar joy xizmatlari',
+    servicesText: 'Biz Karakalpakstan, Xorazm va Buxoro mintaqalarida tur, transfer va mehmonxona xizmatlarini taqdim etamiz.',
+    toursEyebrow: 'Shaxsiy kunlik turlar',
+    toursTitle: 'Xivadan boshlanadigan turlar',
+    toursText: 'Qadimiy Xorazm qal’alari, cho’l landshaftlari va madaniy diqqatga sazovor joylarini shaxsiy haydovchi bilan kashf eting.',
+    sharedEyebrow: 'Umumiy kunlik turlar',
+    sharedTitle: 'Umumiy guruh turlari',
+    sharedText: 'Xivadan har kuni jo‘naydigan arzon guruh turlariga qo\'shiling.',
+    twoEyebrow: 'Ikki kunlik sayohatlar',
+    twoTitle: 'Ikki kunlik turlar',
+    twoText: 'Yurta lagerida tunab, ikki kun davomida cho’l qal’alarini kashf eting.',
+    aralEyebrow: 'Orol dengizi',
+    aralTitle: 'Orol dengizi sarguzashtlari',
+    aralText: 'Afsonaviy qurib borayotgan Orol dengizi va Muynak kema qabristonini kashf eting.',
+    transfersEyebrow: 'Transferlar',
+    transfersTitle: 'Shaxsiy transferlar',
+    transfersText: 'Xiva, Nukus, Buxoro va aeroportlar o\'rtasida qulay eshikdan-eshikkacha transferlar.',
+    carsEyebrow: 'Bizning park',
+    carsTitle: 'Bizning mashinalar',
+    carsText: 'Sayohatlar uchun zamonaviy, qulay transport vositalari.',
+    aboutEyebrow: 'Kompaniya haqida',
+    aboutTitle: 'GoTripKhiva haqida',
+    contactEyebrow: 'Bog\'lanish',
+    contactTitle: 'Biz bilan bog\'laning',
+    contactText: 'Bizga elektron pochta yuboring yoki WhatsApp orqali yozing. Biz 24 soat ichida javob beramiz.',
+    explore: 'Turlarni ko\'rish',
+    contactUs: 'Biz bilan bog\'laning',
+    formTitle: 'So\'rov formasini to\'ldiring',
+    formText: 'Formani to\'ldiring — so\'rov Telegram yoki WhatsApp orqali jo\'natiladi.',
+    formTour: 'Sayohat nomi',
+    formVehicle: 'Mashina / narx',
+    formDate: 'Sana',
+    formPrice: 'Narxni tasdiqlang ($)',
+    formPeople: 'Sayohatchilar soni',
+    formName: 'Ismingiz',
+    formPickup: 'Olish joyi',
+    formPickupTime: 'Olish vaqti',
+    formDropoff: 'Qo\'yib berish joyi',
+    formEmail: 'Kontakt elektron pochtasi',
+    formPhone: 'Telefon / WhatsApp',
+    formMembers: 'Guruh a\'zolarining to\'liq ismlari (ixtiyoriy)',
+    formMessage: 'Savol yoki maxsus so\'rov',
+    sendWa: '💬 WhatsApp orqali yuborish',
+    sendTg: '✈️ Telegram orqali yuborish',
+    formNote: 'Tugmani bosish appni tayyor xabar bilan ochadi.'
+  },
+  ru: {
+    brand: 'Art House Travel and Accommodations',
+    location: 'Хива · Узбекистан',
+    home: 'Главная',
+    services: 'Услуги',
+    tours: 'Туры',
+    sharedDayTrips: 'Групповые поездки',
+    twoDayTours: '2-дневные туры',
+    aralSea: 'Аральское море',
+    transfers: 'Трансферы',
+    cars: 'Наш автопарк',
+    about: 'О нас',
+    contact: 'Контакты',
+    enquiry: 'Запрос',
+    heroEyebrow: 'Древний Хорезм · Оазис Амударьи',
+    servicesEyebrow: 'Наши услуги',
+    servicesTitle: 'Туры и проживание',
+    servicesText: 'Мы предлагаем широкий спектр туров, трансферов и проживания в Каракалпакстане, Хорезме и Бухаре.',
+    toursEyebrow: 'Индивидуальные однодневные туры',
+    toursTitle: 'Туры из Хивы',
+    toursText: 'Исследуйте древние крепости Хорезма, пустынные ландшафты и культурные достопримечательности с личным водителем.',
+    sharedEyebrow: 'Групповые однодневные туры',
+    sharedTitle: 'Групповые туры',
+    sharedText: 'Присоединяйтесь к ежедневным бюджетным групповым турам из Хивы.',
+    twoEyebrow: 'Двухдневные поездки',
+    twoTitle: 'Двухдневные туры',
+    twoText: 'Ночёвка в юрточном лагере и два дня путешествия по пустынным крепостям.',
+    aralEyebrow: 'Аральское море',
+    aralTitle: 'Приключения на Аральском море',
+    aralText: 'Откройте для себя легендарное высыхающее Аральское море и кладбище кораблей Муйнак.',
+    transfersEyebrow: 'Трансферы',
+    transfersTitle: 'Индивидуальные трансферы',
+    transfersText: 'Удобные трансферы между Хивой, Нукусом, Бухарой и аэропортами.',
+    carsEyebrow: 'Наш автопарк',
+    carsTitle: 'Наши машины',
+    carsText: 'Современный и комфортный транспорт для ваших поездок.',
+    aboutEyebrow: 'О компании',
+    aboutTitle: 'О GoTripKhiva',
+    contactEyebrow: 'Связаться',
+    contactTitle: 'Свяжитесь с нами',
+    contactText: 'Напишите нам по электронной почте или в WhatsApp. Мы отвечаем в течение 24 часов.',
+    explore: 'Посмотреть туры',
+    contactUs: 'Связаться с нами',
+    formTitle: 'Заполните форму запроса',
+    formText: 'Заполните форму ниже — запрос будет отправлен напрямую через Telegram или WhatsApp.',
+    formTour: 'Название тура',
+    formVehicle: 'Автомобиль / цена',
+    formDate: 'Дата',
+    formPrice: 'Подтвердите цену ($)',
+    formPeople: 'Количество путешественников',
+    formName: 'Ваше имя',
+    formPickup: 'Место встречи',
+    formPickupTime: 'Время встречи',
+    formDropoff: 'Место высадки',
+    formEmail: 'Контактный email',
+    formPhone: 'Телефон / WhatsApp',
+    formMembers: 'Полные имена участников группы (необязательно)',
+    formMessage: 'Вопрос или особые пожелания',
+    sendWa: '💬 Отправить в WhatsApp',
+    sendTg: '✈️ Отправить в Telegram',
+    formNote: 'Нажатие на кнопку откроет приложение с готовым сообщением.'
+  },
+  en: {
+    brand: 'Art House Travel and Accommodations',
+    location: 'Khiva · Uzbekistan',
+    home: 'Home',
+    services: 'Services',
+    tours: 'Tours',
+    sharedDayTrips: 'Shared Day Trips',
+    twoDayTours: '2-Day Tours',
+    aralSea: 'Aral Sea',
+    transfers: 'Transfers',
+    cars: 'Our Cars',
+    about: 'About',
+    contact: 'Contact',
+    enquiry: 'Enquiry',
+    heroEyebrow: 'Ancient Khorezm · Amu Darya Oasis',
+    servicesEyebrow: 'Our Services',
+    servicesTitle: 'Tour and accommodation services',
+    servicesText: 'We offer a full range of tour and transfer services in the Karakalpakstan, Khorezm and Bukhara regions.',
+    toursEyebrow: 'Private Day Trips',
+    toursTitle: 'Tours departing from Khiva',
+    toursText: 'Explore the ancient Khorezm fortresses, desert landscapes and cultural highlights with a private driver.',
+    sharedEyebrow: 'Shared Day Trips',
+    sharedTitle: 'Shared Group Tours',
+    sharedText: 'Join our daily budget-friendly group tours departing from Khiva.',
+    twoEyebrow: 'Two-Day Trips',
+    twoTitle: 'Two-Day Tours',
+    twoText: 'Sleep in a yurt camp and explore the desert fortresses over two days.',
+    aralEyebrow: 'Aral Sea',
+    aralTitle: 'Aral Sea Adventures',
+    aralText: 'Discover the legendary shrinking Aral Sea and the Muynak ship cemetery.',
+    transfersEyebrow: 'Transfers',
+    transfersTitle: 'Private Transfers',
+    transfersText: 'Comfortable door-to-door transfers between Khiva, Nukus, Bukhara and the airports.',
+    carsEyebrow: 'Our Fleet',
+    carsTitle: 'Our Cars',
+    carsText: 'Modern, comfortable vehicles for your journeys.',
+    aboutEyebrow: 'About the company',
+    aboutTitle: 'About GoTripKhiva',
+    contactEyebrow: 'Get in touch',
+    contactTitle: 'Contact us',
+    contactText: 'Send us an email or write on WhatsApp. We reply within 24 hours.',
+    explore: 'Explore Tours',
+    contactUs: 'Contact Us',
+    formTitle: 'Fill in the enquiry form',
+    formText: 'Fill in the form below — your request will be sent directly via Telegram or WhatsApp.',
+    formTour: 'Tour name',
+    formVehicle: 'Vehicle / price',
+    formDate: 'Date',
+    formPrice: 'Confirm the price ($)',
+    formPeople: 'Number of travellers',
+    formName: 'Your name',
+    formPickup: 'Pick-up place',
+    formPickupTime: 'Pick-up time',
+    formDropoff: 'Drop-off place',
+    formEmail: 'Contact email',
+    formPhone: 'Phone / WhatsApp',
+    formMembers: 'Full names of group members (optional)',
+    formMessage: 'Question or special requests',
+    sendWa: '💬 Send via WhatsApp',
+    sendTg: '✈️ Send via Telegram',
+    formNote: 'Clicking a button opens the app with your message ready to send.'
+  }
+};
+
+function t(path){
+  const parts = path.split('.');
+  let obj = I18N[currentLang];
+  for(const p of parts){ obj = obj ? obj[p] : undefined; }
+  return obj !== undefined ? obj : path;
+}
+
+function esc(s){ return (s===undefined||s===null?'':s).toString().replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function L(uz,ru,en){ return {uz,ru,en}; }
+
+function mdToHtml(str){
+  let s = esc(str||'');
+  s = s.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
+  s = s.split('\n').map(line=> line.trim()==='---' ? '<hr style="border:none;border-top:1px solid #E4DCC9;margin:16px 0;">' : line).join('<br>');
+  return s;
+}
+
+// ================================================================
+// SECTIONS META
+// ================================================================
+const SECTIONS_META = [
+  {key:'privateDayTrips'},
+  {key:'sharedDayTrips'},
+  {key:'twoDayTours'},
+  {key:'aralSea'},
+  {key:'privateTransfers'},
+  {key:'cars'}
+];
+
+const STANDALONE_SECTIONS = ['sharedDayTrips','twoDayTours','aralSea','privateTransfers','cars'];
+const STANDALONE_ANCHOR = { sharedDayTrips:'shared-trips', twoDayTours:'two-day', aralSea:'aral-sea', privateTransfers:'transfers', cars:'cars' };
+
+const ADMIN_SECTION_TITLES = {
+  privateDayTrips: "Private Day Trips",
+  sharedDayTrips: "Shared Day Trips",
+  twoDayTours: "Two-Day Tours",
+  aralSea: "Aral Sea Adventures",
+  privateTransfers: "Private Transfers",
+  cars: "Our Cars"
+};
+
+const CATEGORY_LABELS = {
+  khivaRound: L("Xivadan boshlanib, Xivada tugaydigan bir kunlik sayohatlar","Однодневные туры с началом и концом в Хиве","One Day Trips that start and end in Khiva"),
+  khivaToNukus: L("Xivadan Nukusga sayohat-transfer","Трансфер с экскурсией из Хивы в Нукус","One-Way Sightseeing Transfers from Khiva to Nukus"),
+  khivaToBukhara: L("Xivadan Buxoroga sayohat-transfer","Трансфер с экскурсией из Хивы в Бухару","One-Way Sightseeing Transfers from Khiva to Bukhara"),
+  nukusToKhiva: L("Nukusdan Xivaga sayohat-transfer","Трансфер с экскурсией из Нукуса в Хиву","One-Way Sightseeing Transfers from Nukus to Khiva"),
+  bukharaToKhiva: L("Buxorodan Xivaga sayohat-transfer","Трансфер с экскурсией из Бухары в Хиву","One-Way Sightseeing Transfers from Bukhara to Khiva")
+};
+
+const BOOKING_FIELD_DEFS = [
+  {id:'tour', label:'Tour selector'},
+  {id:'vehicle', label:'Vehicle'},
+  {id:'date', label:'Date'},
+  {id:'people', label:'Travellers'},
+  {id:'name', label:'Name'},
+  {id:'phone', label:'Phone'},
+  {id:'email', label:'Email'},
+  {id:'pickup', label:'Pick-up place'},
+  {id:'dropoff', label:'Drop-off place'},
+  {id:'message', label:'Message'}
+];
+
+// Preset vehicle types for the quick-picker dropdown (admin panel)
+const VEHICLE_PRESETS = [
+  L("Sedan (1-3 kishi)","Седан (1-3 чел)","Sedan (1-3 people)"),
+  L("SUV (1-4 kishi)","Внедорожник (1-4 чел)","SUV (1-4 people)"),
+  L("Miniven (1-6 kishi)","Минивэн (1-6 чел)","Minivan (1-6 people)"),
+  L("Minibus (1-10 kishi)","Микроавтобус (1-10 чел)","Minibus (1-10 people)"),
+  L("Avtobus (1-20 kishi)","Автобус (1-20 чел)","Bus (1-20 people)"),
+  L("Premium Sedan","Премиум седан","Premium Sedan"),
+  L("Premium SUV","Премиум внедорожник","Premium SUV"),
+  L("Sprinter (1-14 kishi)","Спринтер (1-14 чел)","Sprinter (1-14 people)"),
+  L("1 kishi uchun narx","Цена за 1 человека","Price per person"),
+  L("Kuniga narx","Цена за день","Price per day")
+];
+
+// ================================================================
+// HELPERS
+// ================================================================
+function vSet(a,b,c){
+  return [
+    {label:L("Sedan (1-3 kishi)","Седан (1-3 чел)","Sedan (1-3 people)"), price:a},
+    {label:L("SUV (1-4 kishi)","Внедорожник (1-4 чел)","SUV (1-4 people)"), price:b},
+    {label:L("Miniven (1-6 kishi)","Минивэн (1-6 чел)","Minivan (1-6 people)"), price:c}
+  ];
+}
+
+function khivaRoundDesc(stopsUz,stopsRu,stopsEn){
+  return L(
+    `Xivadan chiqib, ${stopsUz} ni ziyorat qilamiz va kunning oxirida Xivaga qaytamiz.`,
+    `Выезжаем из Хивы, посещаем ${stopsRu}, и возвращаемся в Хиву в конце дня.`,
+    `Depart from Khiva, visit ${stopsEn}, and return to Khiva by the end of the day.`
+  );
+}
+
+function transferDesc(fromUz,toUz,stopsUz, fromRu,toRu,stopsRu, fromEn,toEn,stopsEn){
+  return L(
+    `${fromUz}dan ${toUz}ga yo'l-yo'lakay ${stopsUz} ni ziyorat qilib, bir tomonlama qulay sayohat-transfer.`,
+    `Удобный трансфер в одну сторону из ${fromRu} в ${toRu} с посещением ${stopsRu} по пути.`,
+    `A comfortable one-way sightseeing transfer from ${fromEn} to ${toEn}, visiting ${stopsEn} along the way.`
+  );
+}
+
+function mkFortress(id,titleUz,titleRu,titleEn,routeUz,routeRu,routeEn,durUz,durRu,durEn,distance,a,b,c,descArgsUz,descArgsRu,descArgsEn){
+  return {
+    id, category:'khivaRound',
+    name: L(titleUz,titleRu,titleEn),
+    route: L(routeUz,routeRu,routeEn),
+    duration: L(durUz,durRu,durEn),
+    distance: distance,
+    description: khivaRoundDesc(descArgsUz,descArgsRu,descArgsEn),
+    vehicles: vSet(a,b,c),
+    images: [],
+    tableRows: {},
+    survey: { enabled: false, questions: [] },
+    bookingForm: { enabled: true, fields: ["tour","name","phone","date","people","message","pickup"] }
+  };
+}
+
+function mkTransfer(id,cat,titleUz,titleRu,titleEn,routeUz,routeRu,routeEn,durUz,durRu,durEn,distance,a,b,c,fromUz,toUz,stopsUz,fromRu,toRu,stopsRu,fromEn,toEn,stopsEn){
+  return {
+    id, category:cat,
+    name: L(titleUz,titleRu,titleEn),
+    route: L(routeUz,routeRu,routeEn),
+    duration: L(durUz,durRu,durEn),
+    distance: distance,
+    description: transferDesc(fromUz,toUz,stopsUz,fromRu,toRu,stopsRu,fromEn,toEn,stopsEn),
+    vehicles: vSet(a,b,c),
+    images: [],
+    tableRows: {},
+    survey: { enabled: false, questions: [] },
+    bookingForm: { enabled: true, fields: ["tour","name","phone","date","people","message","pickup"] }
+  };
+}
+
+function mkDirectTaxi(id,titleUz,titleRu,titleEn,routeUz,routeRu,routeEn,durUz,durRu,durEn,distance,a,b,c,descUz,descRu,descEn){
+  return {
+    id, category:null,
+    name: L(titleUz,titleRu,titleEn),
+    route: L(routeUz,routeRu,routeEn),
+    duration: L(durUz,durRu,durEn),
+    distance: distance,
+    description: L(descUz,descRu,descEn),
+    vehicles: vSet(a,b,c),
+    images: [],
+    tableRows: {},
+    survey: { enabled: false, questions: [] },
+    bookingForm: { enabled: true, fields: ["tour","name","phone","date","people","message","pickup","dropoff"] }
+  };
+}
+
+// ================================================================
+// DEFAULT DATA
+// ================================================================
+function buildDefaultData(){
+  const privateDayTripsItems = [
+    mkFortress(1,"Xivadan Ayaz Qal'a qal'asiga bir kunlik sayohat","Однодневная поездка из Хивы к крепости Аяз-Кала","Day Trip from Khiva to the Ayaz Kala Fortress",
+      "Xiva – Urganch – Ayaz Qal'a – Urganch – Xiva","Хива – Ургенч – Аяз-Кала – Ургенч – Хива","Khiva – Urgench – Ayaz Kala – Urgench – Khiva",
+      "5-6 soat","5-6 часов","5-6 hours","205 km",50,80,110,
+      "Ayaz Qal'a","Аяз-Кала","Ayaz Kala"),
+    mkFortress(2,"Xivadan Top 3 qal'a va Achchakoʻl koʻliga bir kunlik sayohat","Однодневная поездка из Хивы к Топ-3 крепостям и озеру Аккуль","Day Trip from Khiva to the Top 3 Fortresses and Akchakul Lake",
+      "Xiva – Qizil Qal'a – Topraq Qal'a – Achchakoʻl koʻli – Xiva","Хива – Кызыл-Кала – Топрак-Кала – озеро Аккуль – Хива","Khiva – Kizil Kala – Toprak Kala – Akchakul Lake – Khiva",
+      "6-7 soat","6-7 часов","6-7 hours","225 km",55,85,120,
+      "3 ta qadimiy qal'a hamda Achchakoʻl koʻli","3 древние крепости и озеро Аккуль","3 ancient fortresses along with Akchakul Lake"),
+    mkFortress(3,"Xivadan Top 5 qal'a va Achchakoʻl koʻliga bir kunlik sayohat","Однодневная поездка из Хивы к Топ-5 крепостям и озеру Аккуль","Day Trip from Khiva to the Top 5 Fortresses and Akchakul Lake",
+      "Xiva – Qizil Qal'a – Topraq Qal'a – Achchakoʻl koʻli – Ayaz Qal'a – Xiva","Хива – Кызыл-Кала – Топрак-Кала – озеро Аккуль – Аяз-Кала – Хива","Khiva – Kizil Kala – Toprak Kala – Akchakul Lake – Ayaz Kala – Khiva",
+      "7-8 soat","7-8 часов","7-8 hours","255 km",65,90,130,
+      "5 ta qadimiy qal'a hamda Achchakoʻl koʻli","5 древних крепостей и озеро Аккуль","5 ancient fortresses along with Akchakul Lake"),
+    mkFortress(4,"Xivadan Top 7 qal'a va Achchakoʻl koʻliga bir kunlik sayohat","Однодневная поездка из Хивы к Топ-7 крепостям и озеру Аккуль","Day Trip from Khiva to the Top 7 Fortresses and Akchakul Lake",
+      "Xiva – Xorazm qal'alari zanjiri – Achchakoʻl koʻli – Xiva","Хива – цепь крепостей Хорезма – озеро Аккуль – Хива","Khiva – the chain of Khorezm fortresses – Akchakul Lake – Khiva",
+      "9-10 soat","9-10 часов","9-10 hours","330 km",75,110,140,
+      "7 ta qadimiy qal'a hamda Achchakoʻl koʻli","7 древних крепостей и озеро Аккуль","7 ancient fortresses along with Akchakul Lake"),
+    mkFortress(5,"Xivadan Top 10 qal'a va Achchakoʻl koʻliga bir kunlik sayohat","Однодневная поездка из Хивы к Топ-10 крепостям и озеру Аккуль","Day Trip from Khiva to the Top 10 Fortresses and Akchakul Lake",
+      "Xiva – Xorazm qal'alari zanjiri – Achchakoʻl koʻli – Xiva","Хива – цепь крепостей Хорезма – озеро Аккуль – Хива","Khiva – the chain of Khorezm fortresses – Akchakul Lake – Khiva",
+      "10-12 soat","10-12 часов","10-12 hours","355 km",80,120,150,
+      "10 ta qadimiy qal'a hamda Achchakoʻl koʻli","10 древних крепостей и озеро Аккуль","10 ancient fortresses along with Akchakul Lake"),
+    mkFortress(6,"Xivadan Top 13 qal'a va Achchakoʻl koʻliga bir kunlik sayohat","Однодневная поездка из Хивы к Топ-13 крепостям и озеру Аккуль","Day Trip from Khiva to the Top 13 Fortresses and Akchakul Lake",
+      "Xiva – Xorazm qal'alari zanjiri – Achchakoʻl koʻli – Xiva","Хива – цепь крепостей Хорезма – озеро Аккуль – Хива","Khiva – the chain of Khorezm fortresses – Akchakul Lake – Khiva",
+      "12-14 soat","12-14 часов","12-14 hours","395 km",90,140,170,
+      "13 ta qadimiy qal'a hamda Achchakoʻl koʻli","13 древних крепостей и озеро Аккуль","13 ancient fortresses along with Akchakul Lake"),
+    mkFortress(7,"Xivadan Nukus muzeyi, Mizdaxon va Chilpiq qal'asiga sayohat","Поездка из Хивы в музей Нукуса, Миздахкан и Чильпык","Day Trip from Khiva to the Nukus Museum, Mizdakhan and Chilpik Kala",
+      "Xiva – Nukus – Mizdaxon – Chilpiq – Xiva","Хива – Нукус – Миздахкан – Чильпык – Хива","Khiva – Nukus – Mizdakhan – Chilpik Kala – Khiva",
+      "10-12 soat","10-12 часов","10-12 hours","415 km",85,150,190,
+      "Nukus davlat muzeyi, Mizdaxon nekropoli va Chilpiq zardushtiy minorasi","Государственный музей Нукуса, некрополь Миздахкан и зороастрийская башня Чильпык","the Nukus State Museum, the Mizdakhan necropolis and the Zoroastrian Chilpik Kala tower"),
+    mkFortress(8,"Xivadan Nukus muzeyi, Top 4 qal'a va Achchakoʻl koʻliga sayohat","Поездка из Хивы в музей Нукуса, Топ-4 крепости и озеро Аккуль","Day Trip from Khiva to the Nukus Museum, the Top 4 Fortresses and Akchakul Lake",
+      "Xiva – Nukus – 4 qal'a – Achchakoʻl koʻli – Xiva","Хива – Нукус – 4 крепости – озеро Аккуль – Хива","Khiva – Nukus – 4 fortresses – Akchakul Lake – Khiva",
+      "11-13 soat","11-13 часов","11-13 hours","465 km",95,160,200,
+      "Nukus davlat muzeyi, 4 ta qal'a va Achchakoʻl koʻli","Государственный музей Нукуса, 4 крепости и озеро Аккуль","the Nukus State Museum, 4 fortresses and Akchakul Lake"),
+    mkFortress(9,"Xivadan Muynak kema qabristoni, Nukus, Mizdaxon va Chilpiq qal'asiga sayohat","Поездка из Хивы к кладбищу кораблей Муйнака, в Нукус, Миздахкан и Чильпык","Day Trip from Khiva to the Muynak Ship Cemetery, Nukus Museum, Mizdakhan and Chilpik Kala",
+      "Xiva – Muynak – Nukus – Mizdaxon – Chilpiq – Xiva","Хива – Муйнак – Нукус – Миздахкан – Чильпык – Хива","Khiva – Muynak – Nukus – Mizdakhan – Chilpik Kala – Khiva",
+      "16-17 soat","16-17 часов","16-17 hours","780 km",115,200,280,
+      "afsonaviy Muynak kema qabristoni, Nukus muzeyi, Mizdaxon va Chilpiq","легендарное кладбище кораблей в Муйнаке, музей Нукуса, Миздахкан и Чильпык","the legendary Muynak ship cemetery, the Nukus Museum, Mizdakhan and Chilpik Kala")
+  ];
+  const khivaToNukus = [
+    mkTransfer(10,'khivaToNukus',"Xivadan Nukusga Chilpiq qal'asi orqali transfer","Трансфер из Хивы в Нукус через крепость Чильпык","One-Way Transfer from Khiva to Nukus via visiting Chilpik Kala",
+      "Xiva – Chilpiq – Nukus","Хива – Чильпык – Нукус","Khiva – Chilpik Kala – Nukus","3-4 soat","3-4 часа","3-4 hours","180 km",65,110,150,
+      "Xiva","Nukus","Chilpiq qal'asi","Хивы","Нукус","крепости Чильпык","Khiva","Nukus","Chilpik Kala"),
+    mkTransfer(11,'khivaToNukus',"Xivadan Nukusga 3 qal'a orqali transfer","Трансфер из Хивы в Нукус через 3 крепости","One-Way Transfer from Khiva to Nukus via visiting 3 Fortresses and Akchakul Lake",
+      "Xiva – 3 qal'a – Achchakoʻl koʻli – Nukus","Хива – 3 крепости – озеро Аккуль – Нукус","Khiva – 3 fortresses – Akchakul Lake – Nukus","6-8 soat","6-8 часов","6-8 hours","260 km",85,145,190,
+      "Xiva","Nukus","3 ta qal'a va Achchakoʻl koʻli","Хивы","Нукус","3 крепостей и озера Аккуль","Khiva","Nukus","3 fortresses and Akchakul Lake"),
+    mkTransfer(12,'khivaToNukus',"Xivadan Nukusga Top 4 qal'a orqali transfer","Трансфер из Хивы в Нукус через Топ-4 крепости","One-Way Transfer from Khiva to Nukus via visiting the Top 4 Fortresses and Akchakul Lake",
+      "Xiva – 4 qal'a – Achchakoʻl koʻli – Nukus","Хива – 4 крепости – озеро Аккуль – Нукус","Khiva – 4 fortresses – Akchakul Lake – Nukus","7-9 soat","7-9 часов","7-9 hours","270 km",85,145,190,
+      "Xiva","Nukus","top 4 qal'a va Achchakoʻl koʻli","Хивы","Нукус","топ-4 крепостей и озера Аккуль","Khiva","Nukus","the top 4 fortresses and Akchakul Lake"),
+    mkTransfer(13,'khivaToNukus',"Xivadan Nukusga Top 6 qal'a orqali transfer","Трансфер из Хивы в Нукус через Топ-6 крепостей","One-Way Transfer from Khiva to Nukus via visiting the Top 6 Fortresses and Akchakul Lake",
+      "Xiva – 6 qal'a – Achchakoʻl koʻli – Nukus","Хива – 6 крепостей – озеро Аккуль – Нукус","Khiva – 6 fortresses – Akchakul Lake – Nukus","10-12 soat","10-12 часов","10-12 hours","340 km",95,180,220,
+      "Xiva","Nukus","top 6 qal'a va Achchakoʻl koʻli","Хивы","Нукус","топ-6 крепостей и озера Аккуль","Khiva","Nukus","the top 6 fortresses and Akchakul Lake"),
+    mkTransfer(14,'khivaToNukus',"Xivadan Nukusga Top 10 qal'a orqali transfer","Трансфер из Хивы в Нукус через Топ-10 крепостей","One-Way Transfer from Khiva to Nukus via visiting the Top 10 Fortresses and Akchakul Lake",
+      "Xiva – 10 qal'a – Achchakoʻl koʻli – Nukus","Хива – 10 крепостей – озеро Аккуль – Нукус","Khiva – 10 fortresses – Akchakul Lake – Nukus","12-14 soat","12-14 часов","12-14 hours","435 km",120,220,270,
+      "Xiva","Nukus","top 10 qal'a va Achchakoʻl koʻli","Хивы","Нукус","топ-10 крепостей и озера Аккуль","Khiva","Nukus","the top 10 fortresses and Akchakul Lake")
+  ];
+  const khivaToBukhara = [
+    mkTransfer(15,'khivaToBukhara',"Xivadan Buxoroga Top 3 qal'a orqali transfer","Трансфер из Хивы в Бухару через Топ-3 крепости","One-Way Transfer from Khiva to Bukhara via visiting the Top 3 Fortresses and Akchakul Lake",
+      "Xiva – 3 qal'a – Achchakoʻl koʻli – Buxoro","Хива – 3 крепости – озеро Аккуль – Бухара","Khiva – 3 fortresses – Akchakul Lake – Bukhara","9-10 soat","9-10 часов","9-10 hours","620 km",100,190,240,
+      "Xiva","Buxoro","top 3 qal'a va Achchakoʻl koʻli","Хивы","Бухару","топ-3 крепостей и озера Аккуль","Khiva","Bukhara","the top 3 fortresses and Akchakul Lake"),
+    mkTransfer(16,'khivaToBukhara',"Xivadan Buxoroga Top 5 qal'a orqali transfer","Трансфер из Хивы в Бухару через Топ-5 крепостей","One-Way Transfer from Khiva to Bukhara via visiting the Top 5 Fortresses and Akchakul Lake",
+      "Xiva – 5 qal'a – Achchakoʻl koʻli – Buxoro","Хива – 5 крепостей – озеро Аккуль – Бухара","Khiva – 5 fortresses – Akchakul Lake – Bukhara","10-11 soat","10-11 часов","10-11 hours","640 km",110,200,250,
+      "Xiva","Buxoro","top 5 qal'a va Achchakoʻl koʻli","Хивы","Бухару","топ-5 крепостей и озера Аккуль","Khiva","Bukhara","the top 5 fortresses and Akchakul Lake"),
+    mkTransfer(17,'khivaToBukhara',"Xivadan Buxoroga Top 8 qal'a orqali transfer","Трансфер из Хивы в Бухару через Топ-8 крепостей","One-Way Transfer from Khiva to Bukhara via visiting the Top 8 Fortresses and Akchakul Lake",
+      "Xiva – 8 qal'a – Achchakoʻl koʻli – Buxoro","Хива – 8 крепостей – озеро Аккуль – Бухара","Khiva – 8 fortresses – Akchakul Lake – Bukhara","12-14 soat","12-14 часов","12-14 hours","710 km",125,220,300,
+      "Xiva","Buxoro","top 8 qal'a va Achchakoʻl koʻli","Хивы","Бухару","топ-8 крепостей и озера Аккуль","Khiva","Bukhara","the top 8 fortresses and Akchakul Lake")
+  ];
+  const nukusToKhiva = [
+    mkTransfer(18,'nukusToKhiva',"Nukusdan Xivaga Chilpiq qal'asi orqali transfer","Трансфер из Нукуса в Хиву через крепость Чильпык","One-Way Transfer from Nukus to Khiva via visiting Chilpik Kala",
+      "Nukus – Chilpiq – Xiva","Нукус – Чильпык – Хива","Nukus – Chilpik Kala – Khiva","3-4 soat","3-4 часа","3-4 hours","180 km",65,110,150,
+      "Nukus","Xiva","Chilpiq qal'asi","Нукуса","Хиву","крепости Чильпык","Nukus","Khiva","Chilpik Kala"),
+    mkTransfer(19,'nukusToKhiva',"Nukusdan Xivaga 3 qal'a orqali transfer","Трансфер из Нукуса в Хиву через 3 крепости","One-Way Transfer from Nukus to Khiva via visiting 3 Fortresses and Akchakul Lake",
+      "Nukus – 3 qal'a – Achchakoʻl koʻli – Xiva","Нукус – 3 крепости – озеро Аккуль – Хива","Nukus – 3 fortresses – Akchakul Lake – Khiva","6-8 soat","6-8 часов","6-8 hours","260 km",85,145,190,
+      "Nukus","Xiva","3 ta qal'a va Achchakoʻl koʻli","Нукуса","Хиву","3 крепостей и озера Аккуль","Nukus","Khiva","3 fortresses and Akchakul Lake"),
+    mkTransfer(20,'nukusToKhiva',"Nukusdan Xivaga Top 4 qal'a orqali transfer","Трансфер из Нукуса в Хиву через Топ-4 крепости","One-Way Transfer from Nukus to Khiva via visiting the Top 4 Fortresses and Akchakul Lake",
+      "Nukus – 4 qal'a – Achchakoʻl koʻli – Xiva","Нукус – 4 крепости – озеро Аккуль – Хива","Nukus – 4 fortresses – Akchakul Lake – Khiva","7-9 soat","7-9 часов","7-9 hours","270 km",85,145,190,
+      "Nukus","Xiva","top 4 qal'a va Achchakoʻl koʻli","Нукуса","Хиву","топ-4 крепостей и озера Аккуль","Nukus","Khiva","the top 4 fortresses and Akchakul Lake"),
+    mkTransfer(21,'nukusToKhiva',"Nukusdan Xivaga Top 6 qal'a orqali transfer","Трансфер из Нукуса в Хиву через Топ-6 крепостей","One-Way Transfer from Nukus to Khiva via visiting the Top 6 Fortresses and Akchakul Lake",
+      "Nukus – 6 qal'a – Achchakoʻl koʻli – Xiva","Нукус – 6 крепостей – озеро Аккуль – Хива","Nukus – 6 fortresses – Akchakul Lake – Khiva","10-12 soat","10-12 часов","10-12 hours","340 km",95,180,220,
+      "Nukus","Xiva","top 6 qal'a va Achchakoʻl koʻli","Нукуса","Хиву","топ-6 крепостей и озера Аккуль","Nukus","Khiva","the top 6 fortresses and Akchakul Lake"),
+    mkTransfer(22,'nukusToKhiva',"Nukusdan Xivaga Top 10 qal'a orqali transfer","Трансфер из Нукуса в Хиву через Топ-10 крепостей","One-Way Transfer from Nukus to Khiva via visiting the Top 10 Fortresses and Akchakul Lake",
+      "Nukus – 10 qal'a – Achchakoʻl koʻli – Xiva","Нукус – 10 крепостей – озеро Аккуль – Хива","Nukus – 10 fortresses – Akchakul Lake – Khiva","12-14 soat","12-14 часов","12-14 hours","435 km",120,220,270,
+      "Nukus","Xiva","top 10 qal'a va Achchakoʻl koʻli","Нукуса","Хиву","топ-10 крепостей и озера Аккуль","Nukus","Khiva","the top 10 fortresses and Akchakul Lake")
+  ];
+  const bukharaToKhiva = [
+    mkTransfer(23,'bukharaToKhiva',"Buxorodan Xivaga Top 3 qal'a orqali transfer","Трансфер из Бухары в Хиву через Топ-3 крепости","One-Way Transfer from Bukhara to Khiva via visiting the Top 3 Fortresses and Akchakul Lake",
+      "Buxoro – 3 qal'a – Achchakoʻl koʻli – Xiva","Бухара – 3 крепости – озеро Аккуль – Хива","Bukhara – 3 fortresses – Akchakul Lake – Khiva","9-10 soat","9-10 часов","9-10 hours","620 km",100,190,240,
+      "Buxoro","Xiva","top 3 qal'a va Achchakoʻl koʻli","Бухары","Хиву","топ-3 крепостей и озера Аккуль","Bukhara","Khiva","the top 3 fortresses and Akchakul Lake"),
+    mkTransfer(24,'bukharaToKhiva',"Buxorodan Xivaga Top 5 qal'a orqali transfer","Трансфер из Бухары в Хиву через Топ-5 крепостей","One-Way Transfer from Bukhara to Khiva via visiting the Top 5 Fortresses and Akchakul Lake",
+      "Buxoro – 5 qal'a – Achchakoʻl koʻli – Xiva","Бухара – 5 крепостей – озеро Аккуль – Хива","Bukhara – 5 fortresses – Akchakul Lake – Khiva","10-11 soat","10-11 часов","10-11 hours","640 km",110,200,250,
+      "Buxoro","Xiva","top 5 qal'a va Achchakoʻl koʻli","Бухары","Хиву","топ-5 крепостей и озера Аккуль","Bukhara","Khiva","the top 5 fortresses and Akchakul Lake"),
+    mkTransfer(25,'bukharaToKhiva',"Buxorodan Xivaga Top 8 qal'a orqali transfer","Трансфер из Бухары в Хиву через Топ-8 крепостей","One-Way Transfer from Bukhara to Khiva via visiting the Top 8 Fortresses and Akchakul Lake",
+      "Buxoro – 8 qal'a – Achchakoʻl koʻli – Xiva","Бухара – 8 крепостей – озеро Аккуль – Хива","Bukhara – 8 fortresses – Akchakul Lake – Khiva","12-14 soat","12-14 часов","12-14 hours","710 km",125,220,300,
+      "Buxoro","Xiva","top 8 qal'a va Achchakoʻl koʻli","Бухары","Хиву","топ-8 крепостей и озера Аккуль","Bukhara","Khiva","the top 8 fortresses and Akchakul Lake")
+  ];
+
+  return {
+    siteName: "GoTripKhiva",
+    tagline: {
+      uz: "Qadimiy Xorazmni biz bilan kashf eting!",
+      ru: "Откройте для себя древний Хорезм вместе с нами!",
+      en: "Discover Ancient Khorezm With Us!"
+    },
+    aboutText: {
+      uz: "Biz Xiva shahrida joylashgan mahalliy sayohat agentligimiz — GoTripKhiva. 2018-yildan beri Xorazmning qadimiy qal'alari, Orol dengizi sarguzashtlari hamda Buxoro, Xiva va Nukus oralig'idagi shaxsiy transferlar bo'yicha sifatli va qulay xizmatlar ko'rsatib kelmoqdamiz.",
+      ru: "Мы — местное туристическое агентство GoTripKhiva, базирующееся в Хиве. С 2018 года мы предоставляем качественные и удобные услуги: древние крепости Хорезма, приключения на Аральском море и индивидуальные трансферы между Бухарой, Хивой и Нукусом.",
+      en: "We are GoTripKhiva, a local travel agency based in Khiva. Since 2018, we've been offering quality, hassle-free services covering Khorezm's ancient fortresses, Aral Sea adventures, and private transfers between Bukhara, Khiva and Nukus."
+    },
+    phone1: "+998 99 666-33-22",
+    phone2: "+998 91 999-33-22",
+    whatsapp: WHATSAPP_NUMBER,
+    whatsappLink: "",
+    telegram: TELEGRAM_USERNAME,
+    email: "info@gotripkhiva.uz",
+    address: "Uzbekistan, Khiva, Zargarlar 60",
+    mapLink: "https://maps.google.com",
+    sections: {
+      privateDayTrips: { items: [...privateDayTripsItems, ...khivaToNukus, ...khivaToBukhara, ...nukusToKhiva, ...bukharaToKhiva] },
+      sharedDayTrips: { items: [
+        { id:1, category:null,
+          name: L("Umumiy guruh turi — Uch qal'a","Групповой тур — Три крепости","Shared Group Tour — Three Fortresses"),
+          route: L("Xiva – Uch qal'a – Xiva","Хива – Три крепости – Хива","Khiva – Three Fortresses – Khiva"),
+          description: { uz: "**Har kuni boshlanadi!**\nXivadan kunlik guruh turiga qo'shiling — uch qadimiy qal'ani bir kunda ko'ring.\n---\nGuruh minimal 2 kishidan shakllanadi.",
+            ru: "**Отправление ежедневно!**\nПрисоединяйтесь к ежедневному групповому туру из Хивы — три древние крепости за один день.\n---\nГруппа формируется от 2 человек.",
+            en: "**Departs daily!**\nJoin our daily group tour from Khiva — see three ancient fortresses in one day.\n---\nGroups form from a minimum of 2 people." },
+          vehicles: [{label:L("1 kishi uchun narx","Цена за 1 человека","Price per person"), price:22}],
+          images: [],
+          tableRows: {},
+          survey: { enabled: false, questions: [] },
+          bookingForm: { enabled: true, fields: ["tour","name","phone","date","people","message"] }
+        }
+      ]},
+      twoDayTours: { items: [
+        { id:1, category:null,
+          name: L("Ikki kunlik cho'l safari","Двухдневное пустынное сафари","Two-Day Desert Safari"),
+          route: L("Xiva – Ayaz Qal'a – Yurta lager – Xiva","Хива – Аяз-Кала – Юрточный лагерь – Хива","Khiva – Ayaz Kala – Yurt Camp – Khiva"),
+          description: { uz: "Yurta lagerida tunab, ikki kun davomida cho'l qal'alarini his qiling.\n---\n**1-kun:** Xivadan chiqish, qal'alarni ko'rish, tunash yurta lagerida.\n**2-kun:** Nonushtadan so'ng Xivaga qaytish.",
+            ru: "Переночуйте в юрточном лагере и почувствуйте пустынные крепости за два дня.\n---\n**День 1:** Выезд из Хивы, осмотр крепостей, ночёвка в юрточном лагере.\n**День 2:** Завтрак и возвращение в Хиву.",
+            en: "Sleep in a yurt camp and experience the desert fortresses over two days.\n---\n**Day 1:** Depart Khiva, visit the fortresses, overnight in a yurt camp.\n**Day 2:** Breakfast, then return to Khiva." },
+          vehicles: [{label:L("Sedan","Седан","Sedan"),price:140},{label:L("SUV","Внедорожник","SUV"),price:210}],
+          images: [],
+          tableRows: {},
+          survey: { enabled: false, questions: [] },
+          bookingForm: { enabled: true, fields: ["tour","name","phone","date","people","message"] }
+        }
+      ]},
+      aralSea: { items: [
+        { id:1, category:null,
+          name: L("Orol dengizi va Muynak sayohati","Путешествие на Аральское море и Муйнак","Aral Sea & Muynak Adventure"),
+          route: L("Xiva/Nukus – Muynak – Orol dengizi – Nukus","Хива/Нукус – Муйнак – Аральское море – Нукус","Khiva/Nukus – Muynak – Aral Sea – Nukus"),
+          description: { uz: "Afsonaviy qurigan Orol dengizi va kema qabristonini kashf eting.\n---\n**Tavsiya:** Kamida 2 kunlik vaqt rejalashtiring.",
+            ru: "Откройте для себя легендарное высыхающее Аральское море и кладбище кораблей.\n---\n**Совет:** Планируйте минимум 2 дня.",
+            en: "Discover the legendary shrinking Aral Sea and the ship cemetery.\n---\n**Tip:** Plan for at least 2 days." },
+          vehicles: [{label:L("SUV (4x4)","Внедорожник (4x4)","SUV (4x4)"),price:260}],
+          images: [],
+          tableRows: {},
+          survey: { enabled: false, questions: [] },
+          bookingForm: { enabled: true, fields: ["tour","name","phone","date","people","message"] }
+        }
+      ]},
+      privateTransfers: { items: [
+        { id:1, category:null,
+          name: L("Xiva – Urganch aeroporti transferi","Трансфер Хива – аэропорт Ургенча","Khiva – Urgench Airport Transfer"),
+          route: L("Xiva – Urganch aeroporti","Хива – аэропорт Ургенча","Khiva – Urgench Airport"),
+          description: L("Mehmonxonadan aeroportgacha qulay eshikdan-eshikkacha transfer.","Удобный трансфер от отеля до аэропорта.","Comfortable door-to-door transfer from your hotel to the airport."),
+          vehicles: [{label:L("Sedan","Седан","Sedan"),price:15},{label:L("Minivan","Минивэн","Minivan"),price:25}],
+          images: [],
+          tableRows: {},
+          survey: { enabled: false, questions: [] },
+          bookingForm: { enabled: true, fields: ["tour","name","phone","date","people","message","pickup"] }
+        },
+        mkDirectTaxi(2,"Xivadan Nukusga to'g'ridan-to'g'ri taxi","Прямое такси из Хивы в Нукус","Direct Taxi from Khiva to Nukus",
+          "Xiva – Nukus (to'xtovsiz)","Хива – Нукус (без остановок)","Khiva – Nukus (non-stop)",
+          "2.5-3 soat","2.5-3 часа","2.5-3 hours","165 km",55,90,120,
+          "Xivadan Nukusga to'g'ridan-to'g'ri, hech qanday to'xtovsiz qulay taksi xizmati.",
+          "Удобное прямое такси из Хивы в Нукус без остановок по пути.",
+          "A comfortable direct, non-stop taxi service from Khiva straight to Nukus."),
+        mkDirectTaxi(3,"Xivadan Buxoroga to'g'ridan-to'g'ri taxi","Прямое такси из Хивы в Бухару","Direct Taxi from Khiva to Bukhara",
+          "Xiva – Buxoro (to'xtovsiz)","Хива – Бухара (без остановок)","Khiva – Bukhara (non-stop)",
+          "6-7 soat","6-7 часов","6-7 hours","450 km",90,150,200,
+          "Xivadan Buxoroga to'g'ridan-to'g'ri, hech qanday to'xtovsiz qulay taksi xizmati.",
+          "Удобное прямое такси из Хивы в Бухару без остановок по пути.",
+          "A comfortable direct, non-stop taxi service from Khiva straight to Bukhara."),
+        mkDirectTaxi(4,"Nukusdan Xivaga to'g'ridan-to'g'ri taxi","Прямое такси из Нукуса в Хиву","Direct Taxi from Nukus to Khiva",
+          "Nukus – Xiva (to'xtovsiz)","Нукус – Хива (без остановок)","Nukus – Khiva (non-stop)",
+          "2.5-3 soat","2.5-3 часа","2.5-3 hours","165 km",55,90,120,
+          "Nukusdan Xivaga to'g'ridan-to'g'ri, hech qanday to'xtovsiz qulay taksi xizmati.",
+          "Удобное прямое такси из Нукуса в Хиву без остановок по пути.",
+          "A comfortable direct, non-stop taxi service from Nukus straight to Khiva."),
+        mkDirectTaxi(5,"Buxorodan Xivaga to'g'ridan-to'g'ri taxi","Прямое такси из Бухары в Хиву","Direct Taxi from Bukhara to Khiva",
+          "Buxoro – Xiva (to'xtovsiz)","Бухара – Хива (без остановок)","Bukhara – Khiva (non-stop)",
+          "6-7 soat","6-7 часов","6-7 hours","450 km",90,150,200,
+          "Buxorodan Xivaga to'g'ridan-to'g'ri, hech qanday to'xtovsiz qulay taksi xizmati.",
+          "Удобное прямое такси из Бухары в Хиву без остановок по пути.",
+          "A comfortable direct, non-stop taxi service from Bukhara straight to Khiva.")
+      ]},
+      cars: { items: [
+        { id:1, category:null,
+          name: L("Chevrolet Lacetti (Sedan)","Chevrolet Lacetti (Седан)","Chevrolet Lacetti (Sedan)"),
+          description: L("Qulay va tejamkor sedan. 1-3 kishi uchun.","Комфортный и экономичный седан. Для 1-3 человек.","Comfortable and economical sedan. Fits 1-3 people."),
+          vehicles: [{label:L("Kuniga narx","Цена за день","Price per day"), price:40}],
+          images: [],
+          tableRows: {},
+          survey: { enabled: false, questions: [] },
+          bookingForm: { enabled: true, fields: ["name","phone","date","people","message"] }
+        },
+        { id:2, category:null,
+          name: L("Chevrolet Captiva (SUV)","Chevrolet Captiva (Внедорожник)","Chevrolet Captiva (SUV)"),
+          description: L("Keng va qulay SUV. 1-4 kishi uchun.","Просторный и комфортный внедорожник. Для 1-4 человек.","Spacious and comfortable SUV. Fits 1-4 people."),
+          vehicles: [{label:L("Kuniga narx","Цена за день","Price per day"), price:60}],
+          images: [],
+          tableRows: {},
+          survey: { enabled: false, questions: [] },
+          bookingForm: { enabled: true, fields: ["name","phone","date","people","message"] }
+        }
+      ]}
+    }
+  };
+}
+
+const DEFAULT_DATA = buildDefaultData();
+let state = JSON.parse(JSON.stringify(DEFAULT_DATA));
+
+// ================================================================
+// STORAGE
+// ================================================================
+const storage = {
+  get: (key, json) => {
+    try {
+      const val = localStorage.getItem(key);
+      if (val === null) return null;
+      return json ? JSON.parse(val) : val;
+    } catch(e) { return null; }
+  },
+  set: (key, val, json) => {
+    try {
+      localStorage.setItem(key, json ? JSON.stringify(val) : val);
+      return true;
+    } catch(e) { return false; }
+  },
+  delete: (key) => {
+    try { localStorage.removeItem(key); return true; } catch(e) { return false; }
+  }
+};
+window.storage = storage;
+
+// ================================================================
+// LOAD / SAVE DATA
+// ================================================================
+async function initAdminSession(){
+  try{
+    const res = await storage.get('admin-authed', false);
+    if(res && res === 'true'){ adminAuthed = true; }
+  }catch(e){}
+}
+
+async function loadApiConfig(){
+  try{
+    const cfg = await storage.get('api-config', true);
+    if(cfg){ Object.assign(apiConfig, cfg); }
+  }catch(e){}
+}
+
+async function loadData(){
+  await loadApiConfig();
+  let loaded = false;
+  if(apiConfig.jsonbinId && apiConfig.jsonbinKey){
+    try{
+      const res = await fetch(`https://api.jsonbin.io/v3/b/${apiConfig.jsonbinId}/latest`, { headers:{ 'X-Master-Key': apiConfig.jsonbinKey } });
+      if(res.ok){
+        const json = await res.json();
+        if(json && json.record && Object.keys(json.record).length){
+          state = Object.assign({}, DEFAULT_DATA, json.record);
+          loaded = true;
+        }
+      }
+    }catch(e){}
+  }
+  if(!loaded){
+    try{
+      const res = await storage.get('site-content-v6', true);
+      if(res){ state = Object.assign({}, DEFAULT_DATA, res); }
+    }catch(e){}
+  }
+  if(String(state.telegram || '').replace('@','').toLowerCase() === 'narimanovk'){
+    state.telegram = TELEGRAM_USERNAME;
+    storage.set('site-content-v6', state, true);
+  }
+  if(String(state.whatsapp || '').replace(/\D/g, '') === '998996663322'){
+    state.whatsapp = WHATSAPP_NUMBER;
+    storage.set('site-content-v6', state, true);
+  }
+  await initAdminSession();
+  standalonePage = getPageParam();
+  if(standalonePage){ applyStandaloneMode(standalonePage); }
+  render();
+}
+
+async function saveData(){
+  if(apiConfig.jsonbinId && apiConfig.jsonbinKey){
+    try{
+      const res = await fetch(`https://api.jsonbin.io/v3/b/${apiConfig.jsonbinId}`, {
+        method:'PUT',
+        headers:{ 'Content-Type':'application/json', 'X-Master-Key': apiConfig.jsonbinKey },
+        body: JSON.stringify(state)
+      });
+      if(res.ok) return true;
+    }catch(e){}
+  }
+  try{ 
+    const r = await storage.set('site-content-v6', state, true); 
+    return !!r; 
+  } catch(e){ return false; }
+}
+
+// ================================================================
+// PAGE PARAM
+// ================================================================
+function getPageParam(){
+  try{
+    const p = new URLSearchParams(location.search).get('page');
+    return STANDALONE_SECTIONS.includes(p) ? p : null;
+  }catch(e){ return null; }
+}
+
+function openStandalone(key){
+  const base = location.href.split('?')[0].split('#')[0];
+  window.open(base + '?page=' + key, '_blank');
+}
+
+function goHome(){
+  location.href = location.href.split('?')[0].split('#')[0];
+}
+
+// ================================================================
+// LANGUAGE
+// ================================================================
+function setLang(lang){
+  currentLang = lang;
+  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
+  render();
+}
+
+function applyUiTranslations(){
+  const ui = UI_TEXT[currentLang] || UI_TEXT.en;
+  const setText = (selector, text) => {
+    const el = document.querySelector(selector);
+    if (el) el.textContent = text;
+  };
+
+  setText('.brand-text b', ui.brand);
+  setText('.brand-text span', ui.location);
+
+  setText('a[data-i18n="nav.home"]', ui.home);
+  setText('a[data-i18n="nav.services"]', ui.services);
+  setText('a[data-i18n="nav.tours"]', ui.tours);
+  setText('a[data-i18n="nav.sharedDayTrips"]', ui.sharedDayTrips);
+  setText('a[data-i18n="nav.twoDayTours"]', ui.twoDayTours);
+  setText('a[data-i18n="nav.aralSea"]', ui.aralSea);
+  setText('a[data-i18n="nav.transfers"]', ui.transfers);
+  setText('a[data-i18n="nav.cars"]', ui.cars);
+  setText('a[data-i18n="nav.about"]', ui.about);
+  setText('a[data-i18n="nav.contact"]', ui.contact);
+  setText('button[data-i18n="nav.enquiry"]', ui.enquiry);
+
+  const heroEyebrow = document.querySelector('.hero-eyebrow');
+  if (heroEyebrow) heroEyebrow.textContent = ui.heroEyebrow;
+
+  const heroTitle = document.querySelector('.hero h1');
+  if (heroTitle) heroTitle.textContent = state.siteName;
+
+  const heroTagline = document.querySelector('.tagline');
+  if (heroTagline) heroTagline.textContent = state.tagline[currentLang] || state.tagline.en;
+
+  const heroExplore = document.querySelector('.hero-btns .btn-gold');
+  if (heroExplore) heroExplore.textContent = ui.explore;
+
+  const heroContact = document.querySelector('.hero-btns .btn-outline');
+  if (heroContact) heroContact.textContent = ui.contactUs;
+
+  setText('#services .eyebrow', ui.servicesEyebrow);
+  setText('#services h2', ui.servicesTitle);
+  setText('#services .section-head p', ui.servicesText);
+
+  setText('#tours .eyebrow', ui.toursEyebrow);
+  setText('#tours h2', ui.toursTitle);
+  setText('#tours .section-head p', ui.toursText);
+
+  setText('#shared-trips .eyebrow', ui.sharedEyebrow);
+  setText('#shared-trips h2', ui.sharedTitle);
+  setText('#shared-trips .section-head p', ui.sharedText);
+
+  setText('#two-day .eyebrow', ui.twoEyebrow);
+  setText('#two-day h2', ui.twoTitle);
+  setText('#two-day .section-head p', ui.twoText);
+
+  setText('#aral-sea .eyebrow', ui.aralEyebrow);
+  setText('#aral-sea h2', ui.aralTitle);
+  setText('#aral-sea .section-head p', ui.aralText);
+
+  setText('#transfers .eyebrow', ui.transfersEyebrow);
+  setText('#transfers h2', ui.transfersTitle);
+  setText('#transfers .section-head p', ui.transfersText);
+
+  setText('#cars .eyebrow', ui.carsEyebrow);
+  setText('#cars h2', ui.carsTitle);
+  setText('#cars .section-head p', ui.carsText);
+
+  setText('#about .eyebrow', ui.aboutEyebrow);
+  setText('#about h2', ui.aboutTitle);
+
+  setText('#contact .eyebrow', ui.contactEyebrow);
+  setText('#contact h2', ui.contactTitle);
+  setText('#contact .section-head p', ui.contactText);
+
+  const bookingH3 = document.querySelector('#booking-panel h3');
+  if (bookingH3) bookingH3.textContent = ui.formTitle;
+
+  const bookingIntro = document.querySelector('#booking-panel > p');
+  if (bookingIntro) bookingIntro.textContent = ui.formText;
+
+  const formLabels = document.querySelectorAll('#booking-form label');
+  const mapping = {
+    'Tour name': ui.formTour,
+    'Vehicle / price': ui.formVehicle,
+    'Date': ui.formDate,
+    'Confirm the price ($)': ui.formPrice,
+    'Number of travellers': ui.formPeople,
+    'Your name': ui.formName,
+    'Pick-up place': ui.formPickup,
+    'Pick-up time': ui.formPickupTime,
+    'Drop-off place': ui.formDropoff,
+    'Contact email': ui.formEmail,
+    'Phone / WhatsApp': ui.formPhone,
+    'Full names of group members (optional)': ui.formMembers,
+    'Question or special requests': ui.formMessage
+  };
+  formLabels.forEach((label) => {
+    const key = label.textContent.trim();
+    if (mapping[key]) label.textContent = mapping[key];
+  });
+
+  const formButtons = document.querySelectorAll('#booking-form .btn');
+  formButtons[0] && (formButtons[0].textContent = ui.sendWa);
+  formButtons[1] && (formButtons[1].textContent = ui.sendTg);
+  const formNote = document.querySelector('#booking-form .form-note');
+  if (formNote) formNote.textContent = ui.formNote;
+
+  const footerTag = document.querySelector('footer .footer-brand p');
+  if (footerTag) footerTag.textContent = state.tagline[currentLang] || state.tagline.en;
+}
+
+// ================================================================
+// STANDALONE MODE
+// ================================================================
+function applyStandaloneMode(key){
+  document.body.classList.add('standalone-mode');
+  
+  document.querySelectorAll('body > section').forEach(sec=>{
+    if(sec.id !== STANDALONE_ANCHOR[key]){ sec.style.display = 'none'; }
+    else { sec.style.display = ''; sec.style.paddingTop = '0'; }
+  });
+  
+  const header = document.querySelector('header.nav');
+  if(header){
+    const brand = header.querySelector('.brand').cloneNode(true);
+    const langSwitch = header.querySelector('.lang-switch').cloneNode(true);
+    
+    const standaloneHeader = document.createElement('div');
+    standaloneHeader.className = 'standalone-header';
+    standaloneHeader.innerHTML = `
+      <div class="brand">${brand.innerHTML}</div>
+      <div class="standalone-nav">
+        <a onclick="goHome()" style="cursor:pointer;">← Back to Home</a>
+        <a href="#home" onclick="goHome()">Home</a>
+        <a href="#services" onclick="goHome()">Services</a>
+        <a href="#tours" onclick="goHome()">Tours</a>
+        <a onclick="openStandalone('sharedDayTrips')" style="cursor:pointer;">Shared Day Trips</a>
+        <a onclick="openStandalone('twoDayTours')" style="cursor:pointer;">2-Day Tours</a>
+        <a onclick="openStandalone('aralSea')" style="cursor:pointer;">Aral Sea</a>
+        <a onclick="openStandalone('privateTransfers')" style="cursor:pointer;">Transfers</a>
+        <a onclick="openStandalone('cars')" style="cursor:pointer;">Our Cars</a>
+        <a href="#about" onclick="goHome()">About</a>
+        <a href="#contact" onclick="goHome()">Contact</a>
+        ${langSwitch.outerHTML}
+        <button class="btn btn-terracotta" onclick="openBooking()">Enquiry</button>
+      </div>
+    `;
+    header.parentNode.replaceChild(standaloneHeader, header);
+  }
+  
+  updateSideIcons();
+}
+
+// ================================================================
+// RENDER
+// ================================================================
+function render(){
+  applyUiTranslations();
+  document.getElementById('about-text').textContent = state.aboutText[currentLang] || state.aboutText.uz;
+  document.title = state.siteName;
+
+  applyLogo();
+
+  const list = t('servicesList');
+  const icons = [
+    'M3 11l9-7 9 7M5 10v10h14V10',
+    'M17 20h5v-2a4 4 0 0 0-3-3.87M9 20H4v-2a4 4 0 0 1 3-3.87m5-4.13a4 4 0 1 0 0-8 4 4 0 0 0 0 8z',
+    'M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z',
+    'M2 12h4l3 8 4-16 3 8h6',
+    'M5 17h14M7 17V9a5 5 0 0 1 10 0v8M5 21h14',
+    'M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2M11 3a4 4 0 1 1 0 8 4 4 0 0 1 0-8z'
+  ];
+  const servicesGridEl = document.getElementById('services-grid');
+  if(servicesGridEl){
+    servicesGridEl.innerHTML = list.map((s,i)=>`
+    <div class="service-card ${i===1?'hi':''}">
+      <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="${icons[i]}"/></svg></div>
+      <h3>${esc(s.t)}</h3>
+      <p>${esc(s.d)}</p>
+    </div>`).join('');
+  }
+
+  const tk = {
+    details:"View Details",
+    book:"Book Now",
+    route:"Travel route",
+    desc:"Full description",
+    included:"Included",
+    excluded:"Not included",
+    recommend:"Recommendations",
+    includedList:["Modern, air-conditioned vehicles","Door-to-door hotel pickup and drop-off","Professional English/Russian-speaking drivers","Flexible photo stops at any scenic point","1L of chilled mineral water per person"],
+    excludedList:["Breakfast, lunch and dinner are not included","Site entry fees are paid on site","An English/Russian-speaking personal guide is booked separately"],
+    recommendList:["We recommend starting the trip around 08:00–09:00 AM","Cash is often needed at local desert stops","Bring a wide-brimmed hat, sunglasses and sunscreen","Wear sturdy, closed-toe shoes — the terrain is uneven"],
+    quickDuration:"Duration",
+    quickDistance:"Driving distance",
+    cancelTitle:"Cancellation Policy",
+    cancelList:[
+      {l:"Cancellation Policy:",t:"Free cancellations are available up to 3 days before your scheduled trip."},
+      {l:"Late Cancellations:",t:"Cancellations made within 3 days of the trip will incur a fee equal to 20% of the total tour price."},
+      {l:"How to Cancel:",t:"Please contact our customer support team directly to process any changes or cancellations."}
+    ],
+    paymentTitle:"Price & Payment Policy",
+    paymentNote:"Please note that our stated prices are fixed per vehicle for your entire group, not per person. For your convenience, final payment is made directly to your driver in cash at the conclusion of the trip.",
+    galleryTitle:"Photo Gallery",
+    bookNow:"Book Now →"
+  };
+  
+  SECTIONS_META.forEach(sec=>{
+    const container = document.getElementById(sec.key+'-cards');
+    if(!container) return;
+    const items = (state.sections[sec.key] && state.sections[sec.key].items) || [];
+    const inline = (sec.key === 'privateDayTrips');
+    if(sec.key === 'privateDayTrips'){
+      const catOrder = []; const catMap = {};
+      items.forEach(tr=>{
+        const cat = tr.category || 'other';
+        if(!catMap[cat]){ catMap[cat] = []; catOrder.push(cat); }
+        catMap[cat].push(tr);
+      });
+      container.innerHTML = catOrder.map(cat=>`
+        <div class="cat-head">
+          <span class="eyebrow">Private Day Trips</span>
+          <h3>${esc(CATEGORY_LABELS[cat] ? CATEGORY_LABELS[cat][currentLang] : cat)}</h3>
+          <div class="rule"></div>
+        </div>
+        <div class="tours-grid">${catMap[cat].map(tr=>ticketHTML(tr, sec.key, tk, inline)).join('')}</div>`).join('');
+    } else {
+      container.innerHTML = items.length ? `<div class="tours-grid">${items.map(it=>ticketHTML(it, sec.key, tk, inline)).join('')}</div>` : '';
+    }
+  });
+
+  if(standalonePage){
+    renderStandaloneBooking(standalonePage);
+  }
+
+  const c = {
+    address:"Our address",
+    email:"Our e-mail",
+    phone:"Phone (WhatsApp, Telegram)",
+    mapLink:"Our location on Google Maps",
+    officeHours:"Office hours: Mon-Sun 08:00-20:00"
+  };
+  const contactGridEl = document.getElementById('contact-grid');
+  if(contactGridEl){
+    contactGridEl.innerHTML = `
+    <div class="info-card">
+      <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <h4>${c.address}</h4>
+      <p>${esc(state.address)}</p>
+      <p><a href="${esc(state.mapLink)}" target="_blank" rel="noopener noreferrer">${c.mapLink}</a></p>
+    </div>
+    <div class="info-card">
+      <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg></div>
+      <h4>${c.email}</h4>
+      <p><a href="mailto:${esc(state.email)}">${esc(state.email)}</a></p>
+      <p>${c.officeHours}</p>
+    </div>
+    <div class="info-card">
+      <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 2.9a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.5 2.9.6a2 2 0 0 1 1.8 2.1z"/></svg></div>
+      <h4>${c.phone}</h4>
+      <p>${esc(state.phone1)}</p>
+      <p>${esc(state.phone2)}</p>
+    </div>`;
+  }
+
+  updateSideIcons();
+  renderHeroContactRow();
+
+  if(document.getElementById('f-tour')){
+    populateTourSelect();
+    const selPeople = document.getElementById('f-people');
+    let peopleOpts = `<option value="">—</option>`;
+    for(let i=1;i<=12;i++){ peopleOpts += `<option value="${i}">${i}</option>`; }
+    selPeople.innerHTML = peopleOpts;
+  }
+}
+
+function applyLogo(){
+  const headerMark = document.getElementById('header-brand-mark');
+  const footerMark = document.getElementById('footer-brand-mark');
+  if(LOGO_DATA_URI && LOGO_DATA_URI.indexOf('LOGO_PLACEHOLDER') === -1){
+    [headerMark, footerMark].forEach(el=>{
+      if(el){ el.innerHTML = `<img src="${LOGO_DATA_URI}" alt="${esc(state.siteName)} logo">`; }
+    });
+  }
+}
+
+function renderHeroContactRow(){
+  const row = document.getElementById('hero-contact-row');
+  if(!row) return;
+  const waLabel = { uz:"WhatsApp orqali yozing", ru:"Написать в WhatsApp", en:"Chat on WhatsApp" }[currentLang];
+  const tgLabel = { uz:"Telegram orqali yozing", ru:"Написать в Telegram", en:"Message on Telegram" }[currentLang];
+  row.innerHTML = `
+    <a class="hero-contact-btn wa" id="hero-wa" href="#" target="_blank">
+      <svg viewBox="0 0 32 32" fill="#fff"><path d="M16 0C7.16 0 0 7.16 0 16c0 2.82.74 5.56 2.14 7.98L0 32l8.24-2.1A15.9 15.9 0 0 0 16 32c8.84 0 16-7.16 16-16S24.84 0 16 0zm0 29.2c-2.5 0-4.94-.67-7.08-1.94l-.5-.3-5.02 1.28 1.34-4.9-.33-.5A13.16 13.16 0 0 1 2.8 16C2.8 8.7 8.7 2.8 16 2.8S29.2 8.7 29.2 16 23.3 29.2 16 29.2zm7.2-9.86c-.4-.2-2.34-1.15-2.7-1.28-.36-.13-.63-.2-.9.2-.26.4-1.02 1.28-1.25 1.55-.23.26-.46.3-.86.1-.4-.2-1.68-.62-3.2-1.98-1.18-1.05-1.98-2.36-2.2-2.76-.24-.4-.03-.62.17-.82.18-.18.4-.46.6-.7.2-.23.26-.4.4-.66.13-.26.06-.5-.03-.7-.1-.2-.9-2.17-1.23-2.97-.32-.78-.65-.67-.9-.68l-.77-.02c-.26 0-.7.1-1.06.5-.36.4-1.4 1.36-1.4 3.33s1.43 3.86 1.63 4.13c.2.26 2.8 4.28 6.8 6 .95.4 1.7.65 2.27.84.95.3 1.83.26 2.52.16.77-.12 2.34-.96 2.67-1.88.33-.92.33-1.7.23-1.87-.1-.16-.36-.26-.76-.46z"/></svg>
+      ${esc(waLabel)}
+    </a>
+    <a class="hero-contact-btn tg" id="hero-tg" href="#" target="_blank">
+      <svg viewBox="0 0 240 240" fill="#fff"><path d="M120 0C53.73 0 0 53.73 0 120s53.73 120 120 120 120-53.73 120-120S186.27 0 120 0zm55.6 82.2-19.6 92.5c-1.5 6.6-5.4 8.2-10.9 5.1l-30.1-22.2-14.5 14c-1.6 1.6-2.9 2.9-6 2.9l2.1-30.5 55.6-50.2c2.4-2.1-.5-3.3-3.7-1.2l-68.7 43.3-29.6-9.3c-6.4-2-6.6-6.4 1.4-9.5l115.8-44.6c5.4-2 10.1 1.3 8.2 9.7z"/></svg>
+      ${esc(tgLabel)}
+    </a>`;
+  const waEl = document.getElementById('hero-wa');
+  const tgEl = document.getElementById('hero-tg');
+  if(waEl) waEl.href = whatsappUrl();
+  if(tgEl) tgEl.href = telegramUrl();
+}
+
+// ================================================================
+// WHATSAPP / TELEGRAM HELPERS
+// ================================================================
+function whatsappUrl(){
+  if(state.whatsappLink && state.whatsappLink.trim()){ return state.whatsappLink.trim(); }
+  return "https://wa.me/"+state.whatsapp.replace(/\D/g,'');
+}
+
+function updateSideIcons(){
+  const waLink = whatsappUrl();
+  const tgLink = telegramUrl();
+  
+  const sideWa = document.getElementById('side-wa');
+  const sideTg = document.getElementById('side-tg');
+  const socWa = document.getElementById('social-wa');
+  const socTg = document.getElementById('social-tg');
+  
+  if(sideWa) sideWa.href = waLink;
+  if(sideTg) sideTg.href = tgLink;
+  if(socWa) socWa.href = waLink;
+  if(socTg) socTg.href = tgLink;
+}
+
+function telegramUrl(){
+  return "tg://resolve?domain=" + TELEGRAM_USERNAME;
+}
+
+// ================================================================
+// TICKET HTML
+// ================================================================
+function ticketHTML(item, sectionKey, tk, inlineBooking){
+  const img = (item.images && item.images.find(u=>u && u.length>0));
+  const formId = `inline-${sectionKey}-${item.id}`;
+  
+  let bookingForm = '';
+  if(item.bookingForm && item.bookingForm.enabled !== false){
+    const fields = item.bookingForm.fields || ["name","phone","date","people","message"];
+    const peopleOpts = Array.from({length:12},(_,i)=>`<option value="${i+1}">${i+1}</option>`).join('');
+    const vehOpts = (item.vehicles||[]).map((v,i)=>`<option value="${i}">${esc(v.label.en||v.label[currentLang])} — $${v.price}</option>`).join('');
+    
+    let formFields = '';
+    if(fields.includes('tour')){
+      const sectionItems = (state.sections[sectionKey] && state.sections[sectionKey].items) || [];
+      const tourOpts = sectionItems.map(it2=>`<option value="${it2.id}" ${it2.id===item.id?'selected':''}>${esc(it2.name.en || it2.name[currentLang])}</option>`).join('');
+      formFields += `<div class="full" style="grid-column:1/-1;"><label>Tour name</label><select id="${formId}-tour" onchange="updateInlineTourFields('${sectionKey}','${formId}')">${tourOpts}</select></div>`;
+    }
+    if(fields.includes('vehicle')) formFields += `<div><label>Vehicle</label><select id="${formId}-veh">${vehOpts}</select></div>`;
+    if(fields.includes('date')) formFields += `<div><label>Date</label><input type="date" id="${formId}-date"></div>`;
+    if(fields.includes('people')) formFields += `<div><label>Travellers</label><select id="${formId}-people">${peopleOpts}</select></div>`;
+    if(fields.includes('name')) formFields += `<div><label>Your name</label><input type="text" id="${formId}-name"></div>`;
+    if(fields.includes('phone')) formFields += `<div class="full" style="grid-column:1/-1;"><label>Phone</label><input type="tel" id="${formId}-phone" placeholder="+998 90 123-45-67"></div>`;
+    if(fields.includes('pickup')) formFields += `<div><label>Pick-up</label><input type="text" id="${formId}-pickup" placeholder="Hotel / airport"></div>`;
+    if(fields.includes('dropoff')) formFields += `<div><label>Drop-off</label><input type="text" id="${formId}-dropoff" placeholder="Hotel / airport"></div>`;
+    if(fields.includes('email')) formFields += `<div><label>Email</label><input type="email" id="${formId}-email" placeholder="email@example.com"></div>`;
+    if(fields.includes('message')) formFields += `<div class="full" style="grid-column:1/-1;"><label>Message</label><textarea id="${formId}-message"></textarea></div>`;
+    
+    bookingForm = `
+      <div class="inline-booking" id="${formId}" style="display:none;border-top:1px solid var(--line);padding:18px 24px 22px;background:var(--sand);">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          ${formFields}
+        </div>
+        <div style="display:flex;gap:10px;margin-top:12px;">
+          <button type="button" class="btn btn-teal" style="flex:1;justify-content:center;padding:10px;font-size:13.5px;" onclick="submitInlineBooking('${sectionKey}',${item.id},'${formId}','wa')">💬 WhatsApp</button>
+          <button type="button" class="btn btn-terracotta" style="flex:1;justify-content:center;padding:10px;font-size:13.5px;" onclick="submitInlineBooking('${sectionKey}',${item.id},'${formId}','tg')">✈️ Telegram</button>
+        </div>
+      </div>`;
+  }
+  
+  let tableHTML = '';
+  const rows = item.tableRows || {};
+  if(Object.keys(rows).length > 0){
+    tableHTML = `<div style="margin:14px 24px 0;border-top:1px solid var(--line);padding-top:14px;">
+      <h5 style="font-size:13px;color:var(--navy);margin-bottom:8px;">📋 Additional Information</h5>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <thead><tr style="background:var(--sand);">
+          <th style="padding:8px 12px;text-align:left;border:1px solid var(--line);">Field</th>
+          <th style="padding:8px 12px;text-align:left;border:1px solid var(--line);">Value</th>
+        </tr></thead>
+        <tbody>`;
+    for(const [key, val] of Object.entries(rows)){
+      tableHTML += `<tr><td style="padding:8px 12px;border:1px solid var(--line);font-weight:600;">${esc(key)}</td><td style="padding:8px 12px;border:1px solid var(--line);">${esc(val)}</td></tr>`;
+    }
+    tableHTML += `</tbody></table></div>`;
+  }
+
+  const hasSurvey = item.survey && item.survey.enabled && item.survey.questions && item.survey.questions.length > 0;
+
+  return `
+    <div class="ticket">
+      ${img ? `<img class="ticket-img" src="${esc(img)}" alt="">` : ''}
+      <div class="ticket-body">
+        <h4>${esc(item.name[currentLang])}</h4>
+        ${item.route && item.route[currentLang] ? `<p style="color:var(--muted);font-size:13.5px;margin-top:6px;">📍 ${esc(item.route[currentLang])}</p>` : ''}
+        ${item.duration ? `<p style="color:var(--muted);font-size:12.5px;margin-top:4px;">⏱ ${esc(item.duration[currentLang]||'')} ${item.distance?(' · '+esc(item.distance)):''}</p>` : ''}
+        ${hasSurvey ? `<p style="color:var(--teal-2);font-size:12px;margin-top:4px;">📋 So'rovnoma mavjud</p>` : ''}
+      </div>
+      <div class="stub">
+        ${(item.vehicles||[]).map(v=>`<div class="price-row"><span>${esc(v.label[currentLang])}</span><b>$${v.price}</b></div>`).join('')}
+      </div>
+      ${tableHTML}
+      <div class="ticket-actions">
+        <button class="btn btn-ghost" onclick="openDetailsInNewTab('${sectionKey}',${item.id})">${tk.details}</button>
+        <button class="btn btn-terracotta" onclick="openDetailsInNewTab('${sectionKey}',${item.id})">${tk.book}</button>
+      </div>
+      ${bookingForm}
+    </div>`;
+}
+
+function updateInlineTourFields(sectionKey, formId){
+  const tourSel = document.getElementById(formId+'-tour');
+  const vehSel = document.getElementById(formId+'-veh');
+  if(!tourSel) return;
+  const item2 = (state.sections[sectionKey].items||[]).find(x=>String(x.id)===tourSel.value);
+  if(vehSel && item2){
+    vehSel.innerHTML = (item2.vehicles||[]).map((v,i)=>`<option value="${i}">${esc(v.label.en || v.label[currentLang])} — $${v.price}</option>`).join('');
+  }
+}
+
+async function submitInlineBooking(sectionKey, id, formId, channel){
+  const tourSel = document.getElementById(formId+'-tour');
+  const effectiveId = tourSel ? Number(tourSel.value) : id;
+  const item = (state.sections[sectionKey].items||[]).find(x=>x.id===effectiveId) || (state.sections[sectionKey].items||[]).find(x=>x.id===id);
+  if(!item) return;
+  const name = document.getElementById(formId+'-name')?.value?.trim() || '';
+  const phone = document.getElementById(formId+'-phone')?.value?.trim() || '';
+  if(!name || !phone){ alert('Please enter your name and phone number.'); return; }
+  const vIdx = document.getElementById(formId+'-veh')?.value;
+  const date = document.getElementById(formId+'-date')?.value || '';
+  const people = document.getElementById(formId+'-people')?.value || '';
+  const pickup = document.getElementById(formId+'-pickup')?.value?.trim() || '';
+  const dropoff = document.getElementById(formId+'-dropoff')?.value?.trim() || '';
+  const email = document.getElementById(formId+'-email')?.value?.trim() || '';
+  const message = document.getElementById(formId+'-message')?.value?.trim() || '';
+  const veh = item.vehicles && vIdx ? item.vehicles[vIdx] : null;
+  
+  let out = `${state.siteName} — New booking request\n`;
+  out += `Name: ${name}\nPhone: ${phone}\n`;
+  if(email) out += `Email: ${email}\n`;
+  out += `Tour: ${item.name.en || item.name[currentLang]}\n`;
+  if(veh) out += `Vehicle: ${veh.label.en || veh.label[currentLang]}\nPrice: $${veh.price}\n`;
+  if(people) out += `Travellers: ${people}\n`;
+  if(date) out += `Date: ${date}\n`;
+  if(pickup) out += `Pickup: ${pickup}\n`;
+  if(dropoff) out += `Drop-off: ${dropoff}\n`;
+  if(message) out += `Message: ${message}\n`;
+  
+  recordSubmission(channel === 'wa' ? 'WhatsApp' : 'Telegram', out);
+  if(channel==='wa'){ window.open(messageUrl(whatsappUrl(), out), "_blank"); }
+  else { await sendTelegramToOwner(out); }
+}
+
+// ================================================================
+// RENDER STANDALONE BOOKING
+// ================================================================
+function renderStandaloneBooking(sectionKey){
+  const sectionEl = document.getElementById(STANDALONE_ANCHOR[sectionKey]);
+  if(!sectionEl) return;
+  let panel = document.getElementById('standalone-booking-panel');
+  if(!panel){
+    panel = document.createElement('div');
+    panel.id = 'standalone-booking-panel';
+    panel.style.marginTop = '50px';
+    sectionEl.querySelector('.container').appendChild(panel);
+  }
+  const items = (state.sections[sectionKey] && state.sections[sectionKey].items) || [];
+  const bk = {
+    title:"Fill in the enquiry form",
+    subtitle:"Fill in the form below — your request will be sent directly via Telegram or WhatsApp.",
+    tour:"Tour name",
+    vehicle:"Vehicle / price",
+    date:"Date",
+    price:"Confirm the price ($)",
+    people:"Number of travellers",
+    name:"Your name",
+    pickup:"Pick-up place",
+    pickupPh:"Hotel / airport / railway station name",
+    phone:"Phone / WhatsApp",
+    message:"Question or special requests",
+    sendWa:"💬 Send via WhatsApp",
+    sendTg:"✈️ Send via Telegram",
+    note:"Clicking a button opens the app with your message ready to send."
+  };
+  const tourOpts = items.map(it=>`<option value="${it.id}">${esc(it.name.en || it.name[currentLang])}</option>`).join('');
+  panel.innerHTML = `
+    <div class="booking-panel" style="max-width:820px;margin:0 auto;">
+      <h3>${bk.title}</h3>
+      <p>${bk.subtitle}</p>
+      <div class="form-grid">
+        <div class="full"><label>${bk.tour}</label><select id="sa-tour" onchange="saUpdateVehicles('${sectionKey}')">${tourOpts}</select></div>
+        <div><label>${bk.vehicle}</label><select id="sa-vehicle" onchange="saAutofillPrice('${sectionKey}')"></select></div>
+        <div><label>${bk.date}</label><input type="date" id="sa-date"></div>
+        <div><label>${bk.price}</label><input type="text" id="sa-price" placeholder="$"></div>
+        <div><label>${bk.people}</label><select id="sa-people">${Array.from({length:12},(_,i)=>`<option value="${i+1}">${i+1}</option>`).join('')}</select></div>
+        <div><label>${bk.name}</label><input type="text" id="sa-name"></div>
+        <div><label>${bk.pickup}</label><input type="text" id="sa-pickup" placeholder="${bk.pickupPh}"></div>
+        <div><label>${bk.phone}</label><input type="tel" id="sa-phone" placeholder="+998 90 123-45-67"></div>
+        <div class="full"><label>${bk.message}</label><textarea id="sa-message"></textarea></div>
+      </div>
+      <div class="form-actions">
+        <button type="button" class="btn btn-teal" onclick="submitStandaloneBooking('${sectionKey}','wa')">${bk.sendWa}</button>
+        <button type="button" class="btn btn-terracotta" onclick="submitStandaloneBooking('${sectionKey}','tg')">${bk.sendTg}</button>
+      </div>
+      <p class="form-note">${bk.note}</p>
+    </div>`;
+  saUpdateVehicles(sectionKey);
+}
+
+function saUpdateVehicles(sectionKey){
+  const tourSel = document.getElementById('sa-tour');
+  const vehSel = document.getElementById('sa-vehicle');
+  if(!tourSel || !vehSel) return;
+  const item = (state.sections[sectionKey].items||[]).find(x=>String(x.id)===tourSel.value);
+  vehSel.innerHTML = (item && item.vehicles || []).map((v,i)=>`<option value="${i}">${esc(v.label.en || v.label[currentLang])} — $${v.price}</option>`).join('');
+  saAutofillPrice(sectionKey);
+}
+
+function saAutofillPrice(sectionKey){
+  const tourSel = document.getElementById('sa-tour');
+  const vehSel = document.getElementById('sa-vehicle');
+  const priceField = document.getElementById('sa-price');
+  const item = (state.sections[sectionKey].items||[]).find(x=>String(x.id)===tourSel.value);
+  if(item && item.vehicles && item.vehicles[vehSel.value]){ priceField.value = "$"+item.vehicles[vehSel.value].price; }
+}
+
+async function submitStandaloneBooking(sectionKey, channel){
+  const name = document.getElementById('sa-name').value.trim();
+  const phone = document.getElementById('sa-phone').value.trim();
+  if(!name || !phone){ alert('Please enter your name and phone number.'); return; }
+  const tourSel = document.getElementById('sa-tour');
+  const item = (state.sections[sectionKey].items||[]).find(x=>String(x.id)===tourSel.value);
+  const vehSel = document.getElementById('sa-vehicle');
+  const veh = item && item.vehicles && item.vehicles[vehSel.value];
+  const date = document.getElementById('sa-date').value;
+  const price = document.getElementById('sa-price').value;
+  const people = document.getElementById('sa-people').value;
+  const pickup = document.getElementById('sa-pickup').value;
+  const msg = document.getElementById('sa-message').value.trim();
+  let out = `${state.siteName} — New booking request\n`;
+  out += `Name: ${name}\nPhone: ${phone}\n`;
+  out += `Tour: ${item ? (item.name.en || item.name[currentLang]) : ''}\n`;
+  if(veh) out += `Vehicle: ${veh.label.en || veh.label[currentLang]}\n`;
+  if(price) out += `Price: ${price}\n`;
+  if(people) out += `Travellers: ${people}\n`;
+  if(date) out += `Date: ${date}\n`;
+  if(pickup) out += `Pickup: ${pickup}\n`;
+  if(msg) out += `Message: ${msg}`;
+  recordSubmission(channel === 'wa' ? 'WhatsApp' : 'Telegram', out);
+  if(channel==='wa'){ window.open(messageUrl(whatsappUrl(), out), "_blank"); }
+  else { await sendTelegramToOwner(out); }
+}
+
+// ================================================================
+// OPEN DETAILS IN NEW TAB (with SURVEY + PLACEHOLDERS)
+// ================================================================
+function openDetailsInNewTab(sectionKey, id){
+  const item = (state.sections[sectionKey].items||[]).find(x=>x.id===id);
+  if(!item) return;
+  const tk = {
+    quickDuration:"Duration",
+    quickDistance:"Driving distance",
+    route:"Travel route",
+    desc:"Full description",
+    included:"Included",
+    excluded:"Not included",
+    recommend:"Recommendations",
+    includedList:["Modern, air-conditioned vehicles","Door-to-door hotel pickup and drop-off","Professional English/Russian-speaking drivers","Flexible photo stops at any scenic point","1L of chilled mineral water per person"],
+    excludedList:["Breakfast, lunch and dinner are not included","Site entry fees are paid on site","An English/Russian-speaking personal guide is booked separately"],
+    recommendList:["We recommend starting the trip around 08:00–09:00 AM","Cash is often needed at local desert stops","Bring a wide-brimmed hat, sunglasses and sunscreen","Wear sturdy, closed-toe shoes — the terrain is uneven"],
+    cancelTitle:"Cancellation Policy",
+    cancelList:[
+      {l:"Cancellation Policy:",t:"Free cancellations are available up to 3 days before your scheduled trip."},
+      {l:"Late Cancellations:",t:"Cancellations made within 3 days of the trip will incur a fee equal to 20% of the total tour price."},
+      {l:"How to Cancel:",t:"Please contact our customer support team directly to process any changes or cancellations."}
+    ],
+    paymentTitle:"Price & Payment Policy",
+    paymentNote:"Please note that our stated prices are fixed per vehicle for your entire group, not per person. For your convenience, final payment is made directly to your driver in cash at the conclusion of the trip.",
+    galleryTitle:"Photo Gallery",
+    bookNow:"Book Now →",
+    surveyTitle:"📋 So'rovnoma",
+    surveyNote:"Iltimos, quyidagi savollarga javob bering"
+  };
+  const win = window.open('', '_blank');
+  if(!win) return;
+
+  const baseUrl = location.href.split('?')[0].split('#')[0];
+  const bfFields = (item.bookingForm && item.bookingForm.fields) || ["name","phone","date","people","message"];
+  const bfEnabled = !(item.bookingForm && item.bookingForm.enabled===false);
+  const sectionItemsArr = (state.sections[sectionKey] && state.sections[sectionKey].items) || [];
+  const peopleOptsDD = Array.from({length:12},(_,i)=>`<option value="${i+1}">${i+1}</option>`).join('');
+  const vehOptsDD = (item.vehicles||[]).map((v,i)=>`<option value="${i}">${esc(v.label.en||v.label[currentLang])} — $${v.price}</option>`).join('');
+  let bfFieldsHTML = '';
+  if(bfFields.includes('tour')){
+    const tourOptsDD = sectionItemsArr.map(it2=>`<option value="${it2.id}" ${it2.id===item.id?'selected':''}>${esc(it2.name.en||it2.name[currentLang])}</option>`).join('');
+    bfFieldsHTML += `<div class="dd-full"><label>Tour name</label><select id="dd-tour" onchange="ddUpdateTourVehicles()">${tourOptsDD}</select></div>`;
+  }
+  if(bfFields.includes('vehicle')) bfFieldsHTML += `<div><label>Vehicle</label><select id="dd-veh" onchange="ddAutofillPrice()">${vehOptsDD}</select></div>`;
+  if(bfFields.includes('date')) bfFieldsHTML += `<div><label>Date</label><input type="date" id="dd-date"></div>`;
+  if(bfFields.includes('people')) bfFieldsHTML += `<div><label>Travellers</label><select id="dd-people">${peopleOptsDD}</select></div>`;
+  if(bfFields.includes('name')) bfFieldsHTML += `<div><label>Your name</label><input type="text" id="dd-name"></div>`;
+  if(bfFields.includes('phone')) bfFieldsHTML += `<div><label>Phone / WhatsApp</label><input type="tel" id="dd-phone" placeholder="+998 90 123-45-67"></div>`;
+  if(bfFields.includes('email')) bfFieldsHTML += `<div><label>Email</label><input type="email" id="dd-email" placeholder="email@example.com"></div>`;
+  if(bfFields.includes('pickup')) bfFieldsHTML += `<div><label>Pick-up place</label><input type="text" id="dd-pickup" placeholder="Hotel / airport"></div>`;
+  if(bfFields.includes('dropoff')) bfFieldsHTML += `<div><label>Drop-off place</label><input type="text" id="dd-dropoff" placeholder="Hotel / airport"></div>`;
+  if(bfFields.includes('message')) bfFieldsHTML += `<div class="dd-full"><label>Question / special requests</label><textarea id="dd-message"></textarea></div>`;
+
+  // SURVEY HTML with PLACEHOLDERS
+  let surveyHTML = '';
+  if(item.survey && item.survey.enabled && item.survey.questions && item.survey.questions.length > 0){
+    surveyHTML = `
+      <h3 id="dd-survey-anchor">${tk.surveyTitle}</h3>
+      <p style="color:var(--muted);font-size:14px;">${tk.surveyNote}</p>
+      <div class="survey-container">
+        ${item.survey.questions.map((q, qi) => {
+          const placeholders = q.placeholders || [''];
+          const firstPlaceholder = placeholders[0] || '';
+          const extraPlaceholders = placeholders.slice(1).filter(p => p && p.trim());
+          
+          let inputHtml = '';
+          if(q.type === 'textarea'){
+            inputHtml = `<textarea id="dd-survey-${qi}" placeholder="${esc(firstPlaceholder)}"></textarea>`;
+          } else if(q.type === 'select'){
+            const opts = (q.options||['']).map(o => `<option value="${esc(o)}">${esc(o)}</option>`).join('');
+            inputHtml = `<select id="dd-survey-${qi}">${opts}</select>`;
+          } else if(q.type === 'number'){
+            inputHtml = `<input type="number" id="dd-survey-${qi}" placeholder="${esc(firstPlaceholder)}">`;
+          } else if(q.type === 'price'){
+            inputHtml = `<input type="number" id="dd-survey-${qi}" placeholder="${esc(firstPlaceholder||'$')}" step="0.01">`;
+          } else if(q.type === 'date'){
+            inputHtml = `<input type="date" id="dd-survey-${qi}">`;
+          } else {
+            inputHtml = `<input type="text" id="dd-survey-${qi}" placeholder="${esc(firstPlaceholder)}">`;
+          }
+          
+          let extraPlaceholdersHtml = '';
+          if(extraPlaceholders.length > 0){
+            extraPlaceholdersHtml = `
+              <div style="font-size:12px;color:var(--muted);margin-top:4px;">
+                Masalan: ${extraPlaceholders.map(p => `"${esc(p)}"`).join(', ')}
+              </div>
+            `;
+          }
+          
+          return `
+            <div class="survey-question">
+              <label>${esc(q.text)} ${q.required ? '<span class="required-star">*</span>' : ''}</label>
+              ${inputHtml}
+              ${extraPlaceholdersHtml}
+            </div>
+          `;
+        }).join('')}
+      </div>
+    `;
+  }
+
+  const bookingSection = bfEnabled ? `
+    <h3 id="dd-booking-anchor">📝 Book this tour</h3>
+    <div class="dd-booking-panel" id="booking">
+      <div class="dd-form-grid">${bfFieldsHTML}</div>
+      ${surveyHTML}
+      <div class="dd-actions">
+        <button type="button" class="btn-wa" onclick="ddSubmitBooking('wa')">💬 Send via WhatsApp</button>
+        <button type="button" class="btn-tg" onclick="ddSubmitBooking('tg')">✈️ Send via Telegram</button>
+      </div>
+      <p class="dd-note">Clicking a button opens the app with your message ready to send.</p>
+    </div>` : '';
+
+  let quickBoxes = '';
+  if(item.duration || item.distance){
+    quickBoxes = `<div class="qi-row">
+      ${item.duration ? `<div class="qi-box"><span>${tk.quickDuration}</span><b>${esc(item.duration[currentLang]||item.duration.en||'')}</b></div>` : ''}
+      ${item.distance ? `<div class="qi-box"><span>${tk.quickDistance}</span><b>${esc(item.distance)}</b></div>` : ''}
+    </div>`;
+  }
+
+  const priceLines = (item.vehicles||[]).map((v,vIdx)=>`<div class="p-row"><span>${esc(v.label[currentLang])}</span><b>$${v.price}</b><button type="button" class="p-book-btn" onclick="ddGoToBooking(${vIdx})">${tk.bookNow}</button></div>`).join('');
+
+  const cancelHTML = tk.cancelList.map(c=>`<li><b>${esc(c.l)}</b> ${esc(c.t)}</li>`).join('');
+
+  const gallery = (item.images||[]).filter(u=>u && u.length>0).map(u=>`<img src="${esc(u)}" class="gal-img">`).join('');
+
+  const includedList = (item.included && item.included[currentLang]) || tk.includedList;
+  const excludedList = (item.excluded && item.excluded[currentLang]) || tk.excludedList;
+  const recommendList = (item.recommend && item.recommend[currentLang]) || tk.recommendList;
+
+  let tableHTML = '';
+  const rows = item.tableRows || {};
+  if(Object.keys(rows).length > 0){
+    tableHTML = `<h3>Additional Information</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:14px;margin-bottom:20px;">
+        <thead><tr style="background:#E4DCC9;">
+          <th style="padding:8px 12px;text-align:left;border:1px solid #E4DCC9;">Field</th>
+          <th style="padding:8px 12px;text-align:left;border:1px solid #E4DCC9;">Value</th>
+        </tr></thead>
+        <tbody>`;
+    for(const [key, val] of Object.entries(rows)){
+      tableHTML += `<tr><td style="padding:8px 12px;border:1px solid #E4DCC9;font-weight:600;">${esc(key)}</td><td style="padding:8px 12px;border:1px solid #E4DCC9;">${esc(val)}</td></tr>`;
+    }
+    tableHTML += `</tbody></table>`;
+  }
+
+  const waLink = whatsappUrl();
+  const tgLink = telegramUrl();
+
+  const surveyQuestions = (item.survey && item.survey.questions) || [];
+
+  win.document.write(`<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${esc(item.name[currentLang])} — ${esc(state.siteName)}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;}
+    body{font-family:'Inter',sans-serif;background:#F6F1E6;color:#1B1B1B;margin:0;padding:0;}
+    a{text-decoration:none;}
+    .dd-header{background:#1a0e08;box-shadow:0 2px 12px rgba(0,0,0,.4);position:sticky;top:0;z-index:20;}
+    .dd-header-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;max-width:1000px;margin:0 auto;padding:14px 24px;}
+    .dd-brand{display:flex;align-items:center;gap:10px;color:#fff;}
+    .dd-brand-mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,#C9A84C,#D4652A);flex-shrink:0;overflow:hidden;}
+    .dd-brand-mark img{width:100%;height:100%;object-fit:cover;}
+    .dd-brand b{font-family:'Zilla Slab',serif;font-size:17px;color:#fff;}
+    .dd-nav{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+    .dd-nav a{color:#EADFD3;font-size:13.5px;font-weight:500;border-bottom:2px solid transparent;padding:4px 2px;}
+    .dd-nav a:hover{color:#fff;border-color:#C9A84C;}
+    .dd-nav .dd-enq-btn{background:#D4652A;color:#fff;padding:9px 16px;border-radius:9px;font-weight:700;font-size:13.5px;}
+    .dd-nav .dd-enq-btn:hover{background:#A84F1E;}
+    .wrap{max-width:820px;margin:0 auto;padding:36px 24px 70px;}
+    h1{font-family:'Zilla Slab',serif;color:#142C4F;font-size:28px;margin:0 0 16px;}
+    h3{font-family:'Zilla Slab',serif;color:#142C4F;font-size:18px;border-bottom:2px solid #E2792A;padding-bottom:8px;margin-top:36px;}
+    p,li,div.desc{color:#444;line-height:1.75;font-size:15.5px;}
+    .qi-row{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0 6px;}
+    .qi-box{border:1px solid #E4DCC9;border-radius:12px;padding:12px 18px;background:#fff;min-width:150px;}
+    .qi-box span{display:block;font-size:12px;color:#6b7280;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;}
+    .qi-box b{font-family:'JetBrains Mono',monospace;color:#142C4F;font-size:15.5px;}
+    .price-box{background:#fff;border:1px solid #E4DCC9;border-radius:14px;padding:20px 22px;margin-top:14px;}
+    .p-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;font-size:15px;border-bottom:1px dashed #E4DCC9;flex-wrap:wrap;}
+    .p-row:last-child{border-bottom:none;}
+    .p-row b{font-family:'JetBrains Mono',monospace;color:#C4611B;font-size:16px;margin-right:auto;padding-left:14px;}
+    .p-book-btn{background:#E2792A;color:#fff;border:none;padding:9px 16px;border-radius:8px;font-weight:700;font-size:13.5px;cursor:pointer;white-space:nowrap;}
+    .p-book-btn:hover{background:#C4611B;}
+    .payment-note{font-size:13.5px;color:#6b7280;margin-top:12px;line-height:1.6;}
+    .cancel-list{list-style:none;padding:0;margin:14px 0 0;}
+    .cancel-list li{padding:8px 0;border-bottom:1px dashed #E4DCC9;font-size:14.5px;}
+    .cancel-list li:last-child{border-bottom:none;}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px;}
+    .gal-img{width:100%;height:150px;object-fit:cover;border-radius:10px;border:1px solid #E4DCC9;}
+    table{width:100%;border-collapse:collapse;margin:14px 0;}
+    table th, table td{padding:10px 14px;border:1px solid #E4DCC9;text-align:left;}
+    table th{background:#E4DCC9;font-weight:700;}
+    .dd-booking-panel{background:#fff;border:1px solid #E4DCC9;border-radius:16px;padding:26px;margin-top:14px;box-shadow:0 10px 28px rgba(20,44,79,.08);}
+    .dd-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+    .dd-form-grid .dd-full{grid-column:1/-1;}
+    .dd-booking-panel label{display:block;font-size:12px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px;}
+    .dd-booking-panel input, .dd-booking-panel select, .dd-booking-panel textarea{width:100%;padding:10px 12px;border:1.5px solid #E4DCC9;border-radius:9px;font-family:inherit;font-size:14.5px;background:#F6F1E6;color:#1B1B1B;}
+    .dd-booking-panel textarea{min-height:60px;resize:vertical;}
+    .dd-actions{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap;}
+    .dd-actions button{flex:1;min-width:180px;justify-content:center;padding:12px;border:none;border-radius:10px;font-weight:700;font-size:14.5px;cursor:pointer;color:#fff;}
+    .btn-wa{background:#1B6E6A;}
+    .btn-wa:hover{background:#0E3B3E;}
+    .btn-tg{background:#D4652A;}
+    .btn-tg:hover{background:#A84F1E;}
+    .dd-note{font-size:12px;color:#6b7280;margin-top:12px;text-align:center;}
+    .survey-container{margin-top:16px;}
+    .survey-question{margin-bottom:18px;padding:14px;border:1px solid #E4DCC9;border-radius:10px;background:#FAF7F0;}
+    .survey-question label{font-weight:600;font-size:14px;color:#1B1B1B;text-transform:none;letter-spacing:0;}
+    .survey-question .required-star{color:#c0392b;}
+    .survey-question input,.survey-question select,.survey-question textarea{margin-top:6px;background:#fff;width:100%;padding:10px 12px;border:1.5px solid #E4DCC9;border-radius:9px;font-family:inherit;font-size:14.5px;}
+    @media(max-width:640px){.gallery-grid{grid-template-columns:repeat(2,1fr);} .dd-form-grid{grid-template-columns:1fr;} .dd-nav{display:none;}}
+  </style></head>
+  <body>
+    <div class="dd-header">
+      <div class="dd-header-inner">
+        <a class="dd-brand" href="${esc(baseUrl)}"><div class="dd-brand-mark">${LOGO_DATA_URI && LOGO_DATA_URI.indexOf('LOGO_PLACEHOLDER')===-1 ? `<img src="${LOGO_DATA_URI}" alt="logo">` : ''}</div><b>${esc(state.siteName)}</b></a>
+        <div class="dd-nav">
+          <a href="${esc(baseUrl)}#home">Home</a>
+          <a href="${esc(baseUrl)}#services">Services</a>
+          <a href="${esc(baseUrl)}#tours">Tours</a>
+          <a href="${esc(baseUrl)}#about">About</a>
+          <a href="${esc(baseUrl)}#contact">Contact</a>
+          ${bfEnabled ? `<a class="dd-enq-btn" href="#booking">Enquiry</a>` : `<a class="dd-enq-btn" href="${esc(baseUrl)}#contact">Enquiry</a>`}
+        </div>
+      </div>
+    </div>
+    <div class="wrap">
+      <h1>${esc(item.name[currentLang])}</h1>
+      ${quickBoxes}
+      ${item.route && item.route[currentLang] ? `<h3>${tk.route}</h3><p>${esc(item.route[currentLang])}</p>` : ''}
+      <h3>${tk.desc}</h3><div class="desc">${mdToHtml(item.description ? item.description[currentLang] : '')}</div>
+      <h3>${tk.included}</h3><ul>${includedList.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
+      <h3>${tk.excluded}</h3><ul>${excludedList.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
+      <h3>${tk.recommend}</h3><ul>${recommendList.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
+      <h3>${tk.paymentTitle}</h3>
+      <div class="price-box">${priceLines}</div>
+      <p class="payment-note">${tk.paymentNote}</p>
+      <h3>${tk.cancelTitle}</h3>
+      <ul class="cancel-list">${cancelHTML}</ul>
+      ${tableHTML}
+      ${gallery ? `<h3>${tk.galleryTitle}</h3><div class="gallery-grid">${gallery}</div>` : ''}
+      ${bookingSection}
+    </div>
+    <script>
+      const DD_TOUR_NAME = ${JSON.stringify(item.name.en || item.name[currentLang])};
+      const DD_SITE_NAME = ${JSON.stringify(state.siteName)};
+      const DD_VEHICLES = ${JSON.stringify((item.vehicles||[]).map(v=>({label: v.label.en || v.label[currentLang], price: v.price})))};
+      const DD_WA_LINK = ${JSON.stringify(waLink)};
+      const DD_TG_LINK = ${JSON.stringify(tgLink)};
+      const DD_SECTION_ITEMS = ${JSON.stringify(sectionItemsArr.map(it2=>({id:it2.id, name:(it2.name.en||it2.name[currentLang]), vehicles:(it2.vehicles||[]).map(v=>({label: v.label.en || v.label[currentLang], price: v.price}))})))};
+      const DD_SURVEY_QUESTIONS = ${JSON.stringify(surveyQuestions)};
+      let DD_CURRENT_TOUR_ID = ${item.id};
+
+      function ddUpdateTourVehicles(){
+        const sel = document.getElementById('dd-tour');
+        if(!sel) return;
+        DD_CURRENT_TOUR_ID = Number(sel.value);
+        const found = DD_SECTION_ITEMS.find(x=>x.id===DD_CURRENT_TOUR_ID);
+        const vehSel = document.getElementById('dd-veh');
+        if(vehSel && found){
+          vehSel.innerHTML = found.vehicles.map((v,i)=>'<option value="'+i+'">'+v.label+' — $'+v.price+'</option>').join('');
+        }
+      }
+
+      function ddAutofillPrice(){
+        // no price field in this version
+      }
+
+      function ddGoToBooking(vehIdx){
+        const veh = document.getElementById('dd-veh');
+        const selectedTour = DD_SECTION_ITEMS.find(x=>x.id===DD_CURRENT_TOUR_ID);
+        const vehicles = selectedTour ? selectedTour.vehicles : DD_VEHICLES;
+        if(veh && vehicles[vehIdx] !== undefined){ veh.value = vehIdx; }
+        const anchor = document.getElementById('booking');
+        if(anchor){ anchor.scrollIntoView({behavior:'smooth', block:'start'}); }
+        else { window.location.href = DD_WA_LINK; }
+      }
+
+      function ddSubmitBooking(channel){
+        const g = id => document.getElementById(id);
+        const name = g('dd-name') ? g('dd-name').value.trim() : '';
+        const phone = g('dd-phone') ? g('dd-phone').value.trim() : '';
+        if((g('dd-name') && !name) || (g('dd-phone') && !phone)){
+          alert('Please enter your name and phone number.');
+          return;
+        }
+        let tourName = DD_TOUR_NAME;
+        let vehicles = DD_VEHICLES;
+        if(g('dd-tour')){
+          const found = DD_SECTION_ITEMS.find(x=>x.id===DD_CURRENT_TOUR_ID);
+          if(found){ tourName = found.name; vehicles = found.vehicles; }
+        }
+        let out = DD_SITE_NAME + " — New booking request\\n";
+        if(name) out += "Name: " + name + "\\n";
+        if(phone) out += "Phone: " + phone + "\\n";
+        if(g('dd-email') && g('dd-email').value.trim()) out += "Email: " + g('dd-email').value.trim() + "\\n";
+        out += "Tour: " + tourName + "\\n";
+        if(g('dd-veh') && vehicles[g('dd-veh').value]){
+          const v = vehicles[g('dd-veh').value];
+          out += "Vehicle: " + v.label + "\\nPrice: $" + v.price + "\\n";
+        }
+        if(g('dd-people') && g('dd-people').value) out += "Travellers: " + g('dd-people').value + "\\n";
+        if(g('dd-date') && g('dd-date').value) out += "Date: " + g('dd-date').value + "\\n";
+        if(g('dd-pickup') && g('dd-pickup').value.trim()) out += "Pickup: " + g('dd-pickup').value.trim() + "\\n";
+        if(g('dd-dropoff') && g('dd-dropoff').value.trim()) out += "Drop-off: " + g('dd-dropoff').value.trim() + "\\n";
+        if(g('dd-message') && g('dd-message').value.trim()) out += "Message: " + g('dd-message').value.trim() + "\\n";
+
+        // Survey answers
+        if(DD_SURVEY_QUESTIONS && DD_SURVEY_QUESTIONS.length > 0){
+          out += "\\n--- SO'ROVNOMA ---\\n";
+          let missingRequired = false;
+          DD_SURVEY_QUESTIONS.forEach((q, qi) => {
+            const el = g('dd-survey-'+qi);
+            if(el){
+              const val = el.value ? el.value.trim() : '';
+              if(q.required && !val){ missingRequired = true; }
+              const answer = val || '(javob berilmagan)';
+              out += q.text + ": " + answer + "\\n";
+            }
+          });
+          if(missingRequired){
+            alert('Please answer all required questionnaire questions.');
+            return;
+          }
+        }
+
+        const saved = JSON.parse(localStorage.getItem('booking-submissions-v1') || '[]');
+        saved.unshift({channel: channel === 'wa' ? 'WhatsApp' : 'Telegram', message: out, createdAt: new Date().toISOString()});
+        localStorage.setItem('booking-submissions-v1', JSON.stringify(saved.slice(0, 100)));
+        if(channel === 'wa'){
+          window.open(messageUrl(DD_WA_LINK, out), "_blank");
+          return;
+        }
+        fetch('/api/telegram', {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({message:out})
+        }).then(async response => {
+          const result = await response.json();
+          if(!response.ok || !result.ok) throw new Error(result.error || 'Telegram sending failed');
+          alert('Telegramga yuborildi');
+        }).catch(error => alert('Telegram yuborilmadi: ' + error.message));
+      }
+    <\\/script>
+  </body></html>`);
+  win.document.close();
+}
+
+// ================================================================
+// TOGGLE MOBILE NAV
+// ================================================================
+function toggleMobileNav(){
+  const nav = document.querySelector('nav.links');
+  nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
+  nav.style.cssText += 'flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--header-bg);padding:16px 24px;';
+}
+
+// ================================================================
+// OPEN BOOKING
+// ================================================================
+function openBooking(sectionKey, id, vehicleIdx){
+  document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+  if(sectionKey!==undefined && id!==undefined){
+    setTimeout(()=>{
+      document.getElementById('f-tour').value = sectionKey+':'+id;
+      updateVehicleOptions();
+      if(vehicleIdx!==undefined){
+        document.getElementById('f-vehicle').value = vehicleIdx;
+        autofillPrice();
+      }
+    }, 400);
+  }
+}
+
+function scrollToSection(id){
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    return;
+  }
+  const target = document.querySelector('[id="'+id+'"]');
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    return;
+  }
+  if (id === 'shared-trips' || id === 'two-day' || id === 'aral-sea' || id === 'transfers' || id === 'cars') {
+    const map = {
+      'shared-trips': 'sharedDayTrips',
+      'two-day': 'twoDayTours',
+      'aral-sea': 'aralSea',
+      'transfers': 'privateTransfers',
+      'cars': 'cars'
+    };
+    openStandalone(map[id]);
+  }
+}
+
+// ================================================================
+// BOOKING FORM
+// ================================================================
+function populateTourSelect(){
+  let html = `<option value="">—</option>`;
+  SECTIONS_META.forEach(sec=>{
+    if(sec.key === 'cars') return;
+    const items = (state.sections[sec.key] && state.sections[sec.key].items) || [];
+    if(items.length){
+      const secLabel = ADMIN_SECTION_TITLES[sec.key];
+      html += `<optgroup label="${esc(secLabel)}">`;
+      items.forEach(it=>{
+        html += `<option value="${sec.key}:${it.id}">${esc(it.name.en || it.name[currentLang])}</option>`;
+      });
+      html += `</optgroup>`;
+    }
+  });
+  html += `<option value="other">Other / not sure</option>`;
+  const sel = document.getElementById('f-tour');
+  const prevVal = sel.value;
+  sel.innerHTML = html;
+  if(prevVal){ sel.value = prevVal; }
+}
+
+function updateVehicleOptions(){
+  const val = document.getElementById('f-tour').value;
+  const vehSel = document.getElementById('f-vehicle');
+  const priceField = document.getElementById('f-price');
+  if(!val || val==='other'){ vehSel.innerHTML = `<option value="">—</option>`; priceField.value=''; return; }
+  const [secKey,id] = val.split(':');
+  const item = (state.sections[secKey].items||[]).find(x=>String(x.id)===id);
+  if(!item || !item.vehicles || !item.vehicles.length){ vehSel.innerHTML = `<option value="">—</option>`; priceField.value=''; return; }
+  vehSel.innerHTML = item.vehicles.map((v,i)=>`<option value="${i}">${esc(v.label.en || v.label[currentLang])} — $${v.price}</option>`).join('');
+  autofillPrice();
+}
+
+function autofillPrice(){
+  const val = document.getElementById('f-tour').value;
+  const priceField = document.getElementById('f-price');
+  if(!val || val==='other'){ return; }
+  const [secKey,id] = val.split(':');
+  const item = (state.sections[secKey].items||[]).find(x=>String(x.id)===id);
+  const vIdx = document.getElementById('f-vehicle').value;
+  if(item && item.vehicles && item.vehicles[vIdx]){ priceField.value = "$"+item.vehicles[vIdx].price; }
+}
+
+function buildMessage(){
+  const name = document.getElementById('f-name').value.trim();
+  const phone = document.getElementById('f-phone').value.trim();
+  if(!name || !phone){ alert('Please enter your name and phone number.'); return null; }
+  const tourVal = document.getElementById('f-tour').value;
+  let tourText = "Other / not sure";
+  let vehicleText = '';
+  if(tourVal && tourVal!=='other'){
+    const [secKey,id] = tourVal.split(':');
+    const item = (state.sections[secKey] && state.sections[secKey].items || []).find(x=>String(x.id)===id);
+    if(item){ tourText = item.name.en || item.name[currentLang]; }
+    const vIdx = document.getElementById('f-vehicle').value;
+    if(item && item.vehicles && item.vehicles[vIdx]){ vehicleText = item.vehicles[vIdx].label.en || item.vehicles[vIdx].label[currentLang]; }
+  }
+  const date = document.getElementById('f-date').value;
+  const price = document.getElementById('f-price').value;
+  const people = document.getElementById('f-people').value;
+  const pickup = document.getElementById('f-pickup').value;
+  const pickupTime = document.getElementById('f-pickuptime').value;
+  const dropoff = document.getElementById('f-dropoff').value;
+  const email = document.getElementById('f-email').value;
+  const members = document.getElementById('f-members').value;
+  const msg = document.getElementById('f-message').value.trim();
+
+  let out = `${state.siteName} — New booking request\n`;
+  out += `Name: ${name}\nPhone: ${phone}\n`;
+  if(email) out += `Email: ${email}\n`;
+  out += `Tour: ${tourText}\n`;
+  if(vehicleText) out += `Vehicle: ${vehicleText}\n`;
+  if(price) out += `Price: ${price}\n`;
+  if(people) out += `Travellers: ${people}\n`;
+  if(date) out += `Date: ${date}\n`;
+  if(pickupTime) out += `Pickup time: ${pickupTime}\n`;
+  if(pickup) out += `Pickup: ${pickup}\n`;
+  if(dropoff) out += `Drop-off: ${dropoff}\n`;
+  if(members) out += `Group members: ${members}\n`;
+  if(msg) out += `Message: ${msg}`;
+  return out;
+}
+
+async function submitToTelegram(){
+  const text = buildMessage();
+  if(!text) return;
+  recordSubmission('Telegram', text);
+  await sendTelegramToOwner(text);
+}
+
+function submitToWhatsApp(){
+  const text = buildMessage();
+  if(!text) return;
+  recordSubmission('WhatsApp', text);
+  window.open(messageUrl(whatsappUrl(), text), "_blank");
+}
+
+function messageUrl(baseUrl, text){
+  const separator = baseUrl.includes('?') ? '&' : '?';
+  return baseUrl + separator + 'text=' + encodeURIComponent(text);
+}
+
+function recordSubmission(channel, message){
+  const submissions = storage.get('booking-submissions-v1', true) || [];
+  submissions.unshift({ channel, message, createdAt: new Date().toISOString() });
+  storage.set('booking-submissions-v1', submissions.slice(0, 100), true);
+}
+
+async function sendTelegramToOwner(message){
+  try{
+    const response = await fetch('/api/telegram', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({message})
+    });
+    const result = await response.json();
+    if(!response.ok || !result.ok) throw new Error(result.error || 'Telegram sending failed');
+    showToast('✅ Telegramga yuborildi');
+  }catch(error){
+    showToast('❌ Telegram yuborilmadi: '+error.message);
+  }
+}
+
+// ================================================================
+// ADMIN
+// ================================================================
+function shouldOpenAdminRoute(){
+  try{
+    const p = window.location.pathname.toLowerCase();
+    const q = new URLSearchParams(window.location.search);
+    return /\/admin(?:\/|\.html)?$/.test(p) || q.get('admin') === '1' || q.get('panel') === 'admin';
+  } catch(e){ return false; }
+}
+
+function openAdmin(){
+  if(adminAuthed){
+    fillAdminForm();
+    document.getElementById('admin-panel-bg').classList.add('open');
+    return;
+  }
+  document.getElementById('admin-password').value='';
+  document.getElementById('admin-login-bg').classList.add('open');
+}
+
+function closeModal(id){ document.getElementById(id).classList.remove('open'); }
+
+async function checkAdminPassword(){
+  const pw = document.getElementById('admin-password').value;
+  const savedPassword = storage.get('admin-password', false) || ADMIN_PASSWORD;
+  if(pw === savedPassword){
+    adminAuthed = true;
+    try{ await storage.set('admin-authed','true', false); }catch(e){}
+    closeModal('admin-login-bg');
+    fillAdminForm();
+    document.getElementById('admin-panel-bg').classList.add('open');
+    showToast("✅ Logged in to Admin Panel");
+  } else { 
+    showToast("❌ Wrong password");
+  }
+}
+
+async function changeAdminPassword(){
+  const newPw = document.getElementById('a-new-password').value.trim();
+  if(!newPw || newPw.length < 4){ showToast("❌ Minimum 4 characters required"); return; }
+  try{
+    await storage.set('admin-password', newPw, false);
+    document.getElementById('a-new-password').value = '';
+    showToast("✅ Password changed");
+  }catch(e){ showToast("❌ Error"); }
+}
+
+async function adminLogout(){
+  adminAuthed = false;
+  try{ await storage.delete('admin-authed', false); }catch(e){}
+  closeModal('admin-panel-bg');
+  showToast("👋 Logged out");
+}
+
+// ================================================================
+// FILL ADMIN FORM
+// ================================================================
+function fillAdminForm(){
+  document.getElementById('a-current-lang-note').textContent = currentLang.toUpperCase();
+  document.getElementById('a-sitename').value = state.siteName;
+  document.getElementById('a-tagline').value = state.tagline[currentLang] || state.tagline.uz;
+  document.getElementById('a-about').value = state.aboutText[currentLang] || state.aboutText.uz;
+  document.getElementById('a-phone1').value = state.phone1;
+  document.getElementById('a-phone2').value = state.phone2;
+  document.getElementById('a-whatsapp').value = state.whatsapp;
+  document.getElementById('a-whatsapp-link').value = state.whatsappLink || '';
+  document.getElementById('a-telegram').value = state.telegram;
+  document.getElementById('a-email').value = state.email;
+  document.getElementById('a-address').value = state.address;
+  document.getElementById('a-maplink').value = state.mapLink;
+  document.getElementById('a-jsonbin-id').value = apiConfig.jsonbinId;
+  document.getElementById('a-jsonbin-key').value = apiConfig.jsonbinKey;
+  document.getElementById('a-imgbb-key').value = apiConfig.imgbbKey;
+  renderAdminSubmissions();
+  renderAdminSections();
+}
+
+function renderAdminSubmissions(){
+  const wrap = document.getElementById('admin-submissions-wrap');
+  if(!wrap) return;
+  const submissions = storage.get('booking-submissions-v1', true) || [];
+  wrap.innerHTML = `
+    <div style="background:linear-gradient(135deg,#0e3b3e,#1b6e6a);color:#fff;border-radius:12px;padding:18px;margin-bottom:20px;box-shadow:0 8px 22px rgba(14,59,62,.25);">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+        <div><h4 style="margin:0;color:#fff;font-size:18px;">📥 Yangi so‘rovlar <span style="font-size:13px;opacity:.8;">(${submissions.length})</span></h4><p style="margin:5px 0 0;color:#d9f4ef;font-size:13px;">WhatsApp va Telegram orqali yuborilgan so‘rovlar</p></div>
+        <button class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.5);" onclick="clearAdminSubmissions()">Clear</button>
+      </div>
+      <div style="margin-top:14px;max-height:330px;overflow:auto;">
+        ${submissions.length ? submissions.map((entry, index) => `
+          <div style="background:rgba(255,255,255,.96);color:var(--ink);border-radius:8px;padding:12px;margin-top:8px;">
+            <div style="display:flex;justify-content:space-between;gap:8px;font-size:12px;font-weight:700;color:var(--teal-2);"><span>${esc(entry.channel)}</span><span>${esc(new Date(entry.createdAt).toLocaleString())}</span></div>
+            <textarea id="submission-${index}" style="width:100%;min-height:110px;margin-top:8px;background:#fff;color:var(--ink);font:12px/1.5 'JetBrains Mono',monospace;">${esc(entry.message)}</textarea>
+            <button class="btn btn-ghost" style="margin-top:8px;padding:6px 12px;font-size:12px;" onclick="saveAdminSubmission(${index})">Save changes</button>
+          </div>`).join('') : '<div style="padding:12px 0;color:#d9f4ef;font-size:13px;">Hozircha yangi so‘rov yo‘q.</div>'}
+      </div>
+    </div>`;
+}
+
+function saveAdminSubmission(index){
+  const field = document.getElementById('submission-'+index);
+  const submissions = storage.get('booking-submissions-v1', true) || [];
+  if(!field || !submissions[index]) return;
+  submissions[index].message = field.value;
+  storage.set('booking-submissions-v1', submissions, true);
+  showToast('✅ So‘rov o‘zgartirildi');
+}
+
+function clearAdminSubmissions(){
+  if(!confirm('Barcha so‘rovlarni o‘chirishni xohlaysizmi?')) return;
+  storage.delete('booking-submissions-v1');
+  renderAdminSubmissions();
+}
+
+window.addEventListener('storage', (event) => {
+  if(event.key === 'booking-submissions-v1') renderAdminSubmissions();
+});
+
+async function saveApiConfig(){
+  apiConfig.jsonbinId = document.getElementById('a-jsonbin-id').value.trim();
+  apiConfig.jsonbinKey = document.getElementById('a-jsonbin-key').value.trim();
+  apiConfig.imgbbKey = document.getElementById('a-imgbb-key').value.trim();
+  try{
+    await storage.set('api-config', apiConfig, true);
+    showToast("✅ API settings saved");
+  }catch(e){ showToast("❌ Error saving"); }
+}
+
+// ================================================================
+// RENDER ADMIN SECTIONS
+// ================================================================
+function renderAdminSections(){
+  const wrap = document.getElementById('admin-sections-wrap');
+  wrap.innerHTML = SECTIONS_META.map(sec=>{
+    const items = (state.sections[sec.key] && state.sections[sec.key].items) || [];
+    const title = ADMIN_SECTION_TITLES[sec.key];
+    const standaloneNote = STANDALONE_SECTIONS.includes(sec.key) ? ` <span style="color:var(--terracotta-dark);font-size:11px;">(opens in new window from header)</span>` : '';
+    return `
+    <h5 style="margin-top:30px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--terracotta-dark);border-top:2px solid var(--line);padding-top:20px;">${esc(title)} (${items.length})${standaloneNote}</h5>
+    ${items.map((it,idx)=>renderAdminItemRow(sec.key, idx, it)).join('')}
+    <button class="btn btn-ghost" style="width:100%;justify-content:center;" onclick="addContainer('${sec.key}')">+ Add New Container</button>
+    `;
+  }).join('');
+}
+
+// ================================================================
+// RENDER ADMIN ITEM ROW (with SURVEY + PLACEHOLDERS button)
+// ================================================================
+function renderAdminItemRow(sec, idx, it){
+  const taId = `desc-${sec}-${idx}`;
+  const tableRows = it.tableRows || {};
+  const hasSurvey = it.survey && it.survey.enabled && it.survey.questions && it.survey.questions.length > 0;
+  const presetOptions = VEHICLE_PRESETS.map((p,pi)=>`<option value="${pi}">${esc(p[currentLang])}</option>`).join('');
+  const bookingEnabled = !(it.bookingForm && it.bookingForm.enabled===false);
+
+  return `
+  <div class="admin-tour-row">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+      <h5>#${it.id}${it.category?(' · '+esc(CATEGORY_LABELS[it.category]?CATEGORY_LABELS[it.category][currentLang]:it.category)):''}</h5>
+      <button class="btn btn-ghost" style="padding:4px 10px;font-size:12px;color:#c0392b;" onclick="removeContainer('${sec}',${idx})">✕ Delete</button>
+    </div>
+    <div class="field"><label>Name</label><input type="text" value="${esc(it.name[currentLang])}" oninput="updateItemField('${sec}',${idx},'name',this.value)"></div>
+    <div class="field"><label>Route (from-to)</label><input type="text" value="${esc((it.route&&it.route[currentLang])||'')}" oninput="updateItemField('${sec}',${idx},'route',this.value)"></div>
+
+    <label>Vehicles and prices</label>
+    <div class="vehicle-picker-row">
+      <select id="vpick-${sec}-${idx}">${presetOptions}</select>
+      <input type="number" id="vprice-${sec}-${idx}" placeholder="$ price">
+      <button type="button" class="btn btn-gold" style="padding:9px 14px;font-size:13px;white-space:nowrap;" onclick="addPresetVehicle('${sec}',${idx})">+ Tanlang va qo'shish</button>
+    </div>
+    ${(it.vehicles||[]).map((v,vIdx)=>`
+      <div style="display:flex;gap:8px;margin-bottom:8px;">
+        <input type="text" style="flex:2;" placeholder="e.g. Sedan" value="${esc(v.label[currentLang])}" oninput="updateVehicleLabel('${sec}',${idx},${vIdx},this.value)">
+        <input type="number" style="flex:1;" placeholder="$" value="${v.price||''}" oninput="updateVehiclePrice('${sec}',${idx},${vIdx},this.value)">
+        <button class="btn btn-ghost" style="padding:8px 12px;" onclick="removeVehicle('${sec}',${idx},${vIdx})">✕</button>
+      </div>`).join('')}
+    <button type="button" class="btn btn-ghost" style="font-size:12.5px;padding:7px 12px;margin-bottom:14px;" onclick="addVehicle('${sec}',${idx})">+ Add blank vehicle row</button>
+
+    <label>Description</label>
+    <div style="display:flex;gap:8px;margin-bottom:6px;">
+      <button type="button" class="btn btn-ghost" style="padding:6px 12px;font-size:13px;" onclick="insertBold('${taId}','${sec}',${idx})"><b>B</b>&nbsp;Bold</button>
+      <button type="button" class="btn btn-ghost" style="padding:6px 12px;font-size:13px;" onclick="insertHR('${taId}','${sec}',${idx})">— Line</button>
+    </div>
+    <textarea id="${taId}" style="min-height:80px;" oninput="updateItemField('${sec}',${idx},'description',this.value)">${esc((it.description&&it.description[currentLang])||'')}</textarea>
+
+    <label style="margin-top:12px;display:block;">Image Gallery</label>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+      ${(it.images||[]).map((img,iIdx)=>`
+        <div style="width:120px;">
+          ${img?`<img src="${esc(img)}" style="width:120px;height:76px;object-fit:cover;border-radius:8px;border:1px solid var(--line);">`:`<div style="width:120px;height:76px;background:#fff;border-radius:8px;border:1px dashed var(--line);"></div>`}
+          <input type="text" placeholder="Image URL" value="${esc(img)}" style="font-size:11px;padding:6px;margin-top:4px;" oninput="updateImageUrl('${sec}',${idx},${iIdx},this.value)">
+          <button class="btn btn-ghost" style="width:100%;padding:4px;font-size:11px;margin-top:4px;" onclick="removeImage('${sec}',${idx},${iIdx})">✕ Remove</button>
+        </div>`).join('')}
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;">
+      <button type="button" class="btn btn-ghost" style="font-size:12.5px;padding:7px 12px;" onclick="addImageSlot('${sec}',${idx})">+ Add URL</button>
+      <label class="btn btn-ghost" style="font-size:12.5px;padding:7px 12px;margin-bottom:0;">📤 Upload via ImgBB<input type="file" accept="image/*" style="display:none;" onchange="uploadToImgbb(this.files[0],'${sec}',${idx})"></label>
+    </div>
+
+    <!-- TABLE ROWS -->
+    <label style="display:block;margin-top:6px;">📋 Additional Table Information</label>
+    <p style="font-size:12px;color:var(--muted);margin:4px 0 8px;">e.g. "Start time" → "09:00", "Meeting point" → "Hotel reception"</p>
+    <div class="admin-table-wrap">
+      <table class="admin-table">
+        <thead><tr><th>Field Name</th><th>Value</th><th style="width:50px;"></th></tr></thead>
+        <tbody id="table-${sec}-${idx}">
+          ${Object.entries(tableRows).map(([key, val], ri) => `
+            <tr>
+              <td><input type="text" value="${esc(key)}" oninput="updateTableRow('${sec}',${idx},${ri},'key',this.value)"></td>
+              <td><input type="text" value="${esc(val)}" oninput="updateTableRow('${sec}',${idx},${ri},'value',this.value)"></td>
+              <td><button class="btn btn-ghost" style="padding:4px 8px;font-size:12px;color:#c0392b;" onclick="removeTableRow('${sec}',${idx},${ri})">✕</button></td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    </div>
+    <button type="button" class="btn btn-ghost" style="font-size:12.5px;padding:7px 12px;margin-top:6px;" onclick="addTableRow('${sec}',${idx})">+ Add table row</button>
+
+    <!-- BOOKING FORM FIELDS -->
+    <label style="display:block;margin-top:16px;">📝 Booking / Enquiry Form ("Book this tour") — visible fields</label>
+    <p style="font-size:12px;color:var(--muted);margin:4px 0 8px;">Choose which fields appear in this tour's own booking form (shown on its details page under "Book this tour").</p>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:6px;">
+      ${BOOKING_FIELD_DEFS.map(f=>`
+        <label style="display:flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:7px 12px;font-size:13px;font-weight:500;text-transform:none;letter-spacing:0;cursor:pointer;">
+          <input type="checkbox" style="width:auto;" ${((it.bookingForm&&it.bookingForm.fields)||[]).includes(f.id)?'checked':''} onchange="toggleBookingField('${sec}',${idx},'${f.id}',this.checked)">
+          ${esc(f.label)}
+        </label>`).join('')}
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;margin-top:4px;font-size:13px;font-weight:600;text-transform:none;letter-spacing:0;">
+      <input type="checkbox" style="width:auto;" ${bookingEnabled?'checked':''} onchange="toggleBookingEnabled('${sec}',${idx},this.checked)">
+      Show "Book this tour" form for this container
+    </label>
+
+    <!-- ============================================================ -->
+    <!-- SURVEY / SO'ROVNOMA SECTION with PLACEHOLDERS -->
+    <!-- ============================================================ -->
+    <div style="margin-top:20px;border-top:2px dashed var(--gold);padding-top:16px;">
+      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+        <button class="btn btn-gold" onclick="openSurveyEditor('${sec}',${idx})">
+          📋 So'rovnoma yaratish
+        </button>
+        <span style="font-size:13px;font-weight:600;color:${hasSurvey ? 'var(--teal-2)' : 'var(--muted)'};">
+          ${hasSurvey ? '✅ So\'rovnoma mavjud ('+it.survey.questions.length+' ta savol)' : '❌ So\'rovnoma yo\'q'}
+        </span>
+        ${hasSurvey ? `<button class="btn btn-ghost" style="padding:4px 12px;font-size:12px;color:#c0392b;" onclick="deleteSurvey('${sec}',${idx})">🗑 O'chirish</button>` : ''}
+      </div>
+      ${hasSurvey ? `
+        <div style="margin-top:10px;font-size:13px;color:var(--muted);">
+          <details>
+            <summary style="cursor:pointer;font-weight:600;">Savollarni ko'rish</summary>
+            <ul style="padding-left:20px;margin-top:8px;">
+              ${it.survey.questions.map((q, qi) => `
+                <li>${qi+1}. ${esc(q.text)} (${esc(q.type)})${q.required ? ' *' : ''}
+                  ${q.placeholders && q.placeholders.length > 0 && q.placeholders[0] ? 
+                    ` — Masalan: ${q.placeholders.filter(p=>p&&p.trim()).map(p=>`"${esc(p)}"`).join(', ')}` : ''}
+                </li>
+              `).join('')}
+            </ul>
+          </details>
+        </div>
+      ` : ''}
+    </div>
+  </div>`;
+}
+
+function addPresetVehicle(sec, idx){
+  const pickSel = document.getElementById(`vpick-${sec}-${idx}`);
+  const priceInput = document.getElementById(`vprice-${sec}-${idx}`);
+  if(!pickSel) return;
+  const presetIdx = Number(pickSel.value);
+  const preset = VEHICLE_PRESETS[presetIdx];
+  const price = Number(priceInput.value) || 0;
+  const item = state.sections[sec].items[idx];
+  item.vehicles.push({ label: { uz:preset.uz, ru:preset.ru, en:preset.en }, price: price });
+  renderAdminSections();
+  showToast("✅ Vehicle qo'shildi");
+}
+
+// ================================================================
+// SURVEY FUNCTIONS (with PLACEHOLDERS)
+// ================================================================
+function openSurveyEditor(sec, idx){
+  surveyContext = { sec, idx };
+  const item = state.sections[sec].items[idx];
+  if (!item.survey) {
+    item.survey = { enabled: true, questions: [] };
+  }
+  
+  document.getElementById('survey-modal-title').textContent = `📋 So'rovnoma yaratish — ${esc(item.name.en || item.name[currentLang])}`;
+  renderSurveyQuestions();
+  document.getElementById('survey-modal').classList.add('open');
+}
+
+function renderSurveyQuestions(){
+  const item = state.sections[surveyContext.sec].items[surveyContext.idx];
+  const list = document.getElementById('survey-questions-list');
+  
+  list.innerHTML = (item.survey.questions || []).map((q, qi) => {
+    const placeholders = q.placeholders || [''];
+    return `
+    <div class="survey-question-item" data-idx="${qi}">
+      <div class="q-header">
+        <input type="text" placeholder="Savol matni" value="${esc(q.text)}" onchange="updateSurveyQuestion(${qi},'text',this.value)">
+        <select onchange="updateSurveyQuestion(${qi},'type',this.value)">
+          <option value="text" ${q.type==='text'?'selected':''}>Matn (qisqa)</option>
+          <option value="textarea" ${q.type==='textarea'?'selected':''}>Matn (uzun)</option>
+          <option value="number" ${q.type==='number'?'selected':''}>Raqam</option>
+          <option value="price" ${q.type==='price'?'selected':''}>Narx ($)</option>
+          <option value="date" ${q.type==='date'?'selected':''}>Sana</option>
+          <option value="select" ${q.type==='select'?'selected':''}>Tanlang (dropdown)</option>
+        </select>
+        <label style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;text-transform:none;letter-spacing:0;margin:0;">
+          <input type="checkbox" ${q.required?'checked':''} onchange="updateSurveyQuestion(${qi},'required',this.checked)">
+          Majburiy
+        </label>
+        <button class="btn btn-ghost" style="padding:4px 10px;font-size:12px;color:#c0392b;" onclick="removeSurveyQuestion(${qi})">✕</button>
+      </div>
+      
+      <!-- PLACEHOLDERS - bir nechta placeholder qo'shish imkoni -->
+      <div style="margin-top:10px;border-top:1px dashed var(--line);padding-top:10px;">
+        <label style="font-size:12px;color:var(--muted);text-transform:none;letter-spacing:0;font-weight:600;">📝 Placeholder namunalar (foydalanuvchiga ko'rsatiladi)</label>
+        <div id="placeholders-${qi}" style="margin-top:6px;">
+          ${placeholders.map((ph, pi) => `
+            <div class="placeholder-row">
+              <input type="text" placeholder="Placeholder ${pi+1}" value="${esc(ph)}" onchange="updateSurveyPlaceholder(${qi},${pi},this.value)">
+              <button class="btn btn-ghost" style="padding:2px 10px;font-size:12px;color:#c0392b;" onclick="removeSurveyPlaceholder(${qi},${pi})">✕</button>
+            </div>
+          `).join('')}
+        </div>
+        <button class="btn btn-ghost" style="font-size:12px;padding:4px 14px;margin-top:4px;" onclick="addSurveyPlaceholder(${qi})">+ Placeholder qo'shish</button>
+      </div>
+      
+      ${q.type === 'select' ? `
+        <div class="q-options">
+          <label style="font-size:12px;color:var(--muted);text-transform:none;letter-spacing:0;margin-bottom:4px;">Tanlov variantlari (10 tagacha qo'shishingiz mumkin)</label>
+          ${(q.options||['']).map((opt, oi) => `
+            <div class="opt-row">
+              <input type="text" placeholder="Variant ${oi+1}" value="${esc(opt)}" onchange="updateSurveyOption(${qi},${oi},this.value)">
+              <button class="btn btn-ghost" style="padding:2px 8px;font-size:12px;color:#c0392b;" onclick="removeSurveyOption(${qi},${oi})">✕</button>
+            </div>
+          `).join('')}
+          <button class="btn btn-ghost" style="font-size:12px;padding:4px 12px;margin-top:4px;" onclick="addSurveyOption(${qi})">+ Variant qo'shish</button>
+          <button class="btn btn-gold" style="font-size:12px;padding:4px 12px;margin-top:4px;margin-left:8px;" onclick="fillTenOptions(${qi})">+ 10 tagacha bo'sh joy qo'shish</button>
+        </div>
+      ` : ''}
+    </div>`;
+  }).join('') || `<p style="color:var(--muted);text-align:center;padding:30px 0;">Hali savol qo'shilmagan.</p>`;
+}
+
+function addSurveyQuestion(){
+  const item = state.sections[surveyContext.sec].items[surveyContext.idx];
+  if (!item.survey) item.survey = { enabled: true, questions: [] };
+  item.survey.questions.push({
+    text: "Yangi savol",
+    type: "text",
+    required: false,
+    placeholders: [""],
+    options: []
+  });
+  renderSurveyQuestions();
+}
+
+function removeSurveyQuestion(qi){
+  const item = state.sections[surveyContext.sec].items[surveyContext.idx];
+  if (!item.survey) return;
+  item.survey.questions.splice(qi, 1);
+  renderSurveyQuestions();
+}
+
+function updateSurveyQuestion(qi, field, value){
+  const item = state.sections[surveyContext.sec].items[surveyContext.idx];
+  if (!item.survey || !item.survey.questions[qi]) return;
+  if (field === 'required') {
+    item.survey.questions[qi].required = !!value;
+  } else {
+    item.survey.questions[qi][field] = value;
+  }
+  if(field === 'type'){ renderSurveyQuestions(); }
+}
+
+// PLACEHOLDER FUNCTIONS
+function addSurveyPlaceholder(qi){
+  const item = state.sections[surveyContext.sec].items[surveyContext.idx];
+  if (!item.survey || !item.survey.questions[qi]) return;
+  if (!item.survey.questions[qi].placeholders) {
+    item.survey.questions[qi].placeholders = [""];
+  }
+  item.survey.questions[qi].placeholders.push("");
+  renderSurveyQuestions();
+}
+
+function removeSurveyPlaceholder(qi, pi){
+  const item = state.sections[surveyContext.sec].items[surveyContext.idx];
+  if (!item.survey || !item.survey.questions[qi]) return;
+  if (!item.survey.questions[qi].placeholders) return;
+  item.survey.questions[qi].placeholders.splice(pi, 1);
+  if (item.survey.questions[qi].placeholders.length === 0) {
+    item.survey.questions[qi].placeholders = [""];
+  }
+  renderSurveyQuestions();
+}
+
+function updateSurveyPlaceholder(qi, pi, value){
+  const item = state.sections[surveyContext.sec].items[surveyContext.idx];
+  if (!item.survey || !item.survey.questions[qi]) return;
+  if (!item.survey.questions[qi].placeholders) {
+    item.survey.questions[qi].placeholders = [""];
+  }
+  item.survey.questions[qi].placeholders[pi] = value;
+}
+
+// OPTION FUNCTIONS
+function addSurveyOption(qi){
+  const item = state.sections[surveyContext.sec].items[surveyContext.idx];
+  if (!item.survey || !item.survey.questions[qi]) return;
+  if (!item.survey.questions[qi].options) item.survey.questions[qi].options = [];
+  item.survey.questions[qi].options.push("");
+  renderSurveyQuestions();
+}
+
+function fillTenOptions(qi){
+  const item = state.sections[surveyContext.sec].items[surveyContext.idx];
+  if (!item.survey || !item.survey.questions[qi]) return;
+  if (!item.survey.questions[qi].options) item.survey.questions[qi].options = [];
+  const opts = item.survey.questions[qi].options;
+  const target = Math.min(10, Math.max(opts.length + 1, 8));
+  while(opts.length < target){ opts.push(""); }
+  renderSurveyQuestions();
+}
+
+function removeSurveyOption(qi, oi){
+  const item = state.sections[surveyContext.sec].items[surveyContext.idx];
+  if (!item.survey || !item.survey.questions[qi]) return;
+  item.survey.questions[qi].options.splice(oi, 1);
+  renderSurveyQuestions();
+}
+
+function updateSurveyOption(qi, oi, value){
+  const item = state.sections[surveyContext.sec].items[surveyContext.idx];
+  if (!item.survey || !item.survey.questions[qi]) return;
+  item.survey.questions[qi].options[oi] = value;
+}
+
+async function saveSurvey(){
+  if (!surveyContext) return;
+  const item = state.sections[surveyContext.sec].items[surveyContext.idx];
+  if (!item.survey) item.survey = { enabled: true, questions: [] };
+  item.survey.enabled = true;
+  closeModal('survey-modal');
+  renderAdminSections();
+  surveyContext = null;
+  showToast("⏳ So'rovnoma saqlanmoqda...");
+  const ok = await saveData();
+  showToast(ok ? "✅ So'rovnoma saqlandi!" : "❌ So'rovnomani saqlashda xatolik");
+}
+
+async function deleteSurvey(sec, idx){
+  if (!confirm("So'rovnomani o'chirishni xohlaysizmi?")) return;
+  const item = state.sections[sec].items[idx];
+  item.survey = { enabled: false, questions: [] };
+  renderAdminSections();
+  showToast("⏳ So'rovnoma o'chirilmoqda...");
+  const ok = await saveData();
+  showToast(ok ? "✅ So'rovnoma o'chirildi" : "❌ So'rovnomani o'chirishda xatolik");
+}
+
+// ================================================================
+// OTHER ADMIN FUNCTIONS
+// ================================================================
+function toggleBookingField(sec, idx, fieldId, checked){
+  const item = state.sections[sec].items[idx];
+  if(!item.bookingForm) item.bookingForm = { enabled:true, fields:["name","phone","date","people","message"] };
+  if(!item.bookingForm.fields) item.bookingForm.fields = [];
+  const has = item.bookingForm.fields.includes(fieldId);
+  if(checked && !has){ item.bookingForm.fields.push(fieldId); }
+  else if(!checked && has){ item.bookingForm.fields = item.bookingForm.fields.filter(f=>f!==fieldId); }
+}
+
+function toggleBookingEnabled(sec, idx, checked){
+  const item = state.sections[sec].items[idx];
+  if(!item.bookingForm) item.bookingForm = { enabled:true, fields:["name","phone","date","people","message"] };
+  item.bookingForm.enabled = checked;
+}
+
+function addTableRow(sec, idx){
+  const item = state.sections[sec].items[idx];
+  if(!item.tableRows) item.tableRows = {};
+  const count = Object.keys(item.tableRows).length;
+  item.tableRows[`Field ${count+1}`] = `Value ${count+1}`;
+  renderAdminSections();
+}
+
+function removeTableRow(sec, idx, ri){
+  const item = state.sections[sec].items[idx];
+  if(!item.tableRows) return;
+  const keys = Object.keys(item.tableRows);
+  if(keys.length <= ri) return;
+  delete item.tableRows[keys[ri]];
+  renderAdminSections();
+}
+
+function updateTableRow(sec, idx, ri, type, value){
+  const item = state.sections[sec].items[idx];
+  if(!item.tableRows) return;
+  const keys = Object.keys(item.tableRows);
+  if(keys.length <= ri) return;
+  const oldKey = keys[ri];
+  const oldVal = item.tableRows[oldKey];
+  if(type === 'key'){
+    const newRows = {};
+    let i = 0;
+    for(const [k, v] of Object.entries(item.tableRows)){
+      if(i === ri){ newRows[value] = v; }
+      else { newRows[k] = v; }
+      i++;
+    }
+    item.tableRows = newRows;
+  } else {
+    item.tableRows[oldKey] = value;
+  }
+}
+
+function updateItemField(sec, idx, field, value){
+  state.sections[sec].items[idx][field][currentLang] = value;
+}
+
+function updateVehicleLabel(sec, idx, vIdx, value){
+  state.sections[sec].items[idx].vehicles[vIdx].label[currentLang] = value;
+}
+
+function updateVehiclePrice(sec, idx, vIdx, value){
+  state.sections[sec].items[idx].vehicles[vIdx].price = Number(value)||0;
+}
+
+function addVehicle(sec, idx){
+  state.sections[sec].items[idx].vehicles.push({label:{uz:"",ru:"",en:""}, price:0});
+  renderAdminSections();
+}
+
+function removeVehicle(sec, idx, vIdx){
+  state.sections[sec].items[idx].vehicles.splice(vIdx,1);
+  renderAdminSections();
+}
+
+function updateImageUrl(sec, idx, iIdx, value){
+  state.sections[sec].items[idx].images[iIdx] = value;
+}
+
+function addImageSlot(sec, idx){
+  state.sections[sec].items[idx].images.push("");
+  renderAdminSections();
+}
+
+function removeImage(sec, idx, iIdx){
+  state.sections[sec].items[idx].images.splice(iIdx,1);
+  renderAdminSections();
+}
+
+function addContainer(sec){
+  const items = state.sections[sec].items;
+  const newId = items.length ? Math.max(...items.map(x=>x.id))+1 : 1;
+  items.push({
+    id:newId, category:null,
+    name:{uz:"Yangi tur",ru:"Новый тур",en:"New tour"},
+    route:{uz:"",ru:"",en:""},
+    description:{uz:"",ru:"",en:""},
+    vehicles:[{label:{uz:"Sedan",ru:"Седан",en:"Sedan"},price:0}],
+    images:[],
+    tableRows:{},
+    survey: { enabled: false, questions: [] },
+    bookingForm: { enabled: true, fields: ["tour","name","phone","date","people","message","pickup","vehicle"] }
+  });
+  renderAdminSections();
+}
+
+function removeContainer(sec, idx){
+  if(!confirm("Delete this container?")) return;
+  state.sections[sec].items.splice(idx,1);
+  renderAdminSections();
+}
+
+function insertBold(textareaId, sec, idx){
+  const ta = document.getElementById(textareaId);
+  const start = ta.selectionStart, end = ta.selectionEnd;
+  const sel = ta.value.substring(start,end) || "text";
+  ta.value = ta.value.substring(0,start) + "**"+sel+"**" + ta.value.substring(end);
+  updateItemField(sec, idx, 'description', ta.value);
+}
+
+function insertHR(textareaId, sec, idx){
+  const ta = document.getElementById(textareaId);
+  const pos = ta.selectionStart;
+  const insert = "\n---\n";
+  ta.value = ta.value.substring(0,pos) + insert + ta.value.substring(pos);
+  updateItemField(sec, idx, 'description', ta.value);
+}
+
+async function uploadToImgbb(file, sec, idx){
+  if(!file) return;
+  if(!apiConfig.imgbbKey){ alert("Please enter ImgBB API key in API Settings above and save."); return; }
+  const fd = new FormData();
+  fd.append('image', file);
+  showToast("Uploading image...");
+  try{
+    const res = await fetch(`https://api.imgbb.com/1/upload?key=${apiConfig.imgbbKey}`, { method:'POST', body: fd });
+    const data = await res.json();
+    if(data && data.data && data.data.url){
+      state.sections[sec].items[idx].images.push(data.data.url);
+      renderAdminSections();
+      showToast("✅ Image uploaded");
+    } else {
+      alert("Error uploading image.");
+    }
+  }catch(e){ alert("Upload error: network issue or invalid API key."); }
+}
+
+async function saveAdminChanges(){
+  state.siteName = document.getElementById('a-sitename').value || state.siteName;
+  state.tagline = { ...state.tagline, [currentLang]: document.getElementById('a-tagline').value };
+  state.aboutText = { ...state.aboutText, [currentLang]: document.getElementById('a-about').value };
+  state.phone1 = document.getElementById('a-phone1').value;
+  state.phone2 = document.getElementById('a-phone2').value;
+  state.whatsapp = document.getElementById('a-whatsapp').value;
+  state.whatsappLink = document.getElementById('a-whatsapp-link').value;
+  state.telegram = document.getElementById('a-telegram').value;
+  state.email = document.getElementById('a-email').value;
+  state.address = document.getElementById('a-address').value;
+  state.mapLink = document.getElementById('a-maplink').value;
+  const ok = await saveData();
+  render();
+  closeModal('admin-panel-bg');
+  showToast(ok ? "✅ All changes saved" : "❌ Error saving");
+}
+
+async function resetToDefault(){
+  if(!confirm("Reset all changes to default?")) return;
+  state = JSON.parse(JSON.stringify(buildDefaultData()));
+  await saveData();
+  render();
+  closeModal('admin-panel-bg');
+  showToast("✅ Reset to default");
+}
+
+function showToast(msg){
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(()=>el.classList.remove('show'), 3000);
+}
+
+// ================================================================
+// INIT
+// ================================================================
+document.querySelector('.lang-switch button[data-lang="en"]')?.classList.add('active');
+loadData().then(() => {
+  if (shouldOpenAdminRoute()) {
+    setTimeout(() => openAdmin(), 120);
+  }
+});
+
+</script>
+</body>
+</html>
