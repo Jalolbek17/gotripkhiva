@@ -2225,6 +2225,11 @@ function openDetailsInNewTab(sectionKey, id){
         else { window.location.href = DD_WA_LINK; }
       }
 
+      function ddMessageUrl(baseUrl, text){
+        const separator = baseUrl.includes('?') ? '&' : '?';
+        return baseUrl + separator + 'text=' + encodeURIComponent(text);
+      }
+
       function ddSubmitBooking(channel){
         const g = id => document.getElementById(id);
         const name = g('dd-name') ? g('dd-name').value.trim() : '';
@@ -2277,7 +2282,7 @@ function openDetailsInNewTab(sectionKey, id){
         saved.unshift({channel: channel === 'wa' ? 'WhatsApp' : 'Telegram', message: out, createdAt: new Date().toISOString()});
         localStorage.setItem('booking-submissions-v1', JSON.stringify(saved.slice(0, 100)));
         if(channel === 'wa'){
-          window.open(messageUrl(DD_WA_LINK, out), "_blank");
+          window.open(ddMessageUrl(DD_WA_LINK, out), "_blank");
           return;
         }
         fetch(DD_API_URL, {
