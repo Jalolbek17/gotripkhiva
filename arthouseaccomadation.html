@@ -79,6 +79,8 @@
   .hero-contact-btn.wa:hover{background:#1fb355;}
   .hero-contact-btn.tg{background:#229ED9;}
   .hero-contact-btn.tg:hover{background:#1c85b8;}
+  .hero-buy-row{display:flex;justify-content:center;padding-bottom:34px;position:relative;z-index:2;}
+  .hero-buy-btn{min-width:180px;justify-content:center;font-size:16px;}
   .dune{position:relative;height:120px;margin-top:10px;}
   .dune svg{position:absolute;bottom:-2px;left:0;width:100%;height:100%;}
 
@@ -296,6 +298,9 @@
       <button class="btn btn-outline" onclick="openBooking()">Contact Us</button>
     </div>
     <div class="hero-contact-row" id="hero-contact-row"></div>
+    <div class="hero-buy-row">
+      <button class="btn btn-gold hero-buy-btn" type="button" onclick="openBooking()">Buy</button>
+    </div>
   </div>
   <div class="dune">
     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -589,6 +594,7 @@
       <div class="full"><label>WhatsApp Link (optional — full URL, e.g. wa.me/... or a group invite link. If left empty, the number above is used)</label><input type="text" id="a-whatsapp-link" placeholder="https://wa.me/998901234567 or https://chat.whatsapp.com/..."></div>
       <div><label>Telegram username (@user)</label><input type="text" id="a-telegram"></div>
       <div><label>Email</label><input type="text" id="a-email"></div>
+      <div class="full"><label>Office hours</label><input type="text" id="a-office-hours" placeholder="Office hours: Mon-Sun 08:00-20:00"></div>
       <div><label>Address</label><input type="text" id="a-address"></div>
       <div class="full"><label>Google Maps Link</label><input type="text" id="a-maplink"></div>
       <div class="full"><label>Change Admin Password</label>
@@ -1157,6 +1163,7 @@ function buildDefaultData(){
     whatsappLink: "",
     telegram: TELEGRAM_USERNAME,
     email: "info@gotripkhiva.uz",
+    officeHours: "Office hours: Mon-Sun 08:00-20:00",
     address: "Uzbekistan, Khiva, Zargarlar 60",
     mapLink: "https://maps.google.com",
     sections: {
@@ -1624,7 +1631,7 @@ function render(){
     email:"Our e-mail",
     phone:"Phone (WhatsApp, Telegram)",
     mapLink:"Our location on Google Maps",
-    officeHours:"Office hours: Mon-Sun 08:00-20:00"
+    officeHours: state.officeHours || "Office hours: Mon-Sun 08:00-20:00"
   };
   const contactGridEl = document.getElementById('contact-grid');
   if(contactGridEl){
@@ -1697,6 +1704,11 @@ function renderHeroContactRow(){
 function whatsappUrl(){
   if(state.whatsappLink && state.whatsappLink.trim()){ return state.whatsappLink.trim(); }
   return "https://wa.me/"+state.whatsapp.replace(/\D/g,'');
+}
+
+function whatsappMessageUrl(text){
+  const number = (state.whatsapp || WHATSAPP_NUMBER).replace(/\D/g,'');
+  return messageUrl("https://wa.me/"+number, text);
 }
 
 function updateSideIcons(){
@@ -1793,7 +1805,7 @@ function ticketHTML(item, sectionKey, tk, inlineBooking){
       ${tableHTML}
       <div class="ticket-actions">
         <button class="btn btn-ghost" onclick="openDetailsInNewTab('${sectionKey}',${item.id})">${tk.details}</button>
-        <button class="btn btn-terracotta" onclick="openDetailsInNewTab('${sectionKey}',${item.id})">${tk.book}</button>
+        <button class="btn btn-terracotta" onclick="toggleInlineBooking('${formId}')">${tk.book}</button>
       </div>
       ${bookingForm}
     </div>`;
@@ -1807,6 +1819,14 @@ function updateInlineTourFields(sectionKey, formId){
   if(vehSel && item2){
     vehSel.innerHTML = (item2.vehicles||[]).map((v,i)=>`<option value="${i}">${esc(v.label.en || v.label[currentLang])} — $${v.price}</option>`).join('');
   }
+}
+
+function toggleInlineBooking(formId){
+  const form = document.getElementById(formId);
+  if(!form) return;
+  const isHidden = form.style.display === 'none';
+  form.style.display = isHidden ? 'block' : 'none';
+  if(isHidden){ form.scrollIntoView({behavior:'smooth', block:'nearest'}); }
 }
 
 async function submitInlineBooking(sectionKey, id, formId, channel){
@@ -1838,7 +1858,7 @@ async function submitInlineBooking(sectionKey, id, formId, channel){
   if(message) out += `Message: ${message}\n`;
   
   recordSubmission(channel === 'wa' ? 'WhatsApp' : 'Telegram', out);
-  if(channel==='wa'){ window.location.href = messageUrl(whatsappUrl(), out); }
+  if(channel==='wa'){ window.location.href = whatsappMessageUrl(out); }
   else { await sendTelegramToOwner(out); }
 }
 
@@ -1938,7 +1958,7 @@ async function submitStandaloneBooking(sectionKey, channel){
   if(pickup) out += `Pickup: ${pickup}\n`;
   if(msg) out += `Message: ${msg}`;
   recordSubmission(channel === 'wa' ? 'WhatsApp' : 'Telegram', out);
-  if(channel==='wa'){ window.location.href = messageUrl(whatsappUrl(), out); }
+  if(channel==='wa'){ window.location.href = whatsappMessageUrl(out); }
   else { await sendTelegramToOwner(out); }
 }
 
@@ -2107,7 +2127,7 @@ function openDetailsInNewTab(sectionKey, id){
     tableHTML += `</tbody></table>`;
   }
 
-  const waLink = whatsappUrl();
+  const waLink = "https://wa.me/"+(state.whatsapp || WHATSAPP_NUMBER).replace(/\D/g,'');
   const tgLink = telegramUrl();
 
   const surveyQuestions = (item.survey && item.survey.questions) || [];
@@ -2462,7 +2482,7 @@ function submitToWhatsApp(){
   const text = buildMessage();
   if(!text) return;
   recordSubmission('WhatsApp', text);
-  window.location.href = messageUrl(whatsappUrl(), text);
+  window.location.href = whatsappMessageUrl(text);
 }
 
 function messageUrl(baseUrl, text){
@@ -2560,6 +2580,7 @@ function fillAdminForm(){
   document.getElementById('a-whatsapp-link').value = state.whatsappLink || '';
   document.getElementById('a-telegram').value = state.telegram;
   document.getElementById('a-email').value = state.email;
+  document.getElementById('a-office-hours').value = state.officeHours || 'Office hours: Mon-Sun 08:00-20:00';
   document.getElementById('a-address').value = state.address;
   document.getElementById('a-maplink').value = state.mapLink;
   document.getElementById('a-jsonbin-id').value = apiConfig.jsonbinId;
@@ -3117,6 +3138,7 @@ async function saveAdminChanges(){
   state.whatsappLink = document.getElementById('a-whatsapp-link').value;
   state.telegram = document.getElementById('a-telegram').value;
   state.email = document.getElementById('a-email').value;
+  state.officeHours = document.getElementById('a-office-hours').value;
   state.address = document.getElementById('a-address').value;
   state.mapLink = document.getElementById('a-maplink').value;
   const ok = await saveData();
