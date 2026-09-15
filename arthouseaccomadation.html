@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Art House Travel and Accommodations</title>
+<title>GoTripKhiva</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231a0e08'/%3E%3Cpath d='M32 10c-9 8-15 16-15 24a15 15 0 0 0 30 0c0-8-6-16-15-24z' fill='%23D4652A'/%3E%3Ccircle cx='32' cy='30' r='4' fill='%23C9A84C'/%3E%3Cpath d='M14 50h36M20 50v-8M28 50v-12M36 50v-12M44 50v-8' stroke='%23C9A84C' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -262,27 +262,25 @@
         </svg>
       </div>
       <div class="brand-text">
-        <b>Art House Travel and Accommodations</b>
-        <span>Khiva · Uzbekistan</span>
+        <b>GoTripKhiva</b>
       </div>
     </div>
     <nav class="links">
       <a data-i18n="nav.home" href="#home" onclick="event.preventDefault(); scrollToSection('home')">Home</a>
       <a data-i18n="nav.services" href="#services" onclick="event.preventDefault(); scrollToSection('services')">Services</a>
       <a data-i18n="nav.tours" href="#tours" onclick="event.preventDefault(); scrollToSection('tours')">Tours</a>
-      <a data-i18n="nav.sharedDayTrips" href="#shared-trips" onclick="event.preventDefault(); scrollToSection('shared-trips')">Shared Day Trips</a>
-      <a data-i18n="nav.twoDayTours" href="#two-day" onclick="event.preventDefault(); scrollToSection('two-day')">2-Day Tours</a>
-      <a data-i18n="nav.aralSea" href="#aral-sea" onclick="event.preventDefault(); scrollToSection('aral-sea')">Aral Sea</a>
-      <a data-i18n="nav.transfers" href="#transfers" onclick="event.preventDefault(); scrollToSection('transfers')">Transfers</a>
-      <a data-i18n="nav.cars" href="#cars" onclick="event.preventDefault(); scrollToSection('cars')">Our Cars</a>
-      <a data-i18n="nav.about" href="#about" onclick="event.preventDefault(); scrollToSection('about')">About</a>
+      <a data-i18n="nav.sharedDayTrips" href="#shared-trips" onclick="event.preventDefault(); openStandalone('sharedDayTrips')">Shared Day Trips</a>
+      <a data-i18n="nav.twoDayTours" href="#two-day" onclick="event.preventDefault(); openStandalone('twoDayTours')">2-Day Tours</a>
+      <a data-i18n="nav.aralSea" href="#aral-sea" onclick="event.preventDefault(); openStandalone('aralSea')">Aral Sea</a>
+      <a data-i18n="nav.transfers" href="#transfers" onclick="event.preventDefault(); openStandalone('privateTransfers')">Transfers</a>
       <a data-i18n="nav.contact" href="#contact" onclick="event.preventDefault(); scrollToSection('contact')">Contact</a>
-      <button data-i18n="nav.enquiry" class="btn btn-terracotta" onclick="openBooking()">Enquiry</button>
       <div class="lang-switch">
         <button data-lang="uz" onclick="setLang('uz')">UZ</button>
         <button data-lang="ru" onclick="setLang('ru')">RU</button>
         <button data-lang="en" onclick="setLang('en')">EN</button>
       </div>
+      <button data-i18n="nav.enquiry" class="btn btn-terracotta" onclick="openBooking()">Enquiry</button>
+
     </nav>
     <button class="hamburger" onclick="toggleMobileNav()">☰</button>
   </div>
@@ -298,9 +296,6 @@
       <button class="btn btn-outline" onclick="openBooking()">Contact Us</button>
     </div>
     <div class="hero-contact-row" id="hero-contact-row"></div>
-    <div class="hero-buy-row">
-      <button class="btn btn-gold hero-buy-btn" type="button" onclick="openBooking()">Buy</button>
-    </div>
   </div>
   <div class="dune">
     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -384,39 +379,6 @@
       <p>Modern, comfortable vehicles for your journeys.</p>
     </div>
     <div id="cars-cards"></div>
-  </div>
-</section>
-
-<section class="about-wrap" id="about">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">About the company</div>
-      <h2>About GoTripKhiva</h2>
-    </div>
-    <p class="about-text" id="about-text"></p>
-    <div class="reviews-grid">
-      <div class="review-card google">
-        <div class="review-logo">G</div>
-        <div class="review-name">Google</div>
-        <div class="review-score">5.0</div>
-        <div class="stars">★★★★★</div>
-        <div class="review-count">1007 reviews</div>
-      </div>
-      <div class="review-card trip">
-        <div class="review-logo">T</div>
-        <div class="review-name">TripAdvisor</div>
-        <div class="review-score">5.0</div>
-        <div class="stars">★★★★★</div>
-        <div class="review-count">724 verified reviews</div>
-      </div>
-      <div class="review-card trust">
-        <div class="review-logo">★</div>
-        <div class="review-name">Trustpilot</div>
-        <div class="review-score">4.7</div>
-        <div class="stars">★★★★★</div>
-        <div class="review-count">36 verified reviews</div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -535,7 +497,6 @@
       </div>
       <div>
         <h5>Company</h5>
-        <a href="#about">Our Team</a>
         <a href="#contact">Contact Us</a>
         <a href="#">Terms and Conditions</a>
         <a href="#">Privacy Policy</a>
@@ -584,7 +545,6 @@
     <h5 style="margin-top:24px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">General Information</h5>
     <div class="field"><label>Site Name</label><input type="text" id="a-sitename"></div>
     <div class="field"><label>Tagline</label><input type="text" id="a-tagline"></div>
-    <div class="field"><label>About Us Text</label><textarea id="a-about" style="min-height:100px;"></textarea></div>
 
     <h5 style="margin-top:24px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);">Contact Information</h5>
     <div class="form-grid" style="margin-top:0;">
@@ -717,7 +677,6 @@ const UI_TEXT = {
     aralSea: 'Orol dengizi',
     transfers: 'Transferlar',
     cars: 'Bizning mashinalar',
-    about: 'Biz haqimizda',
     contact: 'Aloqa',
     enquiry: 'So\'rov',
     heroEyebrow: 'Qadimiy Xorazm · Amudaryo vohasi',
@@ -742,8 +701,6 @@ const UI_TEXT = {
     carsEyebrow: 'Bizning park',
     carsTitle: 'Bizning mashinalar',
     carsText: 'Sayohatlar uchun zamonaviy, qulay transport vositalari.',
-    aboutEyebrow: 'Kompaniya haqida',
-    aboutTitle: 'GoTripKhiva haqida',
     contactEyebrow: 'Bog\'lanish',
     contactTitle: 'Biz bilan bog\'laning',
     contactText: 'Bizga elektron pochta yuboring yoki WhatsApp orqali yozing. Biz 24 soat ichida javob beramiz.',
@@ -779,7 +736,6 @@ const UI_TEXT = {
     aralSea: 'Аральское море',
     transfers: 'Трансферы',
     cars: 'Наш автопарк',
-    about: 'О нас',
     contact: 'Контакты',
     enquiry: 'Запрос',
     heroEyebrow: 'Древний Хорезм · Оазис Амударьи',
@@ -804,8 +760,6 @@ const UI_TEXT = {
     carsEyebrow: 'Наш автопарк',
     carsTitle: 'Наши машины',
     carsText: 'Современный и комфортный транспорт для ваших поездок.',
-    aboutEyebrow: 'О компании',
-    aboutTitle: 'О GoTripKhiva',
     contactEyebrow: 'Связаться',
     contactTitle: 'Свяжитесь с нами',
     contactText: 'Напишите нам по электронной почте или в WhatsApp. Мы отвечаем в течение 24 часов.',
@@ -841,7 +795,6 @@ const UI_TEXT = {
     aralSea: 'Aral Sea',
     transfers: 'Transfers',
     cars: 'Our Cars',
-    about: 'About',
     contact: 'Contact',
     enquiry: 'Enquiry',
     heroEyebrow: 'Ancient Khorezm · Amu Darya Oasis',
@@ -866,8 +819,6 @@ const UI_TEXT = {
     carsEyebrow: 'Our Fleet',
     carsTitle: 'Our Cars',
     carsText: 'Modern, comfortable vehicles for your journeys.',
-    aboutEyebrow: 'About the company',
-    aboutTitle: 'About GoTripKhiva',
     contactEyebrow: 'Get in touch',
     contactTitle: 'Contact us',
     contactText: 'Send us an email or write on WhatsApp. We reply within 24 hours.',
@@ -1152,11 +1103,6 @@ function buildDefaultData(){
       ru: "Откройте для себя древний Хорезм вместе с нами!",
       en: "Discover Ancient Khorezm With Us!"
     },
-    aboutText: {
-      uz: "Biz Xiva shahrida joylashgan mahalliy sayohat agentligimiz — GoTripKhiva. 2018-yildan beri Xorazmning qadimiy qal'alari, Orol dengizi sarguzashtlari hamda Buxoro, Xiva va Nukus oralig'idagi shaxsiy transferlar bo'yicha sifatli va qulay xizmatlar ko'rsatib kelmoqdamiz.",
-      ru: "Мы — местное туристическое агентство GoTripKhiva, базирующееся в Хиве. С 2018 года мы предоставляем качественные и удобные услуги: древние крепости Хорезма, приключения на Аральском море и индивидуальные трансферы между Бухарой, Хивой и Нукусом.",
-      en: "We are GoTripKhiva, a local travel agency based in Khiva. Since 2018, we've been offering quality, hassle-free services covering Khorezm's ancient fortresses, Aral Sea adventures, and private transfers between Bukhara, Khiva and Nukus."
-    },
     phone1: "+998 99 666-33-22",
     phone2: "+998 91 999-33-22",
     whatsapp: WHATSAPP_NUMBER,
@@ -1411,7 +1357,6 @@ function applyUiTranslations(){
   setText('a[data-i18n="nav.aralSea"]', ui.aralSea);
   setText('a[data-i18n="nav.transfers"]', ui.transfers);
   setText('a[data-i18n="nav.cars"]', ui.cars);
-  setText('a[data-i18n="nav.about"]', ui.about);
   setText('a[data-i18n="nav.contact"]', ui.contact);
   setText('button[data-i18n="nav.enquiry"]', ui.enquiry);
 
@@ -1457,9 +1402,6 @@ function applyUiTranslations(){
   setText('#cars .eyebrow', ui.carsEyebrow);
   setText('#cars h2', ui.carsTitle);
   setText('#cars .section-head p', ui.carsText);
-
-  setText('#about .eyebrow', ui.aboutEyebrow);
-  setText('#about h2', ui.aboutTitle);
 
   setText('#contact .eyebrow', ui.contactEyebrow);
   setText('#contact h2', ui.contactTitle);
@@ -1532,7 +1474,6 @@ function applyStandaloneMode(key){
         <a onclick="openStandalone('aralSea')" style="cursor:pointer;">Aral Sea</a>
         <a onclick="openStandalone('privateTransfers')" style="cursor:pointer;">Transfers</a>
         <a onclick="openStandalone('cars')" style="cursor:pointer;">Our Cars</a>
-        <a href="#about" onclick="goHome()">About</a>
         <a href="#contact" onclick="goHome()">Contact</a>
         ${langSwitch.outerHTML}
         <button class="btn btn-terracotta" onclick="openBooking()">Enquiry</button>
@@ -1549,7 +1490,6 @@ function applyStandaloneMode(key){
 // ================================================================
 function render(){
   applyUiTranslations();
-  document.getElementById('about-text').textContent = state.aboutText[currentLang] || state.aboutText.uz;
   document.title = state.siteName;
 
   applyLogo();
@@ -2202,7 +2142,6 @@ function openDetailsInNewTab(sectionKey, id){
           <a href="${esc(baseUrl)}#home">Home</a>
           <a href="${esc(baseUrl)}#services">Services</a>
           <a href="${esc(baseUrl)}#tours">Tours</a>
-          <a href="${esc(baseUrl)}#about">About</a>
           <a href="${esc(baseUrl)}#contact">Contact</a>
           ${bfEnabled ? `<a class="dd-enq-btn" href="#booking">Enquiry</a>` : `<a class="dd-enq-btn" href="${esc(baseUrl)}#contact">Enquiry</a>`}
         </div>
@@ -2573,7 +2512,6 @@ function fillAdminForm(){
   document.getElementById('a-current-lang-note').textContent = currentLang.toUpperCase();
   document.getElementById('a-sitename').value = state.siteName;
   document.getElementById('a-tagline').value = state.tagline[currentLang] || state.tagline.uz;
-  document.getElementById('a-about').value = state.aboutText[currentLang] || state.aboutText.uz;
   document.getElementById('a-phone1').value = state.phone1;
   document.getElementById('a-phone2').value = state.phone2;
   document.getElementById('a-whatsapp').value = state.whatsapp;
@@ -3131,7 +3069,6 @@ async function uploadToImgbb(file, sec, idx){
 async function saveAdminChanges(){
   state.siteName = document.getElementById('a-sitename').value || state.siteName;
   state.tagline = { ...state.tagline, [currentLang]: document.getElementById('a-tagline').value };
-  state.aboutText = { ...state.aboutText, [currentLang]: document.getElementById('a-about').value };
   state.phone1 = document.getElementById('a-phone1').value;
   state.phone2 = document.getElementById('a-phone2').value;
   state.whatsapp = document.getElementById('a-whatsapp').value;
