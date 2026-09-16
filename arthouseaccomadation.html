@@ -28,9 +28,11 @@
       "url": "https://gotripkhiva.uz/",
       "logo": "https://gotripkhiva.uz/khiva.jpg",
       "email": "info@gotripkhiva.uz",
+      "telephone": ["+998 91 429 83 03", "+998 33 335 66 67"],
+      "openingHours": "Mo-Su 08:00-23:00",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Zargarlar 60",
+        "streetAddress": "59 Buyoqchilar Street",
         "addressLocality": "Khiva",
         "addressCountry": "UZ"
       }
@@ -200,6 +202,7 @@
   .info-card h4{font-size:16.5px;margin-bottom:8px;}
   .info-card p{margin:2px 0;color:var(--muted);font-size:14.5px;}
   .info-card a{color:var(--terracotta-dark);font-weight:600;}
+  .contact-phone-list{display:flex;flex-direction:column;gap:4px;}
 
   .booking-panel{background:#fff;color:var(--ink);border-radius:18px;padding:38px;max-width:820px;margin:0 auto;box-shadow:0 24px 60px rgba(0,0,0,.25);}
   .booking-panel h3{font-size:24px;text-align:center;}
@@ -438,7 +441,7 @@
     <div class="section-head">
       <div class="eyebrow">Get in touch</div>
       <h2>Contact us</h2>
-      <p>Send us an email or write on WhatsApp. We reply within 24 hours.</p>
+      <p>Send us an email or write on WhatsApp. Open daily from 08:00 to 23:00.</p>
     </div>
     <div class="contact-grid" id="contact-grid"></div>
 
@@ -549,6 +552,10 @@
       <div>
         <h5>Company</h5>
         <a href="#contact">Contact Us</a>
+        <a href="tel:+998914298303">+998 91 429 83 03</a>
+        <a href="tel:+998333356667">+998 33 335 66 67</a>
+        <span style="display:block;color:#D8C6B8;font-size:14px;padding:5px 0;">59 Buyoqchilar Street, Khiva, Uzbekistan</span>
+        <span style="display:block;color:#D8C6B8;font-size:14px;padding:5px 0;">Open daily: 08:00–23:00</span>
         <a href="#">Terms and Conditions</a>
         <a href="#">Privacy Policy</a>
       </div>
@@ -605,7 +612,7 @@
       <div class="full"><label>WhatsApp Link (optional — full URL, e.g. wa.me/... or a group invite link. If left empty, the number above is used)</label><input type="text" id="a-whatsapp-link" placeholder="https://wa.me/998901234567 or https://chat.whatsapp.com/..."></div>
       <div><label>Telegram username (@user)</label><input type="text" id="a-telegram"></div>
       <div><label>Email</label><input type="text" id="a-email"></div>
-      <div class="full"><label>Office hours</label><input type="text" id="a-office-hours" placeholder="Office hours: Mon-Sun 08:00-20:00"></div>
+      <div class="full"><label>Office hours</label><input type="text" id="a-office-hours" placeholder="Open daily: 08:00–23:00"></div>
       <div><label>Address</label><input type="text" id="a-address"></div>
       <div class="full"><label>Google Maps Link</label><input type="text" id="a-maplink"></div>
       <div class="full"><label>Change Admin Password</label>
@@ -660,7 +667,13 @@
 // ================================================================
 const ADMIN_PASSWORD = "";
 const TELEGRAM_USERNAME = "narimanovk";
-const WHATSAPP_NUMBER = "+998991041699";
+const WHATSAPP_NUMBER = "+998914298303";
+const OFFICIAL_CONTACT = {
+  address: "59 Buyoqchilar Street, Khiva, Uzbekistan",
+  phone1: "+998 91 429 83 03",
+  phone2: "+998 33 335 66 67",
+  officeHours: "Open daily: 08:00–23:00"
+};
 const IMGBB_API_KEY = "";
 const JSONBIN_ID = "";
 const JSONBIN_MASTER_KEY = "";
@@ -1154,14 +1167,14 @@ function buildDefaultData(){
       ru: "Откройте для себя древний Хорезм вместе с нами!",
       en: "Discover Ancient Khorezm With Us!"
     },
-    phone1: "+998 99 666-33-22",
-    phone2: "+998 91 999-33-22",
+    phone1: OFFICIAL_CONTACT.phone1,
+    phone2: OFFICIAL_CONTACT.phone2,
     whatsapp: WHATSAPP_NUMBER,
     whatsappLink: "",
     telegram: TELEGRAM_USERNAME,
     email: "info@gotripkhiva.uz",
-    officeHours: "Office hours: Mon-Sun 08:00-20:00",
-    address: "Uzbekistan, Khiva, Zargarlar 60",
+    officeHours: OFFICIAL_CONTACT.officeHours,
+    address: OFFICIAL_CONTACT.address,
     mapLink: "https://maps.google.com",
     sections: {
       privateDayTrips: { items: [...privateDayTripsItems, ...khivaToNukus, ...khivaToBukhara, ...nukusToKhiva, ...bukharaToKhiva] },
@@ -1335,10 +1348,11 @@ async function loadData(){
     state.telegram = TELEGRAM_USERNAME;
     storage.set('site-content-v6', state, true);
   }
-  if(String(state.whatsapp || '').replace(/\D/g, '') === '998996663322'){
-    state.whatsapp = WHATSAPP_NUMBER;
-    storage.set('site-content-v6', state, true);
-  }
+  state.address = OFFICIAL_CONTACT.address;
+  state.phone1 = OFFICIAL_CONTACT.phone1;
+  state.phone2 = OFFICIAL_CONTACT.phone2;
+  state.officeHours = OFFICIAL_CONTACT.officeHours;
+  state.whatsapp = WHATSAPP_NUMBER;
   await initAdminSession();
   standalonePage = getPageParam();
   if(standalonePage){ applyStandaloneMode(standalonePage); }
@@ -1620,7 +1634,7 @@ function render(){
     email:"Our e-mail",
     phone:"Phone (WhatsApp, Telegram)",
     mapLink:"Our location on Google Maps",
-    officeHours: state.officeHours || "Office hours: Mon-Sun 08:00-20:00"
+    officeHours: state.officeHours || OFFICIAL_CONTACT.officeHours
   };
   const contactGridEl = document.getElementById('contact-grid');
   if(contactGridEl){
@@ -1640,8 +1654,10 @@ function render(){
     <div class="info-card">
       <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 2.9a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.5 2.9.6a2 2 0 0 1 1.8 2.1z"/></svg></div>
       <h4>${c.phone}</h4>
-      <p>${esc(state.phone1)}</p>
-      <p>${esc(state.phone2)}</p>
+      <div class="contact-phone-list">
+        <a href="tel:+998914298303">+998 91 429 83 03</a>
+        <a href="tel:+998333356667">+998 33 335 66 67</a>
+      </div>
     </div>`;
   }
 
@@ -2572,7 +2588,7 @@ function fillAdminForm(){
   document.getElementById('a-whatsapp-link').value = state.whatsappLink || '';
   document.getElementById('a-telegram').value = state.telegram;
   document.getElementById('a-email').value = state.email;
-  document.getElementById('a-office-hours').value = state.officeHours || 'Office hours: Mon-Sun 08:00-20:00';
+  document.getElementById('a-office-hours').value = state.officeHours || OFFICIAL_CONTACT.officeHours;
   document.getElementById('a-address').value = state.address;
   document.getElementById('a-maplink').value = state.mapLink;
   document.getElementById('a-jsonbin-id').value = apiConfig.jsonbinId;
