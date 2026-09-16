@@ -4,19 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
-<meta name="description" content="GoTripKhiva offers private Khiva tours and day trips to Ayaz Kala, Nukus, Muynak and the Ship Cemetery, with transfers across Uzbekistan.">
+<meta name="description" content="GoTripKhiva offers private tours and day trips from Khiva, Uzbekistan, including Ayaz Kala, Nukus and Muynak journeys, plus comfortable transfers.">
 <link rel="canonical" href="https://gotripkhiva.uz/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="GoTripKhiva">
-<meta property="og:title" content="Private Khiva Tours and Day Trips | GoTripKhiva">
-<meta property="og:description" content="Plan private day trips from Khiva to Ayaz Kala, Nukus and Muynak, plus comfortable Khiva transfers across Uzbekistan.">
+<meta property="og:title" content="GoTripKhiva | Khiva Tours, Day Trips &amp; Transfers in Uzbekistan">
+<meta property="og:description" content="Private tours and day trips from Khiva, including Ayaz Kala, Nukus and Muynak journeys, plus comfortable transfers.">
 <meta property="og:url" content="https://gotripkhiva.uz/">
 <meta property="og:image" content="https://gotripkhiva.uz/khiva.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Private Khiva Tours and Day Trips | GoTripKhiva">
-<meta name="twitter:description" content="Plan private day trips from Khiva to Ayaz Kala, Nukus and Muynak, plus comfortable Khiva transfers across Uzbekistan.">
+<meta name="twitter:title" content="GoTripKhiva | Khiva Tours, Day Trips &amp; Transfers in Uzbekistan">
+<meta name="twitter:description" content="Private tours and day trips from Khiva, including Ayaz Kala, Nukus and Muynak journeys, plus comfortable transfers.">
 <meta name="twitter:image" content="https://gotripkhiva.uz/khiva.jpg">
-<title>Private Khiva Tours and Day Trips | GoTripKhiva</title>
+<title>GoTripKhiva | Khiva Tours, Day Trips &amp; Transfers in Uzbekistan</title>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,6 +30,12 @@
       "email": "info@gotripkhiva.uz",
       "telephone": ["+998 91 429 83 03", "+998 33 335 66 67"],
       "openingHours": "Mo-Su 08:00-23:00",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "08:00",
+        "closes": "23:00"
+      },
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "59 Buyoqchilar Street",
@@ -50,6 +56,7 @@
       "@id": "https://gotripkhiva.uz/#webpage",
       "url": "https://gotripkhiva.uz/",
       "name": "Private Khiva Tours and Day Trips",
+      "description": "GoTripKhiva offers private tours and day trips from Khiva, Uzbekistan, including Ayaz Kala, Nukus and Muynak journeys, plus comfortable transfers.",
       "isPartOf": {"@id": "https://gotripkhiva.uz/#website"},
       "about": {"@id": "https://gotripkhiva.uz/#organization"},
       "inLanguage": "en"
@@ -733,6 +740,7 @@ const UI_TEXT = {
   uz: {
     brand: 'GoTripKhiva',
     location: 'Xiva · O\'zbekiston',
+    heroTitle: 'Xivadan shaxsiy turlar va kunlik sayohatlar',
     home: 'Bosh sahifa',
     services: 'Xizmatlar',
     tours: 'Turlar',
@@ -792,6 +800,7 @@ const UI_TEXT = {
   ru: {
     brand: 'GoTripKhiva',
     location: 'Хива · Узбекистан',
+    heroTitle: 'Индивидуальные туры и однодневные поездки из Хивы',
     home: 'Главная',
     services: 'Услуги',
     tours: 'Туры',
@@ -851,6 +860,7 @@ const UI_TEXT = {
   en: {
     brand: 'GoTripKhiva',
     location: 'Khiva · Uzbekistan',
+    heroTitle: 'Private Khiva Tours and Day Trips',
     home: 'Home',
     services: 'Services',
     tours: 'Tours',
@@ -1429,7 +1439,7 @@ function applyUiTranslations(){
   if (heroEyebrow) heroEyebrow.textContent = ui.heroEyebrow;
 
   const heroTitle = document.querySelector('.hero h1');
-  if (heroTitle) heroTitle.textContent = state.siteName;
+  if (heroTitle) heroTitle.textContent = ui.heroTitle;
 
   const heroTagline = document.querySelector('.tagline');
   if (heroTagline) heroTagline.textContent = state.tagline[currentLang] || state.tagline.en;
