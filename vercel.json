@@ -1,4 +1,12 @@
 {
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{"type": "host", "value": "www.gotripkhiva.uz"}],
+      "destination": "https://gotripkhiva.uz/$1",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/arthouseaccomadation.html/admin",

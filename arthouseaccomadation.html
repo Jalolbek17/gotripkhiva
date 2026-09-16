@@ -3,7 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GoTripKhiva</title>
+<meta name="robots" content="index, follow">
+<meta name="description" content="GoTripKhiva offers private Khiva tours and day trips to Ayaz Kala, Nukus, Muynak and the Ship Cemetery, with transfers across Uzbekistan.">
+<link rel="canonical" href="https://gotripkhiva.uz/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GoTripKhiva">
+<meta property="og:title" content="Private Khiva Tours and Day Trips | GoTripKhiva">
+<meta property="og:description" content="Plan private day trips from Khiva to Ayaz Kala, Nukus and Muynak, plus comfortable Khiva transfers across Uzbekistan.">
+<meta property="og:url" content="https://gotripkhiva.uz/">
+<meta property="og:image" content="https://gotripkhiva.uz/khiva.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Private Khiva Tours and Day Trips | GoTripKhiva">
+<meta name="twitter:description" content="Plan private day trips from Khiva to Ayaz Kala, Nukus and Muynak, plus comfortable Khiva transfers across Uzbekistan.">
+<meta name="twitter:image" content="https://gotripkhiva.uz/khiva.jpg">
+<title>Private Khiva Tours and Day Trips | GoTripKhiva</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TravelAgency",
+      "@id": "https://gotripkhiva.uz/#organization",
+      "name": "GoTripKhiva",
+      "url": "https://gotripkhiva.uz/",
+      "logo": "https://gotripkhiva.uz/khiva.jpg",
+      "email": "info@gotripkhiva.uz",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Zargarlar 60",
+        "addressLocality": "Khiva",
+        "addressCountry": "UZ"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://gotripkhiva.uz/#website",
+      "url": "https://gotripkhiva.uz/",
+      "name": "GoTripKhiva",
+      "publisher": {"@id": "https://gotripkhiva.uz/#organization"},
+      "inLanguage": ["en", "uz", "ru"]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://gotripkhiva.uz/#webpage",
+      "url": "https://gotripkhiva.uz/",
+      "name": "Private Khiva Tours and Day Trips",
+      "isPartOf": {"@id": "https://gotripkhiva.uz/#website"},
+      "about": {"@id": "https://gotripkhiva.uz/#organization"},
+      "inLanguage": "en"
+    }
+  ]
+}
+</script>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231a0e08'/%3E%3Cpath d='M32 10c-9 8-15 16-15 24a15 15 0 0 0 30 0c0-8-6-16-15-24z' fill='%23D4652A'/%3E%3Ccircle cx='32' cy='30' r='4' fill='%23C9A84C'/%3E%3Cpath d='M14 50h36M20 50v-8M28 50v-12M36 50v-12M44 50v-8' stroke='%23C9A84C' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -289,7 +340,7 @@
 <section class="hero" id="home">
   <div class="hero-inner">
     <div class="hero-eyebrow">Ancient Khorezm · Amu Darya Oasis</div>
-    <h1>GoTripKhiva</h1>
+    <h1>Private Khiva Tours and Day Trips</h1>
     <p class="tagline">Discover Ancient Khorezm With Us!</p>
     <div class="hero-btns">
       <button class="btn btn-gold" onclick="document.getElementById('tours').scrollIntoView()">Explore Tours</button>
@@ -320,7 +371,7 @@
   <div class="container">
     <div class="section-head">
       <div class="eyebrow">Private Day Trips</div>
-      <h2>Tours departing from Khiva</h2>
+      <h2>Private tours and day trips from Khiva</h2>
       <p>Explore the ancient Khorezm fortresses, desert landscapes and cultural highlights with a private driver.</p>
     </div>
     <div id="privateDayTrips-cards"></div>
@@ -524,7 +575,7 @@
   <div class="modal">
     <button class="modal-close" onclick="closeModal('admin-login-bg')">×</button>
     <h3>Admin Panel Login</h3>
-    <p style="color:var(--muted);font-size:14px;">Enter password once, it won't be asked again (in this browser).</p>
+    <p style="color:var(--muted);font-size:14px;">Choose a password the first time; it is stored only in this browser.</p>
     <div class="field" style="margin-top:18px;">
       <label>Password</label>
       <input type="password" id="admin-password" placeholder="Enter password">
@@ -607,12 +658,12 @@
 // ================================================================
 // CONFIGURATION
 // ================================================================
-const ADMIN_PASSWORD = "2026";
+const ADMIN_PASSWORD = "";
 const TELEGRAM_USERNAME = "narimanovk";
 const WHATSAPP_NUMBER = "+998991041699";
-const IMGBB_API_KEY = "965c6e3465655de4fefd861facb671c1";
-const JSONBIN_ID = "67b7f8b2ad19ca34f8123456";
-const JSONBIN_MASTER_KEY = "$2b$10$abcdefghijklmnopqrstuvwxyz1234567890";
+const IMGBB_API_KEY = "";
+const JSONBIN_ID = "";
+const JSONBIN_MASTER_KEY = "";
 const LOGO_DATA_URI = "khiva.jpg";
 
 let apiConfig = { 
@@ -1490,8 +1541,6 @@ function applyStandaloneMode(key){
 // ================================================================
 function render(){
   applyUiTranslations();
-  document.title = state.siteName;
-
   applyLogo();
 
   const list = t('servicesList');
@@ -1732,7 +1781,7 @@ function ticketHTML(item, sectionKey, tk, inlineBooking){
 
   return `
     <div class="ticket">
-      ${img ? `<img class="ticket-img" src="${esc(img)}" alt="">` : ''}
+      ${img ? `<img class="ticket-img" src="${esc(img)}" alt="${esc(item.name[currentLang] || item.name.en || 'Tour image')}" width="800" height="450" loading="lazy" decoding="async">` : ''}
       <div class="ticket-body">
         <h4>${esc(item.name[currentLang])}</h4>
         ${item.route && item.route[currentLang] ? `<p style="color:var(--muted);font-size:13.5px;margin-top:6px;">📍 ${esc(item.route[currentLang])}</p>` : ''}
@@ -2045,7 +2094,7 @@ function openDetailsInNewTab(sectionKey, id){
 
   const cancelHTML = tk.cancelList.map(c=>`<li><b>${esc(c.l)}</b> ${esc(c.t)}</li>`).join('');
 
-  const gallery = (item.images||[]).filter(u=>u && u.length>0).map(u=>`<img src="${esc(u)}" class="gal-img">`).join('');
+  const gallery = (item.images||[]).filter(u=>u && u.length>0).map((u, index)=>`<img src="${esc(u)}" class="gal-img" alt="${esc(item.name[currentLang] || item.name.en || 'Tour image')} photo ${index + 1}" width="800" height="450" loading="lazy" decoding="async">`).join('');
 
   const includedList = (item.included && item.included[currentLang]) || tk.includedList;
   const excludedList = (item.excluded && item.excluded[currentLang]) || tk.excludedList;
@@ -2475,7 +2524,12 @@ function closeModal(id){ document.getElementById(id).classList.remove('open'); }
 
 async function checkAdminPassword(){
   const pw = document.getElementById('admin-password').value;
-  const savedPassword = storage.get('admin-password', false) || ADMIN_PASSWORD;
+  let savedPassword = storage.get('admin-password', false) || ADMIN_PASSWORD;
+  if(!savedPassword){
+    if(!pw){ showToast("❌ Enter a password to continue"); return; }
+    await storage.set('admin-password', pw, false);
+    savedPassword = pw;
+  }
   if(pw === savedPassword){
     adminAuthed = true;
     try{ await storage.set('admin-authed','true', false); }catch(e){}
