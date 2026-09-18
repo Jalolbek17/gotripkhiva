@@ -6,3 +6,6 @@ Disallow: /api/
 Disallow: /__pycache__/
 
 Sitemap: https://gotripkhiva.uz/sitemap.xml
+
+# Machine-readable business information for AI assistants and crawlers
+LLMs-Txt: https://gotripkhiva.uz/llms.txt
